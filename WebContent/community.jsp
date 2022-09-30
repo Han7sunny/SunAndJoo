@@ -47,8 +47,11 @@
 <div class="section bg-light">
 	<div class="container">
 		<div class="row">
-		<c:forEach var="reviews" items="${top_review}">
-			<div class="col-6 col-lg-3" data-aos="fade-up" data-aos-delay="300">
+		
+		<% int delayCnt = 300; %>
+		
+		<c:forEach var="reviews" items="${top_review}" varStatus="status">
+			<div class="col-6 col-lg-3" data-aos="fade-up" data-aos-delay="${300 + status.index * 100}">
 				<div class="box-feature mb-4">
 					<div class="row">
 						<span class="col mb-4 d-block"><img src="${root}/assets/images/LetsTravel_icon_color.png" style="width:30%"/></span>
@@ -83,8 +86,8 @@
 <div class="section bg-light">
 	<div class="container">
 		<div class="row">
-		<c:forEach var="mates" items="${top_mate}">
-			<div class="col-6 col-lg-3" data-aos="fade-up" data-aos-delay="300">
+		<c:forEach var="mates" items="${top_mate}" varStatus = "status">
+			<div class="col-6 col-lg-3" data-aos="fade-up" data-aos-delay="${300 + status.index * 100}">
 				<div class="box-feature mb-4">
 					<div class="row">
 						<span class="col mb-4 d-block"><img src="${root}/assets/images/Mate_icon.png" style="width:30%"/></span>

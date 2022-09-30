@@ -44,6 +44,7 @@ public class UserDaoImpl implements UserDao {
 				userDto.setName(rs.getString(3));
 				userDto.setEmailId(rs.getString(4));
 				userDto.setEmailDomain(rs.getString(5));
+				userDto.setAdminAuthor(rs.getInt(6) == 1 ? true : false);
 			}
 		} finally {
 			dbUtil.close(rs, pstmt, conn);

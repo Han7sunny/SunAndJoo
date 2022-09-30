@@ -28,7 +28,7 @@
     <div class="section">
       <div class="container">
         <div class="row justify-content-between">
-
+<c:if test='${detail_board.board_type_id ne "공지사항" }'>
           <div class="community-info">
 						<div class="address mt-2 mb-5">
 							<i class="icon-room"></i>
@@ -47,6 +47,7 @@
 							</div>
 						</div>
 					</div>
+					</c:if>
           <div class="col-lg-5">
             <div class="img-property-slide-wrap">
               <div class="img-property-slide">
@@ -86,12 +87,5 @@
 
     <%@ include file="/common/footer.jsp" %>
 
-
-    <script src="${root}/assets/js/bootstrap.bundle.min.js"></script>
-    <script src="${root}/assets/js/tiny-slider.js"></script>
-    <script src="${root}/assets/js/aos.js"></script>
-    <script src="${root}/assets/js/navbar.js"></script>
-    <script src="${root}/assets/js/counter.js"></script>
-    <script src="${root}/assets/js/custom.js"></script>
   </body>
 </html>

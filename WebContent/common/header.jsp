@@ -56,6 +56,7 @@
 							<li><a href="${root}/user?action=mvJoin">회원가입</a></li>
 						</c:if>
 						<li><a href="${root}/main_community?act=mvList&content_type_id=0">커뮤니티</a></li>
+						<li><a href="${root}/main_community?act=notice">공지사항</a></li>
 						<c:if test="${userInfo ne null}">
 							<li><a href="${root}/user?action=mvMyPage">마이페이지</a></li>
 							<li><a href="${root}/user?action=logout">로그아웃</a></li>

@@ -7,22 +7,14 @@ public class BoardDto {
 	private String user_id;
 	private int location_sido;
 	private int location_gungu;
-	private String content;	
+	private String content;
+	private int score;
 	private String start_date;
 	private String end_date;
 	private int readcount;
 	private String regist_time;
 	private String img1;
 	private String img2;
-	private int score;
-
-	public int getScore() {
-		return score;
-	}
-
-	public void setScore(int score) {
-		this.score = score;
-	}
 
 	public BoardDto() {
 		super();
@@ -84,6 +76,14 @@ public class BoardDto {
 		this.content = content;
 	}
 
+	public int getScore() {
+		return score;
+	}
+
+	public void setScore(int score) {
+		this.score = score;
+	}
+
 	public String getStart_date() {
 		return start_date;
 	}
@@ -131,9 +131,6 @@ public class BoardDto {
 	public void setImg2(String img2) {
 		this.img2 = img2;
 	}
-	
-	
-	
 
 	@Override
 	public String toString() {
@@ -142,6 +139,5 @@ public class BoardDto {
 				+ ", content=" + content + ", start_date=" + start_date + ", end_date=" + end_date + ", readcount="
 				+ readcount + ", regist_time=" + regist_time + ", img1=" + img1 + ", img2=" + img2 + "]";
 	}
-	
-	
+
 }

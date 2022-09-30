@@ -301,9 +301,6 @@
 			<div class="col-lg-6">
 				<h2 class="font-weight-bold text-primary heading">여행 테마 소개</h2>
 			</div>
-            <div class="col-lg-6 text-lg-end">
-	            <a href="${root}/main?action=totalTheme" class="learn-more">더 많은 여행 테마</a>
-	    	</div>
 		</div>
 		<div class="row">
 			<div class="col-12">
@@ -374,14 +371,6 @@
 						<div class="testimonial">
 							<img src="${root}/assets/images/default-profile.png" alt="Image"
 								class="img-fluid rounded-circle w-25 mb-4" />
-							<div class="rate">
-								<span class="icon-star text-warning"></span> <span
-									class="icon-star text-warning"></span> <span
-									class="icon-star text-warning"></span> <span
-									class="icon-star text-warning"></span> <span
-									class="icon-star text-warning"></span>
-							</div>
-
 						</div>
 					</div>
 
@@ -389,14 +378,6 @@
 						<div class="testimonial">
 							<img src="${root}/assets/images/default-profile.png" alt="Image"
 								class="img-fluid rounded-circle w-25 mb-4" />
-							<div class="rate">
-								<span class="icon-star text-warning"></span> <span
-									class="icon-star text-warning"></span> <span
-									class="icon-star text-warning"></span> <span
-									class="icon-star text-warning"></span> <span
-									class="icon-star text-warning"></span>
-							</div>
-
 						</div>
 					</div>
 
@@ -404,14 +385,6 @@
 						<div class="testimonial">
 							<img src="${root}/assets/images/default-profile.png" alt="Image"
 								class="img-fluid rounded-circle w-25 mb-4" />
-							<div class="rate">
-								<span class="icon-star text-warning"></span> <span
-									class="icon-star text-warning"></span> <span
-									class="icon-star text-warning"></span> <span
-									class="icon-star text-warning"></span> <span
-									class="icon-star text-warning"></span>
-							</div>
-
 						</div>
 					</div>
 
@@ -419,12 +392,6 @@
 						<div class="testimonial">
 							<img src="${root}/assets/images/default-profile.png" alt="Image"
 								class="img-fluid rounded-circle w-25 mb-4" />
-							<div class="rate">
-								<span class="icon-star text-warning"></span> <span
-									class="icon-star text-warning"></span><span
-									class="icon-star text-warning"></span>
-							</div>
-
 						</div>
 					</div>
 
@@ -645,7 +612,15 @@
 	        let idx = 0;
 			data.reviewList.forEach((review) => {
     	    	ItemDiv[idx].setAttribute("onclick","location.href='${root}/main_community?act=view&board_id="+review.board_id+"'");
-
+				
+    	    	let div = document.createElement("div");
+  	          div.setAttribute("class", "rate");
+				for(var i = 0; i < review.score; i++){
+					let span = document.createElement("span");
+		  	          span.setAttribute("class", "icon-star text-warning");
+		  	          div.appendChild(span);
+				}
+    	    	
     	    	let h3 = document.createElement("h3");
     	          h3.setAttribute("class", "h5 text-primary mt-2 mb-4");
     	          h3.appendChild(document.createTextNode(review.user_id));
@@ -659,6 +634,7 @@
   	          p.setAttribute("class", "text-black-50");
     	    	p.appendChild(document.createTextNode(review.regist_time));
 
+    	    	TestimonialDiv[idx].appendChild(div);
     	    	TestimonialDiv[idx].appendChild(h3);
     	    	TestimonialDiv[idx].appendChild(blockquote);
     	    	TestimonialDiv[idx].appendChild(p);
@@ -730,7 +706,6 @@
           let divEmpty = document.createElement("div");
           let span = document.createElement("span");
           span.setAttribute("class", "city d-block mb-3");
-          span.setAttribute("name", "total_tb_title");
           span.appendChild(document.createTextNode(theme.title));
 
           let div = document.createElement("div");
@@ -753,7 +728,7 @@
           div.appendChild(span1);
 
           let a1 = document.createElement("a");
-          a1.setAttribute("href", "${root}/main?action=joinTheme");
+          a1.setAttribute("href", "theme-single.jsp");
           a1.setAttribute("class", "btn btn-4 py-2 px-3");
           a1.appendChild(document.createTextNode("See detail"));
 
@@ -878,8 +853,8 @@
         el.className = "item";
 
         return el;
-      }  
-// 0930_2:39pm
+      }
+
       // 마커를 생성하고 지도 위에 마커를 표시하는 함수입니다
       function addMarker(position, contentTypeId) {
         // https://www.flaticon.com/kr/authors/flat_circular/flat

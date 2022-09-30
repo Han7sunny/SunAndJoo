@@ -69,17 +69,17 @@ public class BoardDaoImpl implements BoardDao {
 	    try {
 	        conn = dbUtil.getConnection();
 	        StringBuilder sql = new StringBuilder();
-	        sql.append("select board_id, board_title, board_type_id, user_id, content, readcount, regist_time from board \n");
-
+	        sql.append("select board_id, board_title, board_type_id, user_id, content, score, readcount, regist_time from board \n");
+	        
 	        switch(content_type_id) {
-	        case"1":
+	        case"1": case "3":
 	            sql.append("where board_type_id = '여행후기' or board_type_id = '여행메이트후기'\n");
 	            break;
 	        case"2":
 	            sql.append("where board_type_id = '여행메이트' \n");
 	            break;
-	        case"3":
-	            sql.append("where board_type_id = '여행메이트후기' or board_type_id = '여행후기' \n");
+	        case"4":
+	            sql.append("where board_type_id = '공지사항' \n");
 	            break;
 	        }
 	        sql.append("order by readcount desc");
@@ -93,6 +93,7 @@ public class BoardDaoImpl implements BoardDao {
 	            boardDto.setUser_id(rs.getString("user_id"));
 	            boardDto.setBoard_type_id(rs.getString("board_type_id"));
 	            boardDto.setContent(rs.getString("content"));
+	            boardDto.setScore(rs.getInt("score"));
 	            boardDto.setReadcount(rs.getInt("readcount"));
 	            boardDto.setRegist_time(rs.getString("regist_time"));
 	            list.add(boardDto);

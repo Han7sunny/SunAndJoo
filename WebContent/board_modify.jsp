@@ -30,6 +30,7 @@
     <div class="section">
       <div class="container">
         <div class="row justify-content-between">
+<c:if test='${detail_board.board_type_id ne "공지사항" }'>
 
           <div class="community-info">
 			<div class="address mt-2">
@@ -49,7 +50,7 @@
 				</div>
 			</div>
 		  </div>
-		
+	</c:if>	
 		
 		<form action="${root}/main_community?act=modify&board_id=${modify_board.board_id}" id="form-modify" method="POST">
 			<div class="row">

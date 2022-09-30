@@ -49,7 +49,8 @@
                 "board_id" : "${review.board_id}",
                 "board_title" : "${review.board_title}",
                 "regist_time" : "${review.regist_time}",
-                "user_id" : "${review.user_id}"
+                "user_id" : "${review.user_id}",
+                "score"	: "${review.score}"		
                 }
                 <c:if test="${i.index != reviewList.size() - 1}">,</c:if>
 </c:forEach>

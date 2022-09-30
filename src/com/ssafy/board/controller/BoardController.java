@@ -38,7 +38,10 @@ public class BoardController extends HttpServlet {
 		String act = request.getParameter("act");
 
 		String path = "/index.jsp";
-		if ("regist".equals(act)) {
+		if ("mvRegist".equals(act)) {
+			path = "/registNotice.jsp";
+			redirect(request, response, path);
+		} else if ("regist".equals(act)) {
 			path = regist(request, response);
 			forward(request, response, path);
 		} else if ("mvList".equals(act)) {
@@ -64,8 +67,24 @@ public class BoardController extends HttpServlet {
 			path = delete(request, response);
 			forward(request, response, path);
 
+		} else if ("notice".equals(act)) {
+			path = notice(request, response);
+			forward(request, response, path);
+
 		} else {
 			redirect(request, response, path);
+		}
+	}
+
+	private String notice(HttpServletRequest request, HttpServletResponse response) {
+		try {
+			List<BoardDto> noticeList = boardService.list("4");
+			request.setAttribute("noticeList", noticeList);
+			return "/notice.jsp";
+		} catch (Exception e) {
+			e.printStackTrace();
+			request.setAttribute("msg", "공지사항 목록을 읽어올 수 없습니다.");
+			return "/error/error.jsp";
 		}
 	}
 
@@ -81,10 +100,10 @@ public class BoardController extends HttpServlet {
 
 		boardDto.setBoard_id(0); // daoImpl에서 default 값
 		boardDto.setBoard_title(request.getParameter("board_title"));
+		String contentType = request.getParameter("content_type");
+		request.setAttribute("content_type", contentType);
 
-		request.setAttribute("content_type", request.getParameter("content_type"));
-
-		switch (request.getParameter("content_type")) {
+		switch (contentType) {
 		case "1":
 			boardDto.setBoard_type_id("여행후기");
 			break;
@@ -94,23 +113,27 @@ public class BoardController extends HttpServlet {
 		case "3":
 			boardDto.setBoard_type_id("여행메이트후기");
 			break;
+		case "4":
+			boardDto.setBoard_type_id("공지사항");
+			break;
 		}
 
-		// 작성자가 고른 지역과 군구
+		if (contentType != "4") {
+			// 작성자가 고른 지역과 군구
 //		boardDto.setLocation_sido(Integer.parseInt(request.getParameter("")));
 //		boardDto.setLocation_gungu("default_location");
-		boardDto.setLocation_sido(1);// 임시 지역
-		boardDto.setLocation_gungu(1);// 임시 지역
-		boardDto.setContent(request.getParameter("board_content"));
+			boardDto.setLocation_sido(1);// 임시 지역
+			boardDto.setLocation_gungu(1);// 임시 지역
+			boardDto.setContent(request.getParameter("board_content"));
 
-		boardDto.setStart_date(request.getParameter("start_date"));
-		boardDto.setEnd_date(request.getParameter("end_date"));
+			boardDto.setStart_date(request.getParameter("start_date"));
+			boardDto.setEnd_date(request.getParameter("end_date"));
 
-		boardDto.setReadcount(0);
-		boardDto.setRegist_time("now"); // 디폴트값
-		boardDto.setImg1("default_img1"); // 임시 디폴트값
-		boardDto.setImg2("default_img2"); // 임시 디폴트값
-
+			boardDto.setReadcount(0);
+			boardDto.setRegist_time("now"); // 디폴트값
+			boardDto.setImg1("default_img1"); // 임시 디폴트값
+			boardDto.setImg2("default_img2"); // 임시 디폴트값
+		}
 		try {
 			boardService.regist(boardDto);
 			return "/main_community?act=mvList";
@@ -123,7 +146,6 @@ public class BoardController extends HttpServlet {
 
 	private String mvList(HttpServletRequest request, HttpServletResponse response) {
 		System.out.println("board action === mvList");
-
 
 		String content_type = request.getParameter("content_type");
 		if (content_type == null) { // url로 content_type_id값이 넘어올때
@@ -147,7 +169,6 @@ public class BoardController extends HttpServlet {
 			break;
 		}
 
-
 		try {
 			request.setAttribute("content_type_id", content_type);
 			request.setAttribute("list_path", by_content_type_path);
@@ -169,16 +190,16 @@ public class BoardController extends HttpServlet {
 			request.setAttribute("total_boards", list);
 
 //			if(content_type_id == "0") {
-				List<BoardDto> top_review = boardService.topReviewList(content_type_id);
-				List<BoardDto> top_mate = boardService.topMateList(content_type_id);
+			List<BoardDto> top_review = boardService.topReviewList(content_type_id);
+			List<BoardDto> top_mate = boardService.topMateList(content_type_id);
 
-				System.out.println(top_review.toString());
-				System.out.println(top_mate.toString());
+			System.out.println(top_review.toString());
+			System.out.println(top_mate.toString());
 
-				boardService.topReviewList(content_type_id);
-				boardService.topMateList(content_type_id);
-				request.setAttribute("top_review", top_review);
-				request.setAttribute("top_mate", top_mate);
+			boardService.topReviewList(content_type_id);
+			boardService.topMateList(content_type_id);
+			request.setAttribute("top_review", top_review);
+			request.setAttribute("top_mate", top_mate);
 //			}
 			return (String) request.getAttribute("list_path");
 		} catch (Exception e) {
@@ -197,13 +218,13 @@ public class BoardController extends HttpServlet {
 		try {
 			BoardDto boardDto = boardService.view(board_id);
 			request.setAttribute("detail_board", boardDto);
-			
+
 			location = boardService.getLocationName(boardDto);
-			request.setAttribute("location_sido",location[0]);
-			request.setAttribute("location_gungu",location[1]);
-			
+			request.setAttribute("location_sido", location[0]);
+			request.setAttribute("location_gungu", location[1]);
+
 			System.out.println("지역" + location[0] + location[1]);
-			
+
 			return "/board_detail_view.jsp";
 		} catch (Exception e) {
 			e.printStackTrace();
@@ -217,17 +238,17 @@ public class BoardController extends HttpServlet {
 		int board_id = Integer.parseInt(request.getParameter("board_id"));
 
 		System.out.println("수정하려는 글 번호 :  " + board_id);
-		
+
 		try {
 			BoardDto boardDto = boardService.view(board_id);
 
 			request.setAttribute("modify_board", boardDto);
 			System.out.println("수정 갱신 전에 " + boardDto.toString());
-			
+
 			location = boardService.getLocationName(boardDto);
-			request.setAttribute("location_sido",location[0]);
-			request.setAttribute("location_gungu",location[1]);
-			
+			request.setAttribute("location_sido", location[0]);
+			request.setAttribute("location_gungu", location[1]);
+
 			return "/board_modify.jsp";
 		} catch (Exception e) {
 			e.printStackTrace();
@@ -238,12 +259,12 @@ public class BoardController extends HttpServlet {
 
 	private String modify(HttpServletRequest request, HttpServletResponse response) {
 		BoardDto boardDto = new BoardDto();
-		
+
 		boardDto.setBoard_id(Integer.parseInt(request.getParameter("board_id")));
 		boardDto.setBoard_title(request.getParameter("title"));
 		boardDto.setContent(request.getParameter("content"));
-		
-		System.out.println("컨트롤러"+boardDto.toString());
+
+		System.out.println("컨트롤러" + boardDto.toString());
 
 		try {
 			boardService.modify(boardDto);
@@ -268,7 +289,7 @@ public class BoardController extends HttpServlet {
 			request.setAttribute("msg", "수정중에러발생");
 			return "/error/error.jsp";
 		}
-		
+
 	}
 
 	private void forward(HttpServletRequest request, HttpServletResponse response, String path)
@@ -283,6 +304,7 @@ public class BoardController extends HttpServlet {
 
 	protected void doPost(HttpServletRequest request, HttpServletResponse response)
 			throws ServletException, IOException {
+		request.setCharacterEncoding("utf-8");
 		doGet(request, response);
 	}
 

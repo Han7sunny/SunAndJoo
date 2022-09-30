@@ -7,18 +7,20 @@ public class UserDto {
 	private String pwd;
 	private String emailId;
 	private String emailDomain;
+	private boolean adminAuthor;
 
 	public UserDto() {
 		super();
 	}
 
-	public UserDto(String name, String id, String pwd, String emailId, String emailDomain) {
+	public UserDto(String name, String id, String pwd, String emailId, String emailDomain, boolean adminAuthor) {
 		super();
 		this.name = name;
 		this.id = id;
 		this.pwd = pwd;
 		this.emailId = emailId;
 		this.emailDomain = emailDomain;
+		this.adminAuthor = adminAuthor;
 	}
 
 	public String getName() {
@@ -61,11 +63,18 @@ public class UserDto {
 		this.emailDomain = emailDomain;
 	}
 
+	public boolean isAdminAuthor() {
+		return adminAuthor;
+	}
+
+	public void setAdminAuthor(boolean adminAuthor) {
+		this.adminAuthor = adminAuthor;
+	}
+
 	@Override
 	public String toString() {
 		return "UserDto [name=" + name + ", id=" + id + ", pwd=" + pwd + ", emailId=" + emailId + ", emailDomain="
 				+ emailDomain + "]";
 	}
 
-	
 }
