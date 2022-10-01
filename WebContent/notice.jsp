@@ -40,7 +40,7 @@
 					<th scope="col">번호</th>
 					<th scope="col" colspan="2">제목</th>
 					<th scope="col">작성자</th>
-					<th scope="col">조회수</th>
+					<th scope="col">조회수</th>
 					<th scope="col">등록일</th>
 				</tr>
 			</thead>
@@ -60,8 +60,8 @@
 		<div id="testimonial-nav"
 			class="row justify-content-between align-items-center"
 			data-aos="fadeup">
-			<span data-controls="prev" class="prev col-1">이전</span> <span
-				data-controls="prev" class="prev col-1">다음</span>
+			<span data-controls="prev" class="prev col-1">이전</span> 
+			<span data-controls="prev" class="prev col-1">다음</span> 
 		</div>
 	</div>
 </div>

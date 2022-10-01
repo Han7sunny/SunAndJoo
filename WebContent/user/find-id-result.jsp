@@ -28,24 +28,23 @@
 </div>
 
 <!-- /.untree_co-section -->
-
 <div class="section">
 	<div class="container">
 		<div class="row  justify-content-center align-items-center">
-			<div class="col-lg-8 text-center" data-aos="fade-up"
+			<div class="col-lg-8 text-center mt-5 mb-5 pb-5" data-aos="fade-up"
 				data-aos-delay="200">
-			<c:if test="${finded_id} != null">
-				 회원님의 아이디는 ${finded_id}입니다.
+			<h2 class="font-weight-bold text-primary heading mt-5 mb-5">			
+			<c:if test="${finded_id != null}">
+				 회원님의 아이디는 ${finded_id} 입니다.
 			</c:if>
-			<c:if test="${finded_id} == null">
+			<c:if test="${finded_id == null}">
 				회원 정보를 찾을 수 없습니다.
-			</c:if>
-					<input type="submit" class="btn btn-outline-primary btn-sm mt-3"
-						id="btn-find-id" value="뒤로 가기"></input>
-				</form>		
+			</c:if>		
+			</h2> 
 			</div>
-		</div>
-								
+			<input type="button" class="btn btn-outline-primary btn-sm mt-3"
+				id="btn-find-id" value="뒤로 가기"  onclick="history.back()"/>
+		</div>			
 	</div>
 </div>
 

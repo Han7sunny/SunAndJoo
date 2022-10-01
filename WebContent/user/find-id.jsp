@@ -38,7 +38,7 @@
 
 				<form action="${root}/user" method="POST">
 					<input type="hidden" name="action" value="findId" />
-					<div class="row">
+					<div class="row mt-5 mb-5">
 						<div class="col-12 mb-4 input-group">
 							<input id="find-name" name="find-email" type="text"
 								class="form-control" placeholder="사용했던 이메일을 입력해주세요" required />
