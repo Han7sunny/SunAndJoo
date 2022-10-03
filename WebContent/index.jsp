@@ -297,12 +297,14 @@
 <!-- 여행 테마 소개 start -->
 <div class="section">
 	<div class="container">
-		<div class="row mb-5 align-items-center mt-5">
+		<div class="row mt-5 mb-5 align-items-center">
 			<div class="col-lg-6">
 				<h2 class="font-weight-bold text-primary heading">여행 테마 소개</h2>
 			</div>
-		</div>
-		<div class="row">
+			<div class="col-lg-6 text-lg-end">
+        		<p><a href="${root}/main?action=totalTheme" class="learn-more">더 많은 여행 테마</a></p>
+ 		   </div>
+		<div class="row mt-5">
 			<div class="col-12">
 				<div class="property-slider-wrap">
 					<div class="property-slider">
@@ -330,8 +332,7 @@
 <!-- 여행 메이트 start -->
 <div class="container mb-5">
 	<div class="col-lg-6">
-		<h2 class="font-weight-bold text-primary heading mt-5 mb-5">여행
-			메이트 찾기</h2>
+		<h2 class="font-weight-bold text-primary heading mt-5 mb-5">여행 메이트 찾기</h2>
 	</div>
 	<section class="features-1">
 		<div class="container">

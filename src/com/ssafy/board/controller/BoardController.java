@@ -1,13 +1,6 @@
 package com.ssafy.board.controller;
 
 import java.io.IOException;
-import java.sql.Connection;
-import java.sql.PreparedStatement;
-import java.sql.ResultSet;
-import java.text.DateFormat;
-import java.text.SimpleDateFormat;
-import java.util.ArrayList;
-import java.util.Date;
 import java.util.List;
 
 import javax.servlet.RequestDispatcher;
@@ -21,16 +14,21 @@ import javax.servlet.http.HttpSession;
 import com.ssafy.board.model.dto.BoardDto;
 import com.ssafy.board.model.service.BoardService;
 import com.ssafy.board.model.service.BoardServiceImpl;
+import com.ssafy.board.model.service.ReplyService;
+import com.ssafy.board.model.service.ReplyServiceImpl;
 import com.ssafy.user.model.UserDto;
+
 
 @WebServlet("/main_community")
 public class BoardController extends HttpServlet {
 	private static final long serialVersionUID = 1L;
 
 	private BoardService boardService;
+	private ReplyService replyService;
 
 	public void init() {
 		boardService = BoardServiceImpl.getBoardService();
+		replyService = ReplyServiceImpl.getReplyService();
 	}
 
 	protected void doGet(HttpServletRequest request, HttpServletResponse response)
@@ -53,6 +51,7 @@ public class BoardController extends HttpServlet {
 
 		} else if ("view".equals(act)) {
 			path = view(request, response);
+			System.out.println("보드path: " +path);
 			forward(request, response, path);
 
 		} else if ("mvModify".equals(act)) {
@@ -133,6 +132,8 @@ public class BoardController extends HttpServlet {
 			boardDto.setRegist_time("now"); // 디폴트값
 			boardDto.setImg1("default_img1"); // 임시 디폴트값
 			boardDto.setImg2("default_img2"); // 임시 디폴트값
+			
+			
 		}
 		try {
 			boardService.regist(boardDto);
@@ -189,22 +190,18 @@ public class BoardController extends HttpServlet {
 			List<BoardDto> list = boardService.list(content_type_id);
 			request.setAttribute("total_boards", list);
 
-//			if(content_type_id == "0") {
 			List<BoardDto> top_review = boardService.topReviewList(content_type_id);
 			List<BoardDto> top_mate = boardService.topMateList(content_type_id);
-
-			System.out.println(top_review.toString());
-			System.out.println(top_mate.toString());
 
 			boardService.topReviewList(content_type_id);
 			boardService.topMateList(content_type_id);
 			request.setAttribute("top_review", top_review);
 			request.setAttribute("top_mate", top_mate);
-//			}
+			
 			return (String) request.getAttribute("list_path");
 		} catch (Exception e) {
 			e.printStackTrace();
-			request.setAttribute("msg", "목록처리중에러발생");
+			request.setAttribute("msg", "목록 처리 중 에러발생");
 			return "/error/error.jsp";
 		}
 	}
@@ -212,9 +209,8 @@ public class BoardController extends HttpServlet {
 	private String view(HttpServletRequest request, HttpServletResponse response) {
 		System.out.println("board action === view");
 		String[] location = new String[2];
-
 		int board_id = Integer.parseInt(request.getParameter("board_id"));
-		System.out.println("조회하려는 글 번호 :  " + board_id);
+		
 		try {
 			BoardDto boardDto = boardService.view(board_id);
 			request.setAttribute("detail_board", boardDto);
@@ -222,13 +218,13 @@ public class BoardController extends HttpServlet {
 			location = boardService.getLocationName(boardDto);
 			request.setAttribute("location_sido", location[0]);
 			request.setAttribute("location_gungu", location[1]);
-
-			System.out.println("지역" + location[0] + location[1]);
+			
+			request.setAttribute("total_reply", replyService.list(board_id));
 
 			return "/board_detail_view.jsp";
 		} catch (Exception e) {
 			e.printStackTrace();
-			request.setAttribute("msg", "상세페이지처리중에러발생");
+			request.setAttribute("msg", "상세페이지 처리 중 에러발생");
 			return "/error/error.jsp";
 		}
 	}
@@ -243,8 +239,6 @@ public class BoardController extends HttpServlet {
 			BoardDto boardDto = boardService.view(board_id);
 
 			request.setAttribute("modify_board", boardDto);
-			System.out.println("수정 갱신 전에 " + boardDto.toString());
-
 			location = boardService.getLocationName(boardDto);
 			request.setAttribute("location_sido", location[0]);
 			request.setAttribute("location_gungu", location[1]);
@@ -252,7 +246,7 @@ public class BoardController extends HttpServlet {
 			return "/board_modify.jsp";
 		} catch (Exception e) {
 			e.printStackTrace();
-			request.setAttribute("msg", "수정처리중에러발생");
+			request.setAttribute("msg", "수정 처리 중 에러발생");
 			return "/error/error.jsp";
 		}
 	}
@@ -264,7 +258,6 @@ public class BoardController extends HttpServlet {
 		boardDto.setBoard_title(request.getParameter("title"));
 		boardDto.setContent(request.getParameter("content"));
 
-		System.out.println("컨트롤러" + boardDto.toString());
 
 		try {
 			boardService.modify(boardDto);
@@ -272,7 +265,7 @@ public class BoardController extends HttpServlet {
 			return "/user?action=mvMyPage";
 		} catch (Exception e) {
 			e.printStackTrace();
-			request.setAttribute("msg", "수정중에러발생");
+			request.setAttribute("msg", "수정 중 에러발생");
 			return "/error/error.jsp";
 		}
 	}
@@ -286,7 +279,7 @@ public class BoardController extends HttpServlet {
 			return "/user?action=mvMyPage";
 		} catch (Exception e) {
 			e.printStackTrace();
-			request.setAttribute("msg", "수정중에러발생");
+			request.setAttribute("msg", "삭제 중 에러발생");
 			return "/error/error.jsp";
 		}
 

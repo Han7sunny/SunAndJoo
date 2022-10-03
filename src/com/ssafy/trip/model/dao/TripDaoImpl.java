@@ -303,6 +303,8 @@ public class TripDaoImpl implements TripDao {
 				theme.setReadcount(rs.getString("readcount"));
 				theme.setArea_code(rs.getString("area_code"));
 				theme.setSigungu_code(rs.getString("sigungu_code"));
+				
+				System.out.println(theme.getImg1());
 			}
 		} finally {
 			dbUtil.close(rs, pstmt, conn);

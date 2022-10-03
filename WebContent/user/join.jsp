@@ -143,7 +143,7 @@ document.querySelector("#btn-join").addEventListener("click", function () {
       alert("이름을 입력해주세요.");
       return;
     } else if (!document.querySelector("#userid").value) {
-      alert("아이디을 입력해주세요.");
+      alert("아이디를 입력해주세요.");
       return;
     } else if (!document.querySelector("#userpwd").value) {
       alert("비밀번호을 입력해주세요.");

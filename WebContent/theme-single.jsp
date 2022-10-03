@@ -45,25 +45,28 @@
 					</div>
 				</div>
 			</div>
-        <div class="row justify-content-between">
+        <div class="row justify-content-between ms-3 mt-5 mb-5" data-aos="fade-up" data-aos-delay="400">
+        </div>
+        
+        <div class="row justify-content-between mt-5" data-aos="fade-up" data-aos-delay="400">
           <div class="col-lg-5">
+            <div id="map" class="ms-3 mt-4 mb-5" style="width:500px;height:400px;"></div>
             <div class="img-property-slide-wrap">
               <div class="img-property-slide">
+				<c:if test="${theme.img1 ne null}">
                 <img
-                  src="http://tong.visitkorea.or.kr/cms/resource/83/1306383_image2_1.jpg"
+                  src="${theme.img1}"
                   alt="Image"
                   class="img-fluid"
                 />
+				</c:if>
+				<c:if test="${theme.img2 ne null}">
                 <img
-                  src="http://tong.visitkorea.or.kr/cms/resource/09/2716609_image2_1.jpg"
+                  src="${theme.img2}"
                   alt="Image"
                   class="img-fluid"
                 />
-                <img
-                  src="http://tong.visitkorea.or.kr/cms/resource/23/2654423_image2_1.jpg"
-                  alt="Image"
-                  class="img-fluid"
-                />
+				</c:if>
               </div>
             </div>
           </div>
@@ -95,6 +98,18 @@
 
     <%@ include file="/common/footer.jsp" %>
 
+
+	<script type="text/javascript" src="//dapi.kakao.com/v2/maps/sdk.js?appkey=958886d2b3c6658678dbc5974c84172f"></script>
+	<script>
+		var container = document.getElementById('map');
+		var options = {
+			center: new kakao.maps.LatLng(${theme_details.lat}, ${theme_details.lng}),
+			level: 3
+		};
+	
+		var map = new kakao.maps.Map(container, options);
+	</script>
+	
 
     <script src="${root}/assets/js/bootstrap.bundle.min.js"></script>
     <script src="${root}/assets/js/tiny-slider.js"></script>

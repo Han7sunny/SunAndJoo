@@ -28,9 +28,6 @@ public class BoardDaoImpl implements BoardDao {
 		Connection conn = null;
 		PreparedStatement pstmt = null;
 
-		System.out.println(boardDto.toString());
-
-
 		try {
 			conn = dbUtil.getConnection();
 			StringBuilder sql = new StringBuilder();
@@ -223,7 +220,7 @@ public class BoardDaoImpl implements BoardDao {
 	public void modify(BoardDto boardDto) throws SQLException {
 		Connection conn = null;
 		PreparedStatement pstmt = null;
-System.out.println("모디파이 dao");
+		
 		try {
 			conn = dbUtil.getConnection();
 			StringBuilder sql = new StringBuilder();

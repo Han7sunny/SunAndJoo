@@ -3,7 +3,6 @@ package com.ssafy.trip.controller;
 import java.io.IOException;
 import java.sql.SQLException;
 import java.util.ArrayList;
-import java.util.HashMap;
 import java.util.List;
 
 import javax.servlet.RequestDispatcher;
@@ -131,6 +130,9 @@ public class TripController extends HttpServlet {
 //			
 //			req.setAttribute("details", map);
 //			
+
+			theme = tripService.joinDB(theme.getTitle());
+			req.setAttribute("theme", theme);
 			
 			return "/theme-single.jsp";
 		} catch (Exception e) {

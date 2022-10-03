@@ -1,14 +1,5 @@
-<!-- /*
-* Template Name: Property
-* Template Author: Untree.co
-* Template URI: https://untree.co/
-* License: https://creativecommons.org/licenses/by/3.0/
-*/ -->
-<%@ page language="java" contentType="text/html; charset=UTF-8"
-	pageEncoding="UTF-8"%>
+<%@ page language="java" contentType="text/html; charset=UTF-8" pageEncoding="UTF-8"%>
 <%@ include file="/common/header.jsp"%>
-
-
 
 
 <div class="hero page-inner overlay"
@@ -106,7 +97,7 @@
 </div>
 <div class="section">
 	<div class="container">
-		<form method= "post" id = "form-regist">
+		<form method= "post" id = "form-regist" enctype="multipart/form-data">
 		<input type="hidden" name="act" value="regist">
 			<div class="row">
 				<div class="col-lg-4 mb-5 mb-lg-0" data-aos="fade-up"
@@ -127,9 +118,11 @@
 						<div class="sigungu col-md-6"></div>
 						<div class="row text-center mt-3">
 						
-			<h2 class="font-weight-bold text-primary heading mt-5">
-			
-			${userInfo.id}님 </br>이번 여행은</br>어떠셨나요?</h2>
+						<c:if test="${userInfo.id} ne null">
+						<h2 class="font-weight-bold text-primary heading mt-5">
+							${userInfo.id}님 </br>이번 여행은</br>어떠셨나요?
+						</h2>
+						</c:if>
 						</div>
 						</div>
 					</div>
@@ -137,7 +130,7 @@
 				<div class="col-lg-8" data-aos="fade-up" data-aos-delay="200">
 					<div class="col-12 mb-3">
 						<input type="text" class="form-control" placeholder="제목 입력..."
-							id="board_title" name="board_title" required />
+							id="board_title" name="board_title" required/>
 					</div>
 					<div class="row">
 						<div class="col-3 mb-3">
@@ -169,7 +162,7 @@
 						</div>
 
 						<div class="col-12 mb-3">
-							<textarea id="board_content" name="board_content" cols="30"
+							<textarea id="board_content" name="board_content" id="board_content" cols="30"
 								rows="7" class="form-control" placeholder="내용 입력..." required></textarea>
 						</div>
 
@@ -196,58 +189,83 @@
 <%@ include file="/common/footer.jsp"%>
 
 <script>
-window.onload =  function (){
-	  console.log("window onload");
-fetch("${root}/main?action=getSigunguList&areaCode=1")
-.then((response) => response.json())
-.then((data) => makeSigunguList(data)); // 시군구
-
-}
-
-
-      let select = document.querySelector(".selectArea");
-
-      select.addEventListener("change", function () {
-      	    initSigunguList(); // 기존 시군구 select 삭제
-      	    let selectedAreaNum = select[select.selectedIndex].value;
-    	  console.log(selectedAreaNum);
-
-      	    fetch("${root}/main?action=getSigunguList&areaCode="+selectedAreaNum)
-      	      .then((response) => response.json())
-      	      .then((data) => makeSigunguList(data)); // 시군구
-      	  });
+	window.onload =  function (){
+		console.log("window onload");
+	fetch("${root}/main?action=getSigunguList&areaCode=1")
+	.then((response) => response.json())
+	.then((data) => makeSigunguList(data)); // 시군구
+	
+	}
 
 
-      function makeSigunguList(data) {
-      	let sigunguList = document.querySelector(".sigungu");
-      	  let select = document.createElement("select");
-      	  select.setAttribute("class", "form-select border-0 py-3 text-center");
-      	  data.sigunguList.forEach((sigungu) => {
-      	    let option = document.createElement("option");
+    let select = document.querySelector(".selectArea");
+
+    select.addEventListener("change", function () {
+    	initSigunguList(); // 기존 시군구 select 삭제
+      	let selectedAreaNum = select[select.selectedIndex].value;
+    	console.log(selectedAreaNum);
+
+      	fetch("${root}/main?action=getSigunguList&areaCode="+selectedAreaNum)
+      	   .then((response) => response.json())
+      	   .then((data) => makeSigunguList(data)); // 시군구
+    });
+
+
+    function makeSigunguList(data) {
+    	let sigunguList = document.querySelector(".sigungu");
+      	let select = document.createElement("select");
+      	select.setAttribute("class", "form-select border-0 py-3 text-center");
+      	data.sigunguList.forEach((sigungu) => {
+      		let option = document.createElement("option");
       	    option.setAttribute("value", sigungu.sigungu_code);
       	    option.appendChild(document.createTextNode(sigungu.sigungu_name));
       	    select.appendChild(option);
-      	  });
-      	  sigunguList.appendChild(select);
-      	}
+      	});
+      	sigunguList.appendChild(select);
+    }
 
-      function initSigunguList() {
-    	  let sigunguOptions = document.querySelector(".sigungu>select");
-    	  document.querySelector(".sigungu").removeChild(sigunguOptions);
+    function initSigunguList() {
+    	let sigunguOptions = document.querySelector(".sigungu>select");
+    	document.querySelector(".sigungu").removeChild(sigunguOptions);
+    }
+
+
+    
+    let start_date = document.querySelector("#start_date");
+    let end_date = document.querySelector("#end_date");
+    start_date.addEventListener('change', function(){
+    	console.log(start_date.value);
+    	let start = start_date.value;
+    	end_date.setAttribute("min", start);
+    });
+    
+    document.querySelector("#submitButton").addEventListener("click",function(){
+    	let title = document.querySelector("#board_title");
+    	let content = document.querySelector("#board_content");
+    	let start_date = document.querySelector("#start_date");
+    	let end_date = document.querySelector("#end_date");
+    	
+    	console.log("타이틀:" + title.value);
+    	
+    	if(${userInfo == null}){
+    		alert("로그인 후 글을 작성할 수 있습니다.");
+    		location.href = "${root}/user/login.jsp";
+    	} else {
+    		if(!title.value)
+				alert("제목을 입력해주세요");
+    		else if(start_date.value == "" || end_date.value == "")
+				alert("날짜를 입력해주세요");
+    		else if(!content.value)
+				alert("내용을 입력해주세요");
+    		else {
+	    		let form = document.querySelector("#form-regist");
+    			form.setAttribute("action","${root}/main_community");
+    			form.submit();
+    		}
     	}
+    });
 
-      document.querySelector("#submitButton").addEventListener("click",function(){
-    	  if(${userInfo == null}){
-    		  alert("로그인 후 글을 작성할 수 있습니다.");
-    		 	location.href = "${root}/user/login.jsp";
-    	  }
-    	  else{
-    		  let form = document.querySelector("#form-regist");
-    		  form.setAttribute("action","${root}/main_community");
-    		  form.submit();
-    	  }
-      })
-
+      
     </script>
 </body>
 </html>
