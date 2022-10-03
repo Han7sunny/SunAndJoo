@@ -61,6 +61,10 @@ public class BoardController extends HttpServlet {
 		} else if ("modify".equals(act)) {
 			path = modify(request, response);
 			forward(request, response, path);
+			
+		} else if ("mvDelete".equals(act)) {
+			path = mvDelete(request, response);
+			forward(request, response, path);
 
 		} else if ("delete".equals(act)) {
 			path = delete(request, response);
@@ -74,6 +78,7 @@ public class BoardController extends HttpServlet {
 			redirect(request, response, path);
 		}
 	}
+
 
 	private String notice(HttpServletRequest request, HttpServletResponse response) {
 		try {
@@ -285,11 +290,26 @@ public class BoardController extends HttpServlet {
 		}
 	}
 
+	private String mvDelete(HttpServletRequest request, HttpServletResponse response) {
+		String board_id = request.getParameter("board_id");
+
+		try {
+			request.setAttribute("board_id", board_id);
+			return "/alert_page/board_delete_check.jsp";
+		} catch (Exception e) {
+			e.printStackTrace();
+			request.setAttribute("msg", "삭제 중 에러발생");
+			return "/error/error.jsp";
+		}
+	}
+	
+	
 	private String delete(HttpServletRequest request, HttpServletResponse response) {
 		int board_id = Integer.parseInt(request.getParameter("board_id"));
 		System.out.println("삭제하려는 글번호 : " + board_id);
 
 		try {
+			replyService.deleteAll(board_id);
 			boardService.delete(board_id);
 			return "/user?action=mvMyPage";
 		} catch (Exception e) {

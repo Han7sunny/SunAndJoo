@@ -31,7 +31,7 @@ public class ReplyServiceImpl implements ReplyService {
 	}
 
 	@Override
-	public void modify(ReplyDto replyDto) throws SQLException {
+	public void modify(ReplyDto replyDto) throws Exception {
 		replyDao.modify(replyDto);
 	}
 
@@ -43,6 +43,11 @@ public class ReplyServiceImpl implements ReplyService {
 	@Override
 	public List<ReplyDto> list_by_id(String user_id) throws Exception {
 		return replyDao.list_by_id(user_id);
+	}
+
+	@Override
+	public void deleteAll(int board_id) throws Exception {
+		replyDao.deleteAll(board_id);
 	}
 
 }

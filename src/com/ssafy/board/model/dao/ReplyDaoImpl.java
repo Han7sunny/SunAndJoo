@@ -155,4 +155,23 @@ public class ReplyDaoImpl implements ReplyDao {
 			dbUtil.close(pstmt, conn);
 		}
 	}
+
+	@Override
+	public void deleteAll(int board_id) throws SQLException {
+
+		Connection conn = null;
+		PreparedStatement pstmt = null;
+
+		try {
+			conn = dbUtil.getConnection();
+			StringBuilder sql = new StringBuilder();
+			sql.append("delete from reply where board_id = ? \n");
+			pstmt = conn.prepareStatement(sql.toString());
+			pstmt.setInt(1, board_id);
+
+			pstmt.executeUpdate();
+		} finally {
+			dbUtil.close(pstmt, conn);
+		}
+	}
 }

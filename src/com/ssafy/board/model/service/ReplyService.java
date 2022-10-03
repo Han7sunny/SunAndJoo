@@ -12,4 +12,5 @@ public interface ReplyService {
 	List<ReplyDto> list_by_id(String user_id) throws Exception;
 	void modify(ReplyDto replyDto) throws Exception;
 	void delete(int idx) throws Exception;
+	void deleteAll(int board_id) throws Exception;
 }

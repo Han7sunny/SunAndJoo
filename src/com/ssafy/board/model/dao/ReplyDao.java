@@ -11,5 +11,6 @@ public interface ReplyDao {
 	List<ReplyDto> list_by_id(String user_id) throws SQLException;
 	void modify(ReplyDto replyDto)  throws SQLException;
 	void delete(int idx) throws SQLException;
+	void deleteAll(int board_id) throws SQLException;
 	
 }

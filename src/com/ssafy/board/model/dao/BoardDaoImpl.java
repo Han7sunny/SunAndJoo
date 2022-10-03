@@ -236,7 +236,7 @@ public class BoardDaoImpl implements BoardDao {
 			dbUtil.close(pstmt, conn);
 		}
 	}
-
+	
 	@Override
 	public void delete(int board_id) throws SQLException {
 		Connection conn = null;

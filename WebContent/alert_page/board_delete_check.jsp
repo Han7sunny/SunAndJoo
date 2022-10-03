@@ -26,7 +26,7 @@
 		<div class="row text-center mt-5 mb-5 pt-5 pb-5">
 				<h4 class="mt-5 mb-2">" ${userInfo.name} " 님 이 글을 정말 삭제하시겠습니까?</h4>
 		</div>
-	    <form action="${root}/main_community?act=delete" method="post" class="row mb-5 mt-5 ms-5 me-5">
+	    <form action="${root}/main_community?act=delete&board_id=${board_id}" method="post" class="row mb-5 mt-5 ms-5 me-5">
 			<div class="col-lg-6 col-sm-12 text-lg-start text-center">
 				<input type="submit" class="btn btn-danger" id="delete-btn" value="예"/>
 			</div>

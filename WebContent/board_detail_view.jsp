@@ -124,7 +124,7 @@
 				<button class="btn btn-outline-primary mt-5 mb-3"
 					onClick="location.href='${root}/main_community?act=mvModify&board_id=${detail_board.board_id}'">수정하기</button>
 				<button class="btn btn-outline-danger mt-3 mb-5"
-					onClick="location.href='${root}/main_community?act=delete&board_id=${detail_board.board_id}'">삭제하기</button>
+					onClick="location.href='${root}/main_community?act=mvDelete&board_id=${detail_board.board_id}'">삭제하기</button>
 			</c:if>
 		</div>
 	</div>

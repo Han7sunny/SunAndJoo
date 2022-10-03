@@ -218,7 +218,6 @@
 </div>
 
 <script>
-console.log("admin : "+${userInfo});
 	document.querySelector("#delete-btn").addEventListener("click", function() {
 		location.href = "${root}/alert_page/user_delete_check.jsp";
 	});
