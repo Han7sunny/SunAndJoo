@@ -29,8 +29,6 @@
       </div>
     </div>
 
-    <!-- /.untree_co-section -->
-
     <div class="container mt-5 mb-5">
       <h2 class="font-weight-bold text-primary heading">여행 메이트</h2>
     </div>

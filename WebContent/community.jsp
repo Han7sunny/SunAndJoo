@@ -342,7 +342,6 @@ makeScoreList("1");
     	}
     });
 
-
       
     </script>
 </body>

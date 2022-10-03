@@ -483,7 +483,7 @@
 				<div class="col-6 col-sm-6 col-lg-3" data-aos="fade-up"
 					data-aos-delay="600">
 					<div class="m-4 text-center">
-						<a href="#" class="learn-more">더 많은 한옥 보기</a>
+						<a href="${root}/hanok_single.jsp" class="learn-more">더 많은 한옥 보기</a>
 					</div>
 				</div>
 			</div>
