@@ -280,7 +280,7 @@
  
  
 
-> 삭제 버튼 클릭 시 : alert창 띄운 후 삭제 진행
+> 삭제 버튼 클릭 시 : alert창으로 재확인 후 삭제 진행
 <br/>
 ![reply-delete](/uploads/a2a2e7a23a7ffea0b08d9d71d9b80f8e/reply-delete.JPG)
 <br/><br/><br/>
