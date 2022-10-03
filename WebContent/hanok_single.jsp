@@ -26,7 +26,8 @@
       </div>
     </div>
 
-    <div class="section">
+    <div class="section" data-aos="fade-up"
+						data-aos-delay="300">
       <div class="container">
         <div class="row text-left mb-5">
           <div class="col-12">
@@ -41,7 +42,8 @@
       </div>
     </div>
 
-    <div class="section pt-0">
+    <div class="section pt-0" data-aos="fade-up"
+						data-aos-delay="400">
       <div class="container">
         <div class="row justify-content-between mb-5">
           <div class="col-lg-7 mb-5 mb-lg-0 order-lg-2">
@@ -88,7 +90,8 @@
       </div>
     </div>
 
-    <div class="section pt-0">
+    <div class="section pt-0" data-aos="fade-up"
+						data-aos-delay="500">
       <div class="container">
         <div class="row justify-content-between mb-5">
           <div class="col-lg-7 mb-5 mb-lg-0">

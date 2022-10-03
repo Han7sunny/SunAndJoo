@@ -396,9 +396,12 @@ public class TripDaoImpl implements TripDao {
 		try {
 			conn = dbUtil.getConnection();
 			StringBuilder sql = new StringBuilder();
-			sql.append("select * from hanok");
+			sql.append("select * \n");
+			sql.append("from hanok \n");
+			sql.append("where zipcode = ?");
 			
 			pstmt = conn.prepareStatement(sql.toString());
+			pstmt.setString(1, zipcode);
 			rs = pstmt.executeQuery();
 			
 			if(rs.next()) {

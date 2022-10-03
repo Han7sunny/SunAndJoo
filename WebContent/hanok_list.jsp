@@ -35,7 +35,7 @@
         <div class="row">
         <!-- item -->
         <c:forEach var="idx" begin="0" end="8" step="3">
-          <div class="col-xs-12 col-sm-6 col-md-6 col-lg-4  mt-5 mb-5">
+          <div class="col-xs-12 col-sm-6 col-md-6 col-lg-4  mt-5 mb-5"  data-aos="fade-up" data-aos-delay="${300+idx*100}">
             <div class="property-item mb-30">
               <a href="${root}/main?action=hanokView&zipcode=${total_hanok[idx].zipcode}" class="img align-items-center">
                 <img src="${total_hanok[idx].img}" alt="Image" class="img-fluid" />
@@ -70,7 +70,7 @@
             </div>
           </div>
         <!-- item -->
-          <div class="col-xs-12 col-sm-6 col-md-6 col-lg-4  mt-5 mb-5">
+          <div class="col-xs-12 col-sm-6 col-md-6 col-lg-4  mt-5 mb-5" data-aos="fade-up" data-aos-delay="${300+(idx+1)*100}">
             <div class="property-item mb-30">
               <a href="${root}/main?action=hanokView&zipcode=${total_hanok[idx+1].zipcode}" class="img">
                 <img src="${total_hanok[idx+1].img}" alt="Image" class="img-fluid" />
@@ -105,7 +105,7 @@
             </div>
           </div>
         <!-- item -->
-          <div class="col-xs-12 col-sm-6 col-md-6 col-lg-4 mt-5 mb-5">
+          <div class="col-xs-12 col-sm-6 col-md-6 col-lg-4 mt-5 mb-5" data-aos="fade-up" data-aos-delay="${300+(idx+2)*100}">
             <div class="property-item mb-30">
               <a href="${root}/main?action=hanokView&zipcode=${total_hanok[idx+2].zipcode}" class="img">
                 <img src="${total_hanok[idx+2].img}" alt="Image" class="img-fluid"/>
