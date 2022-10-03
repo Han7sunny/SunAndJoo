@@ -262,12 +262,13 @@
 
 ### 11. 댓글 기능
 > 모든 게시글 하단에 구현되어 있는 댓글 작성 폼
+> 댓글 작성자와 세션에 저장된 로그인 아이디가 같을 때에만 수정, 삭제버튼 활성화
 <br/>
 ![reply-regist](/uploads/9a106ce414cd969b217059eebeca7c17/reply-regist.JPG)
 <br/><br/>
 
 
-> 댓글 작성자와 세션에 저장된 로그인 아이디가 같을 때에만 수정, 삭제버튼 활성화
+> 수정 버튼 클릭 시 : input textarea 형식으로 전환
 <br/>
 ![reply-modify](/uploads/8ebcbc3925487fd18a40e97120c5896c/reply-modify.JPG)
 <br/><br/><br/>
