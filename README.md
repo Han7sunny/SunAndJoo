@@ -181,6 +181,8 @@
 ### 7. 커뮤니티 - community.jsp
 > 여행 메이트 / 여행 후기 글을 조회할 수 있는 페이지
 
+> 조회수 기준 상위 4개의 글을 볼 수 있다.
+
 <br/>
 ![community](/uploads/ecf6c5f63cd83005003179255ee56ac6/community.JPG)
 <br/><br/>
