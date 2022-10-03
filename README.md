@@ -96,7 +96,7 @@
 ### 4. 커뮤니티 - community.jsp
 > 여행 메이트 / 여행 후기 보기를 할 수 있는 페이지
 <br/>
-![메인](/assets/readme/community-main.jpg)  
+![메인](/assets/readme/community-main.JPG)  
 <br/><br/>
 
 
