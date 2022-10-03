@@ -3,6 +3,7 @@
 
 #### 프로젝트 소개
 > 메인 페이지에 구현된 지도와 로그인, 회원가입, 커뮤니티 기능을 통해 여행 후기, 여행 메이트를 찾아 보고
+> 
 > 여행 테마와 한옥 숙박 정보도 얻을 수 있는 여행 정보 사이트 웹 프로젝트입니다.
 
 
@@ -162,13 +163,13 @@
 ------------------------------------------------------------
 
 ### 6. 한옥 숙소 소개 - hanok_list.jsp
-> 작성된 여행 후기 및 여행 메이트 후기 게시글을 볼 수 있는 페이지
+> index.jsp에서 '더 많은 한옥 보기' 클릭 시 이동할 수 있는 한옥 숙소 소개 페이지
 <br/>
-![hanok-list](/uploads/b5f195abbd9009d877154089859d2af9/hanok-list.JPG)
+![hanok-list](/uploads/b2fcfda35cf2955b5a0b60c3010e6d80/hanok-list.JPG)
 <br/><br/>
 
 
-    > 각 게시글 클릭 시 : 상세 페이지 hanok_single.jsp 로 이동
+    > 각 숙소 클릭 시 : 상세 페이지 hanok_single.jsp 로 이동
 ![hanok-detail](/uploads/2f50874b52e5a17bf4bbec1a204c59b0/hanok-detail.JPG)
 <br/><br/><br/>
 
@@ -248,12 +249,16 @@
 
 
     > 수정하기 클릭 시 : 수정 페이지 board_modify.jsp 로 이동
-    > 삭제하기 클릭 시 : 삭제 진행
+    > 수정 후 등록하기 버튼 클릭 시 : 마이 페이지 mypage.jsp 로 이동
 ![board-modify-complete](/uploads/507c1655dc969ae625c62d29ed3de36a/board-modify-complete.JPG)
 <br/><br/><br/>
 
-    > 수정 후 등록하기 버튼 클릭 시 : 마이 페이지 mypage.jsp 로 이동
 
+    > 삭제하기 클릭 시 : 재확인 후 삭제 진행
+![board-delete-check](/uploads/38936a0d185f5cf460a96bbc8a4ededc/board-delete-check.JPG)
+<br/><br/>
+
+<br/>
 
 
 
@@ -275,7 +280,7 @@
  
  
 
-> 삭제 버튼 클릭 시 : alert창 띄운 후 삭제 진행
+> 삭제 버튼 클릭 시 : alert창으로 재확인 후 삭제 진행
 <br/>
 ![reply-delete](/uploads/a2a2e7a23a7ffea0b08d9d71d9b80f8e/reply-delete.JPG)
 <br/><br/><br/>
