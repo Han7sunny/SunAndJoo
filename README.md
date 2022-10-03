@@ -36,6 +36,11 @@
 ![trip-theme](/uploads/68b9b27c81542eed42faf98ae294d31f/trip-theme.JPG)
 <br/><br/>
 
+
+    > '더 많은 여행테마 보기' 클릭 시 theme-total.jsp 로 이동
+<br/><br/>
+
+
 > 여행 메이트 찾기 - 아직 마감되지 않은 여행 메이트 모집글 4개 출력
 <br/>
 ![trip-mate](/uploads/056794ee71067527170b21eec23d73f3/trip-mate.JPG)
@@ -99,6 +104,10 @@
 <br/>
 ![find_pwd_email](/uploads/6d0c50bd7a7b67eef828a6ef18685d07/find_pwd_email.GIF)
 
+<br/><br/><br/>
+
+
+
 
 
 -----------------------------------------------------------
@@ -109,42 +118,60 @@
 > 가입 정보를 수정할 수 있는 마이페이지  
 <br/>
 
+> 사용자가 작성한 글, 댓글을 모두 조회할 수 있는 기능 
+<br/>
 
-![마이페이지](/assets/readme/mypage.jpg)  
+
+![mypage](/uploads/bfc8d828bb8716c0b851748b5dc7c139/mypage.JPG)
 <br/><br/>
 
-![마이페이지](/assets/readme/mypage2.jpg)  
+> 관리자가 로그인한 경우, 작성한 공지사항들을 모두 조회할 수 있다.
+<br/>
+![mypage2](/uploads/ada3c9488079a55f0fc02b92ab8290d6/mypage2.JPG)
 <br/><br/>
+
+
+
+    > '탈퇴하기' 클릭 시 : 재확인 후 탈퇴 진행
+![join-delete-check](/uploads/084adc233f80fde2f0e8a80efd456d4d/join-delete-check.JPG)
+<br/><br/><br/>
+
+
+
+    > '정보 수정하기' 클릭 시 : 정보 수정 완료 창
+![mypage-modify](/uploads/6a8531a35847efd9421ad42de0d8d3b1/mypage-modify.JPG)
+<br/><br/><br/>
 
 -----------------------------------------------------------
 
 ### 5. 커뮤니티 - community.jsp
-> 여행 메이트 / 여행 후기 보기를 할 수 있는 페이지
+> 여행 메이트 / 여행 후기 글을 조회할 수 있는 페이지
 <br/>
 ![메인](/assets/readme/community-main.JPG)  
 <br/><br/>
 
 
 <br/>
-![여행리뷰](/assets/readme/community-review.jpg)  
+![community-review](/uploads/e508258dde2aca54173389cba093ac24/community-review.JPG)
 <br/><br/>
 
 <br/>
-![여행메이트](/assets/readme/community-mate.jpg)  
+![community-mate](/uploads/8e5003c9677f94dedabab44a51e921be/community-mate.JPG)
 <br/><br/>
 
 
 > 게시글 작성 - 위치, 글 제목, 작성자명, 날짜, 카테고리 선택
 <br/>
-![작성](/assets/readme/board-regist.jpg)  
+![board-regist](/uploads/067ab65554e0f718270470e5bf40b9c6/board-regist.JPG)
 <br/><br/>
 <br/>
-![작성](/assets/readme/board-regist2.jpg)  
+![board-regist2](/uploads/e1a818b4f4ac6cd082a5ea74b309ad04/board-regist2.jpg)
 <br/><br/>
 
 
+    > 글 작성 내용에 맞는 도시, 군구 선택 가능
     > 시작 날짜 선택 시 종료 날짜는 시작 날짜 이후로 선택 가능
-    > 글 카테고리 선택 가능(여행 후기, 여행 메이트, 여행 메이트 후기)
+    > 글 카테고리 선택 가능 (여행 후기, 여행 메이트, 여행 메이트 후기)
     > 별점 선택
 <br/><br/><br/>
 
@@ -154,14 +181,57 @@
 ### 6. 여행 후기 - community-tripReview.jsp
 > 작성된 여행 후기 및 여행 메이트 후기 게시글을 볼 수 있는 페이지
 <br/>
-![후기](/assets/readme/tripReview-list.jpg)
+![tripReview-list](/uploads/a80bef94a2c4edbb340f8b8a08c869a4/tripReview-list.JPG)
+<br/><br/>
+
+
+    > 각 게시글 클릭 시 : 상세 보기로 이동
+![tripReview-view](/uploads/506db8c304f2b288e391c60f05dccdaf/tripReview-view.JPG)
+<br/><br/><br/>
 
 -----------------------------------------------------------
 
 ### 7. 여행 메이트 - community-tripMate.jsp
-> 작성된 여행 메이트 게시글(모집글)을 볼 수 있는 페이지
+> 작성된 여행 메이트 모집글 전체를 볼 수 있는 페이지
 <br/>
-![메이트](/assets/readme/tripMate-list.jpg)
+![tripMate-list](/uploads/5bc01dc793f4745a1ad52216a1e2c424/tripMate-list.JPG)
+<br/><br/>
 
 
+    > 각 게시글 클릭 시 : 상세 보기로 이동
+![tripMate-view](/uploads/1cbfd976dc8103b67c1237f8b651cf6e/tripMate-view.JPG)
+<br/><br/><br/>
+
+-----------------------------------------------------------
+
+
+### 8. 게시글 수정 기능
+> 글 작성자와 세션에 저장된 로그인 아이디가 같을 때에만 수정, 삭제 버튼 활성화
+<br/>
+![board-modify](/uploads/2748e8eba59c90e1846d7b5ee04a6dcb/board-modify.jpg)
+<br/><br/>
+
+
+    > 수정하기 클릭 시 : 수정 페이지 board_modify.jsp 로 이동
+![board-modify-complete](/uploads/507c1655dc969ae625c62d29ed3de36a/board-modify-complete.JPG)
+<br/><br/><br/>
+
+
+    > 삭제하기 클릭 시 : 삭제 진행
+
+
+-----------------------------------------------------------
+
+
+### 8. 댓글 기능
+> 댓글 작성 폼
+<br/>
+![reply-regist](/uploads/9a106ce414cd969b217059eebeca7c17/reply-regist.JPG)
+<br/><br/>
+
+
+    > 댓글 작성자와 세션에 저장된 로그인 아이디가 같을 때에만 수정, 삭제버튼 활성화
+![reply-modify](/uploads/8ebcbc3925487fd18a40e97120c5896c/reply-modify.JPG)
+<br/><br/><br/>
+ 
  
