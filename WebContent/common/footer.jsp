@@ -106,3 +106,4 @@
 <script src="${root}/assets/js/navbar.js"></script>
 <script src="${root}/assets/js/counter.js"></script>
 <script src="${root}/assets/js/custom.js"></script>
+<script src="https://kit.fontawesome.com/7c5c9bd1a9.js" crossorigin="anonymous"></script>

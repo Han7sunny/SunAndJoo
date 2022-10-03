@@ -344,7 +344,7 @@ public class TripDaoImpl implements TripDao {
 				theme.setArea_code(rs.getString("area_code"));
 				theme.setSigungu_code(rs.getString("sigungu_code"));
 				
-				System.out.println(theme.getImg1());
+				//System.out.println(theme.getImg1());
 			}
 		} finally {
 			dbUtil.close(rs, pstmt, conn);
@@ -377,7 +377,7 @@ public class TripDaoImpl implements TripDao {
 				hanok.setRoom(rs.getString("room"));
 				hanok.setImg(rs.getString("img"));
 
-				System.out.println(hanok.toString());
+				//System.out.println(hanok.toString());
 				HanokList.add(hanok);
 			}
 		} finally {
@@ -418,7 +418,7 @@ public class TripDaoImpl implements TripDao {
 				hanok.setPolicy(rs.getString("policy"));
 				hanok.setImg(rs.getString("img"));
 
-				System.out.println(hanok.toString());
+				//System.out.println(hanok.toString());
 			}
 		} finally {
 			dbUtil.close(rs, pstmt, conn);
@@ -461,7 +461,7 @@ public class TripDaoImpl implements TripDao {
 				hanokFacility.setShower(rs.getString("shower"));
 				hanokFacility.setDetails(rs.getString("details"));
 
-				System.out.println(hanokFacility.toString());
+				//System.out.println(hanokFacility.toString());
 			}
 		} finally {
 			dbUtil.close(rs, pstmt, conn);

@@ -28,7 +28,7 @@
 <link rel="stylesheet" href="${root}/assets/css/tiny-slider.css" />
 <link rel="stylesheet" href="${root}/assets/css/aos.css" />
 <link rel="stylesheet" href="${root}/assets/css/style.css" />
-
+<script src="https://kit.fontawesome.com/7c5c9bd1a9.js" crossorigin="anonymous"></script>
 <title>S&J</title>
 
 </head>

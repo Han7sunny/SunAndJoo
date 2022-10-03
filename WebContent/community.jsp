@@ -126,7 +126,7 @@ input[type="date"]:focus::before, input[type="date"]:valid::before {
 <div class="section">
 	<div class="container">
 
-		<form method= "post" id = "form-regist" enctype="multipart/form-data">
+		<form method= "post" id = "form-regist">
 		<input type="hidden" name="act" value="regist">
 			<div class="row">
 				<div class="col-lg-4 mb-5 mb-lg-0" data-aos="fade-up"
@@ -190,11 +190,11 @@ input[type="date"]:focus::before, input[type="date"]:valid::before {
 						<div class="score col-3 mb-3">
 							<select class="rateSelect form-control form-select border-0 py-3 ">
 								<option class="star text-center">별점</option>
-								<option class="star text-warning" value="1">&#xf005</option>
-								<option class="star text-warning" value="2">&#xf005 &#xf005</option>
-								<option class="star text-warning" value="3">&#xf005 &#xf005 &#xf005</option>
-								<option class="star text-warning" value="4">&#xf005 &#xf005 &#xf005 &#xf005</option>
-								<option class="star text-warning" value="5">&#xf005 &#xf005 &#xf005 &#xf005 &#xf005</option>
+								<option class="fa fa-start star text-warning" value="1">&#xf005</option>
+								<option class="fa fa-start star text-warning" value="2">&#xf005 &#xf005</option>
+								<option class="fa fa-start star text-warning" value="3">&#xf005 &#xf005 &#xf005</option>
+								<option class="fa fa-start star text-warning" value="4">&#xf005 &#xf005 &#xf005 &#xf005</option>
+								<option class="fa fa-start star text-warning" value="5">&#xf005 &#xf005 &#xf005 &#xf005 &#xf005</option>
 								<option class="recruit text-center">모집</option>
 							</select>
 						</div>
