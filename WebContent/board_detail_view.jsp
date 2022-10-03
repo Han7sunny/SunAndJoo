@@ -133,6 +133,7 @@
   </body>
   
   <script>
+  // 윤주 //
 	  let modify_btn = document.querySelectorAll(".modify-btn");
 	  let delete_btn = document.querySelectorAll(".delete-btn");
 
@@ -176,5 +177,6 @@
 			}
 	  	});
 	  });
+	  // 윤주 끝 //
   </script>
 </html>

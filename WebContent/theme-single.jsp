@@ -27,6 +27,7 @@
       </div>
     </div>
 
+	<!-- 이미지 추가  -->
     <div class="section mb-5">
       <div class="container mb-5">
 			<div class="row section-counter mt-5 mb-5">
