@@ -144,7 +144,7 @@
 
 -----------------------------------------------------------
 
-### 6. 여행 테마 - theme-total.jsp
+### 5. 여행 테마 - theme-total.jsp
 > 여행 테마 전체를 조회할 수 있는 페이지
 <br/>
 ![theme-list](/uploads/241269dc801c4037154de0f9bfcd4b8d/theme-list.JPG)
@@ -152,7 +152,7 @@
 
 
     > 각 게시글 클릭 시 : 상세 페이지 theme-single.jsp 로 이동
-![theme-view](/uploads/f7debbe774f0a41377969c90360b6957/theme-view.JPG)
+![theme-view](/uploads/69dfefea93aae3d7d9d5c3f80bd0d151/theme-view.JPG)
 <br/><br/><br/>
 
 
@@ -176,7 +176,7 @@
 
 
 
-### 5. 커뮤니티 - community.jsp
+### 7. 커뮤니티 - community.jsp
 > 여행 메이트 / 여행 후기 글을 조회할 수 있는 페이지
 
 <br/>
@@ -210,7 +210,7 @@
 
 -----------------------------------------------------------
 
-### 6. 여행 후기 - community-tripReview.jsp
+### 8. 여행 후기 - community-tripReview.jsp
 > 작성된 여행 후기 및 여행 메이트 후기 게시글을 볼 수 있는 페이지
 <br/>
 ![tripReview-list](/uploads/a80bef94a2c4edbb340f8b8a08c869a4/tripReview-list.JPG)
@@ -218,12 +218,13 @@
 
 
     > 각 게시글 클릭 시 : 상세 페이지 board_detail_view.jsp 로 이동
+    >                  : 클릭할 때마다 해당 게시글 조회수 증가
 ![tripReview-view](/uploads/506db8c304f2b288e391c60f05dccdaf/tripReview-view.JPG)
 <br/><br/><br/>
 
 -----------------------------------------------------------
 
-### 7. 여행 메이트 - community-tripMate.jsp
+### 9. 여행 메이트 - community-tripMate.jsp
 > 작성된 여행 메이트 모집글 전체를 볼 수 있는 페이지
 <br/>
 ![tripMate-list](/uploads/5bc01dc793f4745a1ad52216a1e2c424/tripMate-list.JPG)
@@ -231,13 +232,14 @@
 
 
     > 각 게시글 클릭 시 : 상세 페이지 board_detail_view.jsp 로 이동
+    >                  : 클릭할 때마다 해당 게시글 조회수 증가
 ![tripMate-view](/uploads/1cbfd976dc8103b67c1237f8b651cf6e/tripMate-view.JPG)
 <br/><br/><br/>
 
 -----------------------------------------------------------
 
 
-### 8. 게시글 수정 기능
+### 10. 게시글 수정 기능
 > 글 작성자와 세션에 저장된 로그인 아이디가 같을 때에만 수정, 삭제 버튼 활성화
 <br/>
 ![board-modify](/uploads/2748e8eba59c90e1846d7b5ee04a6dcb/board-modify.jpg)
@@ -257,7 +259,7 @@
 -----------------------------------------------------------
 
 
-### 8. 댓글 기능
+### 11. 댓글 기능
 > 모든 게시글 하단에 구현되어 있는 댓글 작성 폼
 <br/>
 ![reply-regist](/uploads/9a106ce414cd969b217059eebeca7c17/reply-regist.JPG)
