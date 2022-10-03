@@ -144,12 +144,40 @@
 
 -----------------------------------------------------------
 
-### 5. 커뮤니티 - community.jsp
-> 여행 메이트 / 여행 후기 글을 조회할 수 있는 페이지
+### 6. 여행 테마 - theme-total.jsp
+> 여행 테마 전체를 조회할 수 있는 페이지
 <br/>
-![메인](/assets/readme/community-main.JPG)  
+![theme-list](/uploads/241269dc801c4037154de0f9bfcd4b8d/theme-list.JPG)
 <br/><br/>
 
+
+    > 각 게시글 클릭 시 : 상세 페이지 theme-single.jsp 로 이동
+![theme-view](/uploads/f7debbe774f0a41377969c90360b6957/theme-view.JPG)
+<br/><br/><br/>
+
+
+
+
+------------------------------------------------------------
+
+### 6. 한옥 숙소 소개 - hanok_list.jsp
+> 작성된 여행 후기 및 여행 메이트 후기 게시글을 볼 수 있는 페이지
+<br/>
+![hanok-list](/uploads/b5f195abbd9009d877154089859d2af9/hanok-list.JPG)
+<br/><br/>
+
+
+    > 각 게시글 클릭 시 : 상세 페이지 hanok_single.jsp 로 이동
+![hanok-detail](/uploads/2f50874b52e5a17bf4bbec1a204c59b0/hanok-detail.JPG)
+<br/><br/><br/>
+
+
+------------------------------------------------------------
+
+
+
+### 5. 커뮤니티 - community.jsp
+> 여행 메이트 / 여행 후기 글을 조회할 수 있는 페이지
 
 <br/>
 ![community-review](/uploads/e508258dde2aca54173389cba093ac24/community-review.JPG)
@@ -158,6 +186,10 @@
 <br/>
 ![community-mate](/uploads/8e5003c9677f94dedabab44a51e921be/community-mate.JPG)
 <br/><br/>
+
+
+    > 각 게시글 클릭 시 : 게시글 상세 페이지 board_detail_view.jsp 로 이동
+<br/>
 
 
 > 게시글 작성 - 위치, 글 제목, 작성자명, 날짜, 카테고리 선택
@@ -185,7 +217,7 @@
 <br/><br/>
 
 
-    > 각 게시글 클릭 시 : 상세 보기로 이동
+    > 각 게시글 클릭 시 : 상세 페이지 board_detail_view.jsp 로 이동
 ![tripReview-view](/uploads/506db8c304f2b288e391c60f05dccdaf/tripReview-view.JPG)
 <br/><br/><br/>
 
@@ -198,7 +230,7 @@
 <br/><br/>
 
 
-    > 각 게시글 클릭 시 : 상세 보기로 이동
+    > 각 게시글 클릭 시 : 상세 페이지 board_detail_view.jsp 로 이동
 ![tripMate-view](/uploads/1cbfd976dc8103b67c1237f8b651cf6e/tripMate-view.JPG)
 <br/><br/><br/>
 
@@ -233,12 +265,14 @@
 
 
 > 댓글 작성자와 세션에 저장된 로그인 아이디가 같을 때에만 수정, 삭제버튼 활성화
+<br/>
 ![reply-modify](/uploads/8ebcbc3925487fd18a40e97120c5896c/reply-modify.JPG)
 <br/><br/><br/>
  
  
 
 > 삭제 버튼 클릭 시 : alert창 띄운 후 삭제 진행
+<br/>
 ![reply-delete](/uploads/a2a2e7a23a7ffea0b08d9d71d9b80f8e/reply-delete.JPG)
 <br/><br/><br/>
  
