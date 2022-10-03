@@ -74,7 +74,7 @@ public class BoardDaoImpl implements BoardDao {
 				sql.append("where board_type_id = '여행후기' or board_type_id = '여행메이트후기'\n");
 				break;
 			case "2":
-				sql.append("where board_type_id = '여행메이트' \n");
+				sql.append("where board_type_id = '여행메이트' and end_date >= now() \n");
 				break;
 			case "4":
 				sql.append("where board_type_id = '공지사항' \n");

@@ -103,35 +103,74 @@ public class TripDaoImpl implements TripDao {
 	}
 
 	@Override
-	public List<ThemeTripDto> getThemeTripList() throws SQLException {
-		List<ThemeTripDto> themeTripList = new ArrayList<>();
+	public List<TotalThemeDto> getThemeTripList() throws SQLException {
+		List<TotalThemeDto> themeTripList = new ArrayList<>();
 		Connection conn = null;
 		PreparedStatement pstmt = null;
 		ResultSet rs = null;
+
 		try {
 			conn = dbUtil.getConnection();
 			StringBuilder sql = new StringBuilder();
-			sql.append("select content_id, title, first_image, first_image2, readcount \n");
-			sql.append("from total_area \n");
-			sql.append("where content_type_id = 25 and first_image != \"\" \n");
+			sql.append("select * from theme_info as theme left join (select * from total_area where content_type_id = 25) as total \n");
+			sql.append("on theme.title = total.title \n");
 			sql.append("order by readcount desc limit 16");
 			pstmt = conn.prepareStatement(sql.toString());
+
 			rs = pstmt.executeQuery();
+
 			while (rs.next()) {
-				ThemeTripDto themeTripDto = new ThemeTripDto();
+				TotalThemeDto theme = new TotalThemeDto();
+				theme.setIdx(rs.getInt("idx"));
+				theme.setTitle(rs.getString("title"));
+				theme.setLat(rs.getString("latitude"));
+				theme.setLng(rs.getString("logitude"));
+				theme.setOverview(rs.getString("overview"));
+				theme.setCalendar(rs.getString("calendar"));
+				theme.setType(rs.getString("type"));
+				theme.setDist(rs.getString("total_distance"));
+				theme.setTime(rs.getString("total_time"));
+				theme.setDetails(rs.getString("details"));
 
-				themeTripDto.setContentId(rs.getInt(1));
-				themeTripDto.setTitle(rs.getString(2));
-				themeTripDto.setFirstImage(rs.getString(3));
-				themeTripDto.setFirstImage2(rs.getString(4));
-				themeTripDto.setReadCount(rs.getString(5));
-				themeTripDto.setOverView(""); // 나중에
-
-				themeTripList.add(themeTripDto);
+				// from join table
+				theme.setImg1(rs.getString("first_image"));
+				theme.setImg2(rs.getString("first_image"));
+				theme.setReadcount(rs.getString("readcount"));
+				theme.setArea_code(rs.getString("area_code"));
+				theme.setSigungu_code(rs.getString("sigungu_code"));
+				
+				themeTripList.add(theme);
 			}
 		} finally {
 			dbUtil.close(rs, pstmt, conn);
 		}
+//		Connection conn = null;
+//		PreparedStatement pstmt = null;
+//		ResultSet rs = null;
+//		try {
+//			conn = dbUtil.getConnection();
+//			StringBuilder sql = new StringBuilder();
+//			sql.append("select content_id, title, first_image, first_image2, readcount \n");
+//			sql.append("from total_area \n");
+//			sql.append("where content_type_id = 25 and first_image != \"\" \n");
+//			sql.append("order by readcount desc limit 16");
+//			pstmt = conn.prepareStatement(sql.toString());
+//			rs = pstmt.executeQuery();
+//			while (rs.next()) {
+//				ThemeTripDto themeTripDto = new ThemeTripDto();
+//
+//				themeTripDto.setContentId(rs.getInt(1));
+//				themeTripDto.setTitle(rs.getString(2));
+//				themeTripDto.setFirstImage(rs.getString(3));
+//				themeTripDto.setFirstImage2(rs.getString(4));
+//				themeTripDto.setReadCount(rs.getString(5));
+//				themeTripDto.setOverView(""); // 나중에
+//
+//				themeTripList.add(themeTripDto);
+//			}
+//		} finally {
+//			dbUtil.close(rs, pstmt, conn);
+//		}
 		return themeTripList;
 	}
 

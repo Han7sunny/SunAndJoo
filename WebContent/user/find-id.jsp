@@ -19,7 +19,7 @@
 					<ol class="breadcrumb text-center justify-content-center">
 						<li class="breadcrumb-item"><a href="index.jsp">Home</a></li>
 						<li class="breadcrumb-item active text-white-50"
-							aria-current="page">login</li>
+							aria-current="page">Find ID</li>
 					</ol>
 				</nav>
 			</div>

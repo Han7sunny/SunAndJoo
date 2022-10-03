@@ -206,7 +206,13 @@ public class TripController extends HttpServlet {
 
 	private String getThemeTripList(HttpServletRequest req, HttpServletResponse resp) {
 		try {
-			List<ThemeTripDto> themeTripList = tripService.getThemeTripList();
+			//List<TotalThemeDto> themeTripList = tripService.TotalThemeList("main");
+			//List<ThemeTripDto> themeTripList = tripService.getThemeTripList();
+			List<TotalThemeDto> themeTripList = tripService.getThemeTripList();
+			for (int i = 0; i < 16; i++) {
+				System.out.println(themeTripList.get(i).getIdx() +", readcount" + themeTripList.get(i).getReadcount() +", title " + themeTripList.get(i).getTitle());
+			}
+System.out.println(themeTripList.size());
 			req.setAttribute("themeTripList", themeTripList);
 			return "./themeTripList.jsp";
 		} catch (Exception e) {

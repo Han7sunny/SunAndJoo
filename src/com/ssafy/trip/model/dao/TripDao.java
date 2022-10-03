@@ -25,7 +25,7 @@ public interface TripDao {
 																										// 지역 정보
 																										// 가져오기
 
-	List<ThemeTripDto> getThemeTripList() throws SQLException; // 여행 테마 소개
+	List<TotalThemeDto> getThemeTripList() throws SQLException; // 여행 테마 소개
 
 	List<TotalThemeDto> TotalThemeList() throws SQLException;
 

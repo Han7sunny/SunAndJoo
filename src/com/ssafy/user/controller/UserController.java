@@ -12,6 +12,16 @@ import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 import javax.servlet.http.HttpSession;
 
+import java.util.Properties;
+
+import javax.mail.Authenticator;
+import javax.mail.Message;
+import javax.mail.PasswordAuthentication;
+import javax.mail.Session;
+import javax.mail.Transport;
+import javax.mail.internet.InternetAddress;
+import javax.mail.internet.MimeMessage;
+
 import com.ssafy.board.model.dao.ReplyDao;
 import com.ssafy.board.model.dto.BoardDto;
 import com.ssafy.board.model.dto.ReplyDto;
@@ -90,11 +100,11 @@ public class UserController extends HttpServlet {
 			break;
 		case "modify":
 			path = modfiy(request, response);
-			forward(request,response,path);
+			forward(request, response, path);
 			break;
 		case "delete":
 			path = delete(request, response);
-			forward(request,response,path);
+			forward(request, response, path);
 			break;
 		default:
 			redirect(request, response, path);
@@ -102,7 +112,6 @@ public class UserController extends HttpServlet {
 		}
 
 	}
-
 
 	private int nameCheck(HttpServletRequest request, HttpServletResponse response) {
 		String userName = request.getParameter("username");
@@ -120,7 +129,7 @@ public class UserController extends HttpServlet {
 			HttpSession session = request.getSession();
 			UserDto user = (UserDto) session.getAttribute("userInfo");
 
-			if(user.getAdminAuthor()) {
+			if (user.getAdminAuthor()) {
 				List<BoardDto> noticeList = boardService.getBoardListById(user.getId(), "공지사항");
 				request.setAttribute("noticeSize", noticeList.size());
 				request.setAttribute("noticeList", noticeList);
@@ -129,11 +138,11 @@ public class UserController extends HttpServlet {
 
 			request.setAttribute("boardList", boardList);
 			request.setAttribute("boardSize", boardList.size());
-			
+
 			List<ReplyDto> replyList = replyService.list_by_id(user.getId());
-			request.setAttribute("replyList",replyList);
-			request.setAttribute("replySize",replyList.size());
-			
+			request.setAttribute("replyList", replyList);
+			request.setAttribute("replySize", replyList.size());
+
 			return "/user/mypage.jsp";
 		} catch (Exception e) {
 			e.printStackTrace();
@@ -222,10 +231,43 @@ public class UserController extends HttpServlet {
 
 		try {
 			result = userService.findPwd(find_id, find_email, find_emaildomain);
+			boolean findPwdResult = false;
 			if(result != null) {
 				// 이메일 보내기
+				Properties props = new Properties();
+				props.put("mail.smtp.host", "smtp.gmail.com");
+				props.put("mail.smtp.port", "587");
+				props.put("mail.smtp.auth", "true");
+				props.put("mail.smtp.starttls.enable", "true");
+				props.put("mail.smtp.ssl.trust", "smtp.gmail.com");
+				
+				Session session = Session.getInstance(props, new Authenticator() {
+					@Override
+					protected PasswordAuthentication getPasswordAuthentication() {
+						return new PasswordAuthentication("xoa1235@gmail.com", "nnbnldyykurafxsm");
+					}
+				});
+				
+				String receiver = find_email+"@"+find_emaildomain; // 메일 받을 주소
+				System.out.println(receiver);
+				String title = "[써니앤쥬] 비밀번호 조회 결과입니다.";
+				
+				String content ="<h2 class='font-weight-bold text-primary heading mt-5 mb-5'>" + find_id + "님의 비밀번호는 " + result +" 입니다." + "</h2>";
+				Message message = new MimeMessage(session);
+				try {
+					message.setFrom(new InternetAddress("xoa1235@gmail.com", "관리자", "utf-8"));
+					message.addRecipient(Message.RecipientType.TO, new InternetAddress(receiver));
+					message.setSubject(title);
+					message.setContent(content, "text/html; charset=utf-8");
+
+					Transport.send(message);
+				} catch (Exception e) {
+					e.printStackTrace();
+				}
+				findPwdResult = true;
+				request.setAttribute("email", receiver);
 			}
-			//request.setAttribute("finded_pwd", result);
+			request.setAttribute("finded_pwd", findPwdResult);
 			return "/user/find-pwd-result.jsp";
 		} catch (Exception e) {
 			e.printStackTrace();
@@ -238,9 +280,9 @@ public class UserController extends HttpServlet {
 		userDto.setId(request.getParameter("userpage_id"));
 		userDto.setEmailId(request.getParameter("userpage_emailId"));
 		userDto.setEmailDomain(request.getParameter("userpage_emailDomain"));
-		
+
 		HttpSession session = request.getSession();
-	
+
 		try {
 			userService.modify(userDto);
 			session.setAttribute("userInfo", userDto);
@@ -251,7 +293,6 @@ public class UserController extends HttpServlet {
 			return "/error/error.jsp";
 		}
 	}
-
 
 	private String delete(HttpServletRequest request, HttpServletResponse response) {
 		HttpSession session = request.getSession();

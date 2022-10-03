@@ -31,7 +31,7 @@ public class TripServiceImpl implements TripService {
 	}
 
 	@Override
-	public List<ThemeTripDto> getThemeTripList() throws Exception {
+	public List<TotalThemeDto> getThemeTripList() throws Exception {
 		return tripDao.getThemeTripList();
 	}
 

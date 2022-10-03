@@ -131,7 +131,6 @@
 									<th class="col-1">번호</th>
 									<th class="col-5">제목</th>
 									<th class="col-3">작성자</th>
-									<th class="col-1">글 번호</th>
 									<th class="col-2">작성날짜</th>
 								</tr>
 							</thead>
@@ -144,7 +143,6 @@
 											<th class="col-1">${status.count}</th>
 											<td class="col-5">${replys.reply_content}</td>
 											<td class="col-3">${replys.user_id}</td>
-											<td class="col-1">${replys.board_id}</td>
 											<td class="col-2">${replys.regist_time}</td>
 
 										</tr>

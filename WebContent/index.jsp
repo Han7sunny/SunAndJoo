@@ -302,216 +302,222 @@
 				<h2 class="font-weight-bold text-primary heading">여행 테마 소개</h2>
 			</div>
 			<div class="col-lg-6 text-lg-end">
-        		<p><a href="${root}/main?action=totalTheme" class="learn-more">더 많은 여행 테마</a></p>
- 		   </div>
-		<div class="row mt-5">
-			<div class="col-12">
-				<div class="property-slider-wrap">
-					<div class="property-slider">
-						<div class="property-item"></div>
-						<div class="property-item"></div>
-						<div class="property-item"></div>
-						<div class="property-item"></div>
-					</div>
-
-					<div id="property-nav" class="controls" tabindex="0"
-						aria-label="Carousel Navigation">
-						<span class="prev" data-controls="prev" aria-controls="property"
-							tabindex="-1">Prev</span> <span class="next" data-controls="next"
-							aria-controls="property" tabindex="-1">Next</span>
-					</div>
-				</div>
-			</div>
-		</div>
-	</div>
-</div>
-<!-- 여행 테마 소개 end -->
-
-
-
-<!-- 여행 메이트 start -->
-<div class="container mb-5">
-	<div class="col-lg-6">
-		<h2 class="font-weight-bold text-primary heading mt-5 mb-5">여행 메이트 찾기</h2>
-	</div>
-	<section class="features-1">
-		<div class="container">
-			<div class="mateDiv row">
-				<!-- 여행 메이트 모집 글  -->
-			</div>
-		</div>
-	</section>
-	<!-- 여행 메이트 end -->
-
-	<!-- 여행 후기 start -->
-
-	<div class="section sec-testimonials">
-		<div class="container">
-			<div class="row mt-5 mb-5 align-items-center">
-				<div class="col-md-6">
-					<h2 class="font-weight-bold heading text-primary mt-5 mb-4 mb-md-0">여행
-						후기</h2>
-				</div>
-				<div class="col-md-6 text-md-end">
-					<div id="testimonial-nav">
-						<span class="prev" data-controls="prev">Prev</span> <span
-							class="next" data-controls="next">Next</span>
-					</div>
-				</div>
-			</div>
-
-			<div class="row">
-				<div class="col-lg-4"></div>
-			</div>
-
-			<div class="testimonial-slider-wrap">
-				<div class="reviewDiv testimonial-slider">
-					<!-- 여행 후기 글 -->
-
-					<div class="item" onmouseover="this.style.cursor='pointer'">
-						<div class="testimonial">
-							<img src="${root}/assets/images/default-profile.png" alt="Image"
-								class="img-fluid rounded-circle w-25 mb-4" />
-						</div>
-					</div>
-
-					<div class="item" onmouseover="this.style.cursor='pointer'">
-						<div class="testimonial">
-							<img src="${root}/assets/images/default-profile.png" alt="Image"
-								class="img-fluid rounded-circle w-25 mb-4" />
-						</div>
-					</div>
-
-					<div class="item" onmouseover="this.style.cursor='pointer'">
-						<div class="testimonial">
-							<img src="${root}/assets/images/default-profile.png" alt="Image"
-								class="img-fluid rounded-circle w-25 mb-4" />
-						</div>
-					</div>
-
-					<div class="item" onmouseover="this.style.cursor='pointer'">
-						<div class="testimonial">
-							<img src="${root}/assets/images/default-profile.png" alt="Image"
-								class="img-fluid rounded-circle w-25 mb-4" />
-						</div>
-					</div>
-
-				</div>
-			</div>
-		</div>
-	</div>
-
-
-	<!-- 여행 후기 end -->
-
-	<!-- 한옥 start -->
-	<div class="section section-4 bg-light">
-		<div class="container">
-			<div class="row justify-content-center text-center mb-5">
-				<div class="col-lg-5">
-					<h2 class="font-weight-bold heading text-primary mb-4">
-						한국에서만<br /> 경험할 수 있는
-					</h2>
-					<p class="text-black-50">
-						한옥(韓屋)이라는 말은 우리 땅에 들어온 서구 스타일의 집,<br /> 즉 양옥(洋屋)에 대비되는 의미로
-						시작되었습니다. <br /> 문화강국의 국격(國格)을 보여주는 한류(韓流)의 주역으로 삼으면서 <br /> 한국을
-						대표하는 건축(K-Architecture)이 되어 전 세계에 소개되고 있습니다.
-					</p>
-				</div>
-			</div>
-			<div class="row justify-content-between mb-5">
-				<div class="col-lg-7 mb-5 mb-lg-0 order-lg-2">
-					<div class="img-about dots">
-						<img src="${root}/assets/images/hanok.jpg" alt="Image"
-							class="img-fluid" />
-					</div>
-				</div>
-				<div class="col-lg-4">
-					<div class="d-flex feature-h">
-						<span class="wrap-icon me-3"> <span class="icon-home2"></span>
-						</span>
-						<div class="feature-text">
-							<h3 class="heading">자연친화적 건축</h3>
-							<p class="text-black-50">한옥은 나무와 돌, 흙 등 우리 주위 어디에서나 손쉽게 구할 수
-								있는 재료로 만든다는 점에서 자연친화적입니다.</p>
-						</div>
-					</div>
-
-					<div class="d-flex feature-h">
-						<span class="wrap-icon me-3"> <span class="icon-person"></span>
-						</span>
-						<div class="feature-text">
-							<h3 class="heading">인간 친화성</h3>
-							<p class="text-black-50">건축 용어로 휴먼 스케일이라 하는 인간 친화성은 공간과 인간의
-								상호교감 정도를 의미하는데 한옥에는 심리적 안정을 갖게 하는 인간 친화성이 있습니다.</p>
-						</div>
-					</div>
-
-					<div class="d-flex feature-h">
-						<span class="wrap-icon me-3"> <span class="icon-security"></span>
-						</span>
-						<div class="feature-text">
-							<h3 class="heading">현대적 재해석</h3>
-							<p class="text-black-50">현대식 공동주택과 같이 냉·난방 등 에너지관리, 보안, 유지관리
-								등 현대 생활에 필요한 주택 주요 기능을 갖추고 있습니다.</p>
-						</div>
-					</div>
-				</div>
-			</div>
-			<div class="row section-counter mt-5">
-				<div class="col-6 col-sm-6 col-md-6 col-lg-3" data-aos="fade-up"
-					data-aos-delay="300">
-					<div class="counter-wrap mb-5 mb-lg-0 text-center">
-						<span class="number"><span class="countup text-primary">1666</span></span>
-						<span class="caption text-black-50">전국 한옥체험업 개수</span>
-					</div>
-				</div>
-				<div class="col-6 col-sm-6 col-md-6 col-lg-3" data-aos="fade-up"
-					data-aos-delay="400">
-					<div class="counter-wrap mb-5 mb-lg-0 text-center">
-						<span class="number"><span class="countup text-primary">735</span></span>
-						<span class="caption text-black-50">전주한옥마을 한옥 동수</span>
-					</div>
-				</div>
-				<div class="col-6 col-sm-6 col-md-6 col-lg-3" data-aos="fade-up"
-					data-aos-delay="500">
-					<div class="counter-wrap mb-5 mb-lg-0 text-center">
-						<span class="number"><span class="countup text-primary">11080572</span></span>
-						<span class="caption text-black-50">연간 평균 한옥 마을 방문 관광객</span>
-					</div>
-				</div>
-				<div class="col-6 col-sm-6 col-lg-3" data-aos="fade-up"
-					data-aos-delay="600">
-					<div class="m-4 text-center">
-						<a href="${root}/hanok_single.jsp" class="learn-more">더 많은 한옥 보기</a>
-					</div>
-				</div>
-			</div>
-		</div>
-	</div>
-	<!-- 한옥 end -->
-
-	<div class="section">
-		<div class="row justify-content-center footer-cta" data-aos="fade-up">
-			<div class="col-lg-7 mx-auto text-center">
-				<h2 class="mb-4">EnjoyTrip에서 당신의 다음 여행지를 선택하세요</h2>
 				<p>
-					<button class="btn btn-2 text-white py-3 px-4" id="searchMore">더
-						많은 여행지 검색하기</button>
+					<a href="${root}/main?action=totalTheme" class="learn-more">더
+						많은 여행 테마</a>
 				</p>
 			</div>
-			<!-- /.col-lg-7 -->
+			<div class="row mt-5">
+				<div class="col-12">
+					<div class="property-slider-wrap">
+						<div class="property-slider">
+							<div class="property-item"></div>
+							<div class="property-item"></div>
+							<div class="property-item"></div>
+							<div class="property-item"></div>
+						</div>
+
+						<div id="property-nav" class="controls" tabindex="0"
+							aria-label="Carousel Navigation">
+							<span class="prev" data-controls="prev" aria-controls="property"
+								tabindex="-1">Prev</span> <span class="next"
+								data-controls="next" aria-controls="property" tabindex="-1">Next</span>
+						</div>
+					</div>
+				</div>
+			</div>
 		</div>
-		<!-- /.row -->
 	</div>
+	<!-- 여행 테마 소개 end -->
 
-	<%@ include file="/common/footer.jsp"%>
 
-	<script type="text/javascript"
-		src="//dapi.kakao.com/v2/maps/sdk.js?appkey=3c69fd4c558034e826ba1e7c22d02e52"></script>
-	<script type="text/javascript"
-		src="//dapi.kakao.com/v2/maps/sdk.js?appkey=3c69fd4c558034e826ba1e7c22d02e52&libraries=services"></script>
-	<script>
+
+	<!-- 여행 메이트 start -->
+	<div class="container mb-5">
+		<div class="col-lg-6">
+			<h2 class="font-weight-bold text-primary heading mt-5 mb-5">여행
+				메이트 찾기</h2>
+		</div>
+		<section class="features-1">
+			<div class="container">
+				<div class="mateDiv row">
+					<!-- 여행 메이트 모집 글  -->
+				</div>
+			</div>
+		</section>
+		<!-- 여행 메이트 end -->
+
+		<!-- 여행 후기 start -->
+
+		<div class="section sec-testimonials">
+			<div class="container">
+				<div class="row mt-5 mb-5 align-items-center">
+					<div class="col-md-6">
+						<h2
+							class="font-weight-bold heading text-primary mt-5 mb-4 mb-md-0">여행
+							후기</h2>
+					</div>
+					<div class="col-md-6 text-md-end">
+						<div id="testimonial-nav">
+							<span class="prev" data-controls="prev">Prev</span> <span
+								class="next" data-controls="next">Next</span>
+						</div>
+					</div>
+				</div>
+
+				<div class="row">
+					<div class="col-lg-4"></div>
+				</div>
+
+				<div class="testimonial-slider-wrap">
+					<div class="reviewDiv testimonial-slider">
+						<!-- 여행 후기 글 -->
+
+						<div class="item" onmouseover="this.style.cursor='pointer'">
+							<div class="testimonial">
+								<img src="${root}/assets/images/default-profile.png" alt="Image"
+									class="img-fluid rounded-circle w-25 mb-4" />
+							</div>
+						</div>
+
+						<div class="item" onmouseover="this.style.cursor='pointer'">
+							<div class="testimonial">
+								<img src="${root}/assets/images/default-profile.png" alt="Image"
+									class="img-fluid rounded-circle w-25 mb-4" />
+							</div>
+						</div>
+
+						<div class="item" onmouseover="this.style.cursor='pointer'">
+							<div class="testimonial">
+								<img src="${root}/assets/images/default-profile.png" alt="Image"
+									class="img-fluid rounded-circle w-25 mb-4" />
+							</div>
+						</div>
+
+						<div class="item" onmouseover="this.style.cursor='pointer'">
+							<div class="testimonial">
+								<img src="${root}/assets/images/default-profile.png" alt="Image"
+									class="img-fluid rounded-circle w-25 mb-4" />
+							</div>
+						</div>
+
+					</div>
+				</div>
+			</div>
+		</div>
+
+
+		<!-- 여행 후기 end -->
+
+		<!-- 한옥 start -->
+		<div class="section section-4 bg-light">
+			<div class="container">
+				<div class="row justify-content-center text-center mb-5">
+					<div class="col-lg-5">
+						<h2 class="font-weight-bold heading text-primary mb-4">
+							한국에서만<br /> 경험할 수 있는
+						</h2>
+						<p class="text-black-50">
+							한옥(韓屋)이라는 말은 우리 땅에 들어온 서구 스타일의 집,<br /> 즉 양옥(洋屋)에 대비되는 의미로
+							시작되었습니다. <br /> 문화강국의 국격(國格)을 보여주는 한류(韓流)의 주역으로 삼으면서 <br /> 한국을
+							대표하는 건축(K-Architecture)이 되어 전 세계에 소개되고 있습니다.
+						</p>
+					</div>
+				</div>
+				<div class="row justify-content-between mb-5">
+					<div class="col-lg-7 mb-5 mb-lg-0 order-lg-2">
+						<div class="img-about dots">
+							<img src="${root}/assets/images/hanok.jpg" alt="Image"
+								class="img-fluid" />
+						</div>
+					</div>
+					<div class="col-lg-4">
+						<div class="d-flex feature-h">
+							<span class="wrap-icon me-3"> <span class="icon-home2"></span>
+							</span>
+							<div class="feature-text">
+								<h3 class="heading">자연친화적 건축</h3>
+								<p class="text-black-50">한옥은 나무와 돌, 흙 등 우리 주위 어디에서나 손쉽게 구할 수
+									있는 재료로 만든다는 점에서 자연친화적입니다.</p>
+							</div>
+						</div>
+
+						<div class="d-flex feature-h">
+							<span class="wrap-icon me-3"> <span class="icon-person"></span>
+							</span>
+							<div class="feature-text">
+								<h3 class="heading">인간 친화성</h3>
+								<p class="text-black-50">건축 용어로 휴먼 스케일이라 하는 인간 친화성은 공간과 인간의
+									상호교감 정도를 의미하는데 한옥에는 심리적 안정을 갖게 하는 인간 친화성이 있습니다.</p>
+							</div>
+						</div>
+
+						<div class="d-flex feature-h">
+							<span class="wrap-icon me-3"> <span class="icon-security"></span>
+							</span>
+							<div class="feature-text">
+								<h3 class="heading">현대적 재해석</h3>
+								<p class="text-black-50">현대식 공동주택과 같이 냉·난방 등 에너지관리, 보안, 유지관리
+									등 현대 생활에 필요한 주택 주요 기능을 갖추고 있습니다.</p>
+							</div>
+						</div>
+					</div>
+				</div>
+				<div class="row section-counter mt-5">
+					<div class="col-6 col-sm-6 col-md-6 col-lg-3" data-aos="fade-up"
+						data-aos-delay="300">
+						<div class="counter-wrap mb-5 mb-lg-0 text-center">
+							<span class="number"><span class="countup text-primary">1666</span></span>
+							<span class="caption text-black-50">전국 한옥체험업 개수</span>
+						</div>
+					</div>
+					<div class="col-6 col-sm-6 col-md-6 col-lg-3" data-aos="fade-up"
+						data-aos-delay="400">
+						<div class="counter-wrap mb-5 mb-lg-0 text-center">
+							<span class="number"><span class="countup text-primary">735</span></span>
+							<span class="caption text-black-50">전주한옥마을 한옥 동수</span>
+						</div>
+					</div>
+					<div class="col-6 col-sm-6 col-md-6 col-lg-3" data-aos="fade-up"
+						data-aos-delay="500">
+						<div class="counter-wrap mb-5 mb-lg-0 text-center">
+							<span class="number"><span class="countup text-primary">11080572</span></span>
+							<span class="caption text-black-50">연간 평균 한옥 마을 방문 관광객</span>
+						</div>
+					</div>
+					<div class="col-6 col-sm-6 col-lg-3" data-aos="fade-up"
+						data-aos-delay="600">
+						<div class="m-4 text-center">
+							<a href="${root}/hanok_single.jsp" class="learn-more">더 많은 한옥
+								보기</a>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+		<!-- 한옥 end -->
+
+		<div class="section">
+			<div class="row justify-content-center footer-cta" data-aos="fade-up">
+				<div class="col-lg-7 mx-auto text-center">
+					<h2 class="mb-4">EnjoyTrip에서 당신의 다음 여행지를 선택하세요</h2>
+					<p>
+						<button class="btn btn-2 text-white py-3 px-4" id="searchMore">더
+							많은 여행지 검색하기</button>
+					</p>
+				</div>
+				<!-- /.col-lg-7 -->
+			</div>
+			<!-- /.row -->
+		</div>
+
+		<%@ include file="/common/footer.jsp"%>
+
+		<script type="text/javascript"
+			src="//dapi.kakao.com/v2/maps/sdk.js?appkey=3c69fd4c558034e826ba1e7c22d02e52"></script>
+		<script type="text/javascript"
+			src="//dapi.kakao.com/v2/maps/sdk.js?appkey=3c69fd4c558034e826ba1e7c22d02e52&libraries=services"></script>
+		<script>
       function signUpCheck() {
         let password = document.querySelector("#user-pwd").value;
         let passwordCheck = document.querySelector("#user-pwd-check").value;
@@ -524,7 +530,7 @@
         }
       }
     </script>
-	<script>
+		<script>
 
 		function initSigunguList() {
 	    	  let sigunguOptions = document.querySelector(".sigungu>select");
@@ -685,14 +691,13 @@
     fetch(ThemeUrl)
       .then((response) => response.json())
       .then(function (data) {
-
         let propertyItemDiv = document.querySelectorAll(".property-item");
         let idx = 0;
         data.themeTripList.forEach((theme) => {
 
           let a = document.createElement("a");
           a.setAttribute("class", "img");
-          a.setAttribute("href", "theme-single.jsp");
+          a.setAttribute("href", "${root}/main?action=themeView&idx="+theme.content_id);
 
           let image = document.createElement("img");
           image.setAttribute("src", theme.firstImage);
@@ -729,7 +734,7 @@
           div.appendChild(span1);
 
           let a1 = document.createElement("a");
-          a1.setAttribute("href", "theme-single.jsp");
+          a1.setAttribute("href", "${root}/main?action=themeView&idx="+theme.content_id);
           a1.setAttribute("class", "btn btn-4 py-2 px-3");
           a1.appendChild(document.createTextNode("See detail"));
 
@@ -907,5 +912,5 @@
 
 
     </script>
-	</body>
-	</html>
+		</body>
+		</html>
