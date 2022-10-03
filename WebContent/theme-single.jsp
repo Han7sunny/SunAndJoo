@@ -78,7 +78,7 @@
             <div data-aos="fade-up" data-aos-delay="300">
 				<div class="box-feature mb-4">
 		            <p class="text-black-50">[ 개요 ]</p>
-		            <h3 class="text-black mb-3 font-weight-bold">${theme_details.overview}</h3></br>
+		            <h3 class="text-black mb-3 font-weight-bold">${theme_details.overview}</h3><br/>
 				</div>
 			</div>
             <br>
@@ -95,6 +95,7 @@
             
         </div>
       </div>
+    </div>
     </div>
 
     <%@ include file="/common/footer.jsp" %>

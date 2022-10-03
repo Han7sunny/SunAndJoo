@@ -149,12 +149,12 @@ input[type="date"]:focus::before, input[type="date"]:valid::before {
 
 								<c:if test="${userInfo ne null}">
 									<h2 class="font-weight-bold text-primary heading mt-5">
-										${userInfo.id}님 </br>이번 여행은</br>어떠셨나요?
+										${userInfo.id}님 <br/>이번 여행은<br/>어떠셨나요?
 									</h2>
 								</c:if>
 								<c:if test="${userInfo eq null}">
 									<h3 class="font-weight-bold text-primary heading mt-5">
-										로그인 후 </br>글을 작성해 주세요.</br>
+										로그인 후 <br/>글을 작성해 주세요.<br/>
 									</h3>
 
 								</c:if>

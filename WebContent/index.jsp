@@ -1,9 +1,3 @@
-<!-- /*
-* Template Name: Property
-* Template Author: Untree.co
-* Template URI: https://untree.co/
-* License: https://creativecommons.org/licenses/by/3.0/
-*/ -->
 <%@ page language="java" contentType="text/html; charset=UTF-8"
 	pageEncoding="UTF-8"%>
 <%@ include file="/common/header.jsp"%>
@@ -328,6 +322,7 @@
 			</div>
 		</div>
 	</div>
+</div>
 	<!-- 여행 테마 소개 end -->
 
 
@@ -511,34 +506,34 @@
 			</div>
 			<!-- /.row -->
 		</div>
+</div>
+<%@ include file="/common/footer.jsp"%>
 
-		<%@ include file="/common/footer.jsp"%>
-
-		<script type="text/javascript"
-			src="//dapi.kakao.com/v2/maps/sdk.js?appkey=3c69fd4c558034e826ba1e7c22d02e52"></script>
-		<script type="text/javascript"
-			src="//dapi.kakao.com/v2/maps/sdk.js?appkey=3c69fd4c558034e826ba1e7c22d02e52&libraries=services"></script>
-		<script>
-      function signUpCheck() {
-        let password = document.querySelector("#user-pwd").value;
-        let passwordCheck = document.querySelector("#user-pwd-check").value;
-        if (password == passwordCheck) {
-          form.submit();
-          return true;
-        } else {
-          alert("비밀번호가 일치하지 않습니다.");
-          return false;
-        }
+<script type="text/javascript"
+	src="//dapi.kakao.com/v2/maps/sdk.js?appkey=3c69fd4c558034e826ba1e7c22d02e52"></script>
+<script type="text/javascript"
+	src="//dapi.kakao.com/v2/maps/sdk.js?appkey=3c69fd4c558034e826ba1e7c22d02e52&libraries=services"></script>
+<script>
+    function signUpCheck() {
+      let password = document.querySelector("#user-pwd").value;
+      let passwordCheck = document.querySelector("#user-pwd-check").value;
+      if (password == passwordCheck) {
+        form.submit();
+        return true;
+      } else {
+        alert("비밀번호가 일치하지 않습니다.");
+        return false;
       }
-    </script>
-		<script>
+    }
+</script>
+<script>
 
-		function initSigunguList() {
-	    	  let sigunguOptions = document.querySelector(".sigungu>select");
-	    	  document.querySelector(".sigungu").removeChild(sigunguOptions);
-	    }
+	function initSigunguList() {
+   	  let sigunguOptions = document.querySelector(".sigungu>select");
+   	  document.querySelector(".sigungu").removeChild(sigunguOptions);
+   	}
 
-    fetch("${root}/main?action=start").then(response => response.json()).then(function (data) {
+	fetch("${root}/main?action=start").then(response => response.json()).then(function (data) {
 
     	  let areaList = document.querySelector(".area"); // select append
     	  let select = document.createElement("select");
@@ -913,5 +908,5 @@
 
 
     </script>
-		</body>
-		</html>
+</body>
+</html>

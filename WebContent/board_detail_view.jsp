@@ -49,7 +49,7 @@
 					</div>
 				</div>
 			</c:if>
-			<div class="col-lg-5">
+			<div class="col-lg-5 mb-5">
 				<div class="img-property-slide-wrap">
 					<div class="img-property-slide">
 						<!-- 이미지 있을 때 추가 -->
@@ -62,10 +62,25 @@
 							alt="Image" class="img-fluid" />
 					</div>
 				</div>
+				<section class="features-1 row ps-4 pe-4">
+					<div class="d-flex feature-h">
+						<span class="wrap-icon me-3"> <i class="icon-room"></i>	</span>
+						<div class="feature-text my-auto pt-1">
+							<h3 class="heading"> 일정 : ${detail_board.start_date}  ~  ${detail_board.end_date}</h3>
+						</div>
+					</div>
+				</section>
 			</div>
-			<div class="col-lg-6 mb-3">
-				<h2 class="heading text-primary">${detail_board.board_title}</h2>
-				<p class="text-black mt-5">${detail_board.content}</p>
+			<div class="col mb-3">
+				<div class="text-center">
+					<h2 class="heading text-primary ">${detail_board.board_title}</h2>
+				</div>	
+				<div class="text-left mb-5 ms-5">
+					<h4 class="text-black mt-5">" ${detail_board.content} "</h4>
+				</div>
+				<div align="right">
+					- ${detail_board.user_id} 님 -
+				</div>
 			</div>
 
 			<hr>
