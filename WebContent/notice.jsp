@@ -63,8 +63,10 @@
 		<div id="testimonial-nav"
 			class="row justify-content-between align-items-center"
 			data-aos="fadeup">
-			<span data-controls="prev" class="prev col-1">이전</span> <span
-				data-controls="prev" class="prev col-1">다음</span>
+
+			<span data-controls="prev" class="prev col-1">이전</span> 
+			<span data-controls="prev" class="prev col-1">다음</span> 
+
 		</div>
 	</div>
 </div>

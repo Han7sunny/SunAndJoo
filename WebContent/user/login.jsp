@@ -54,9 +54,9 @@
 					<button type="button" class="btn btn-outline-primary btn-sm"
 						id="btn-login">로그인</button>
 				</form>
-				<div class="col-auto text-center mt-3">
-					<button type="button" class="btn btn-sm btn-light mb-3"><a href="${root}/user/find-id.jsp">아이디 찾기</a></button>
-					<button type="button" class="btn btn-sm btn-light mb-3"><a href="${root}/user/find-pwd.jsp">비밀번호 찾기</a></button>
+				<div class="col-auto text-center mt-5">
+					<button type="button" class="btn btn-sm btn-light mb-3" onClick="location.href='${root}/user/find-id.jsp'">아이디 찾기</button>
+					<button type="button" class="btn btn-sm btn-light mb-3"  onClick="location.href='${root}/user/find-pwd.jsp'">비밀번호 찾기</button>
 				</div>				
 			</div>
 		</div>

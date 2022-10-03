@@ -34,19 +34,19 @@
 		<div class="row  justify-content-center align-items-center">
 			<div class="col-lg-8 text-center mt-5 mb-5 pb-5" data-aos="fade-up"
 				data-aos-delay="200">
-				<h4>			
+
+			<h2 class="font-weight-bold text-primary heading mt-5 mb-5">			
 			<c:if test="${finded_pwd ne null}">
 				 회원님의 비밀번호는 ${finded_pwd}입니다.
 			</c:if>
 			<c:if test="${finded_pwd eq null}">
 				회원 정보를 찾을 수 없습니다.
 			</c:if>		
-				</h4> 
+			</h2> 
 			</div>
-			<input type="submit" class="btn btn-outline-primary btn-sm mt-3"
-				id="btn-find-id" value="뒤로 가기"  onclick="history.back()"></input>
-		</div>
-								
+			<input type="button" class="btn btn-outline-primary btn-sm mt-3"
+				id="btn-find-id" value="뒤로 가기"  onclick="history.back()"/>
+		</div>			
 	</div>
 </div>
 

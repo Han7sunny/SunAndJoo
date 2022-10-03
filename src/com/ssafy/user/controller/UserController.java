@@ -12,9 +12,13 @@ import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 import javax.servlet.http.HttpSession;
 
+import com.ssafy.board.model.dao.ReplyDao;
 import com.ssafy.board.model.dto.BoardDto;
+import com.ssafy.board.model.dto.ReplyDto;
 import com.ssafy.board.model.service.BoardService;
 import com.ssafy.board.model.service.BoardServiceImpl;
+import com.ssafy.board.model.service.ReplyService;
+import com.ssafy.board.model.service.ReplyServiceImpl;
 import com.ssafy.user.model.UserDto;
 import com.ssafy.user.model.service.UserService;
 import com.ssafy.user.model.service.UserServiceImpl;
@@ -25,10 +29,12 @@ public class UserController extends HttpServlet {
 
 	private UserService userService;
 	private BoardService boardService;
+	private ReplyService replyService;
 
 	public UserController() {
 		userService = UserServiceImpl.getUserService();
 		boardService = BoardServiceImpl.getBoardService();
+		replyService = ReplyServiceImpl.getReplyService();
 	}
 
 	protected void doGet(HttpServletRequest request, HttpServletResponse response)
@@ -113,14 +119,21 @@ public class UserController extends HttpServlet {
 		try {
 			HttpSession session = request.getSession();
 			UserDto user = (UserDto) session.getAttribute("userInfo");
+
 			if(user.getAdminAuthor()) {
 				List<BoardDto> noticeList = boardService.getBoardListById(user.getId(), "공지사항");
 				request.setAttribute("noticeSize", noticeList.size());
 				request.setAttribute("noticeList", noticeList);
 			}
 			List<BoardDto> boardList = boardService.getBoardListById(user.getId(), "list");
+
 			request.setAttribute("boardList", boardList);
 			request.setAttribute("boardSize", boardList.size());
+			
+			List<ReplyDto> replyList = replyService.list_by_id(user.getId());
+			request.setAttribute("replyList",replyList);
+			request.setAttribute("replySize",replyList.size());
+			
 			return "/user/mypage.jsp";
 		} catch (Exception e) {
 			e.printStackTrace();

@@ -1,11 +1,4 @@
-<!-- /*
-* Template Name: Property
-* Template Author: Untree.co
-* Template URI: https://untree.co/
-* License: https://creativecommons.org/licenses/by/3.0/
-*/ -->
-<%@ page language="java" contentType="text/html; charset=UTF-8"
-	pageEncoding="UTF-8"%>
+<%@ page language="java" contentType="text/html; charset=UTF-8" pageEncoding="UTF-8"%>
 <%@ include file="/common/header.jsp"%>
 <style>
 input[type="date"]::before {
@@ -17,11 +10,13 @@ input[type="date"]:focus::before, input[type="date"]:valid::before {
 	display: none
 }
 
+
 .rateSelect .star {
 	font-family: "Font Awesome 5 Free";
 	font-weight: 900;
 }
 </style>
+
 <div class="hero page-inner overlay"
 	style="background-image: url('${root}/assets/images/bg-img.jpg')">
 	<div class="container">
@@ -130,8 +125,9 @@ input[type="date"]:focus::before, input[type="date"]:valid::before {
 </div>
 <div class="section">
 	<div class="container">
-		<form method="post" id="form-regist">
-			<input type="hidden" name="act" value="regist">
+
+		<form method= "post" id = "form-regist" enctype="multipart/form-data">
+		<input type="hidden" name="act" value="regist">
 			<div class="row">
 				<div class="col-lg-4 mb-5 mb-lg-0" data-aos="fade-up"
 					data-aos-delay="100">
@@ -164,6 +160,7 @@ input[type="date"]:focus::before, input[type="date"]:valid::before {
 								</c:if>
 								</h2>
 							</div>
+
 						</div>
 					</div>
 				</div>
@@ -171,6 +168,7 @@ input[type="date"]:focus::before, input[type="date"]:valid::before {
 					<div class="col-12 mb-3">
 						<input type="text" class="form-control" placeholder="제목 입력..."
 							id="board_title" name="board_title" aria-required="true" required />
+
 					</div>
 					<div class="row">
 						<div class="col-3 mb-3">
@@ -202,7 +200,7 @@ input[type="date"]:focus::before, input[type="date"]:valid::before {
 						</div>
 
 						<div class="col-12 mb-3">
-							<textarea id="board_content" name="board_content" cols="30"
+							<textarea id="board_content" name="board_content" id="board_content" cols="30"
 								rows="7" class="form-control" placeholder="내용 입력..." required></textarea>
 						</div>
 
@@ -228,6 +226,7 @@ input[type="date"]:focus::before, input[type="date"]:valid::before {
 <%@ include file="/common/footer.jsp"%>
 
 <script>
+
 window.onload =  function (){
 fetch("${root}/main?action=getSigunguList&areaCode=1")
 .then((response) => response.json())
@@ -235,42 +234,37 @@ fetch("${root}/main?action=getSigunguList&areaCode=1")
 makeScoreList("1");
 }
 
+    let select = document.querySelector(".selectArea");
 
-      let select = document.querySelector(".selectArea");
+    select.addEventListener("change", function () {
+    	initSigunguList(); // 기존 시군구 select 삭제
+      	let selectedAreaNum = select[select.selectedIndex].value;
+    	console.log(selectedAreaNum);
 
-      select.addEventListener("change", function () {
-      	    initSigunguList(); // 기존 시군구 select 삭제
-      	    let selectedAreaNum = select[select.selectedIndex].value;
-    	  console.log(selectedAreaNum);
-
-      	    fetch("${root}/main?action=getSigunguList&areaCode="+selectedAreaNum)
-      	      .then((response) => response.json())
-      	      .then((data) => makeSigunguList(data)); // 시군구
-      	  });
+      	fetch("${root}/main?action=getSigunguList&areaCode="+selectedAreaNum)
+      	   .then((response) => response.json())
+      	   .then((data) => makeSigunguList(data)); // 시군구
+    });
 
 
-      function makeSigunguList(data) {
-      	let sigunguList = document.querySelector(".sigungu");
-      	  let select = document.createElement("select");
-      	  select.setAttribute("class", "form-select border-0 py-3 text-center");
-      	  data.sigunguList.forEach((sigungu) => {
-      	    let option = document.createElement("option");
+    function makeSigunguList(data) {
+    	let sigunguList = document.querySelector(".sigungu");
+      	let select = document.createElement("select");
+      	select.setAttribute("class", "form-select border-0 py-3 text-center");
+      	data.sigunguList.forEach((sigungu) => {
+      		let option = document.createElement("option");
       	    option.setAttribute("value", sigungu.sigungu_code);
       	    option.appendChild(document.createTextNode(sigungu.sigungu_name));
       	    select.appendChild(option);
-      	  });
-      	  sigunguList.appendChild(select);
-      	}
+      	});
+      	sigunguList.appendChild(select);
+    }
 
-      function initSigunguList() {
-    	  let sigunguOptions = document.querySelector(".sigungu>select");
-    	  document.querySelector(".sigungu").removeChild(sigunguOptions);
-    	}
+    function initSigunguList() {
+    	let sigunguOptions = document.querySelector(".sigungu>select");
+    	document.querySelector(".sigungu").removeChild(sigunguOptions);
+    }
 
-      //function initScoreList() {
-    	//  let scoreOptions = document.querySelector(".score>select");
-//	  document.querySelector(".score").removeChild(scoreOptions);
-    	//}
       
       function makeScoreList(selectedContentTypeId){
     	  	let scoreList = document.querySelector(".score");
@@ -307,28 +301,49 @@ makeScoreList("1");
 
   	  });
 
-      document.querySelector("#submitButton").addEventListener("click",function(){
-          let startDate = document.querySelector("#start_date").value;
-          let endDate = document.querySelector("#end_date").value;
 
-    	  console.log(startDate);
-    	  console.log(endDate);
-    	  if(${userInfo == null}){
-    		  alert("로그인 후 글을 작성할 수 있습니다.");
-    		 	location.href = "${root}/user/login.jsp";
-    	  }
-    	  else{
-    		  if(startDate > endDate){
-    			  console.log("start<end");
-    			  alert("시작일과 종료일을 다시 한 번 확인해 주세요.");
-    			  return;
-    		  }
-    		  let form = document.querySelector("#form-regist");
-    		  form.setAttribute("action","${root}/main_community");
-    		  form.submit();
-    	  }
-      })
+    let start_date = document.querySelector("#start_date");
+    let end_date = document.querySelector("#end_date");
+    start_date.addEventListener('change', function(){
+    	console.log(start_date.value);
+    	let start = start_date.value;
+    	end_date.setAttribute("min", start);
+    });
+    
+    document.querySelector("#submitButton").addEventListener("click",function(){
+    	let title = document.querySelector("#board_title");
+    	let content = document.querySelector("#board_content");
+    	let start_date = document.querySelector("#start_date");
+    	let end_date = document.querySelector("#end_date");
+    	let startDate = document.querySelector("#start_date").value;
+        let endDate = document.querySelector("#end_date").value;
+    	console.log("타이틀:" + title.value);
+    	
+    	if(${userInfo == null}){
+    		alert("로그인 후 글을 작성할 수 있습니다.");
+    		location.href = "${root}/user/login.jsp";
+    	} else {
+    		if(!title.value)
+				alert("제목을 입력해주세요");
+    		else if(start_date.value == "" || end_date.value == "")
+				alert("날짜를 입력해주세요");
+    		else if(startDate > endDate){
+  			  console.log("start<end");
+			  alert("시작일과 종료일을 다시 한 번 확인해 주세요.");
+			  return;
+		  }
+    		else if(!content.value)
+				alert("내용을 입력해주세요");
+    		else {
+	    		let form = document.querySelector("#form-regist");
+    			form.setAttribute("action","${root}/main_community");
+    			form.submit();
+    		}
+    	}
+    });
 
+
+      
     </script>
 </body>
 </html>

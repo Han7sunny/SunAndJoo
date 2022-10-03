@@ -45,7 +45,6 @@
                 <th scope="col" colspan="2">주제</th>
                 <th scope="col">총 거리</th>
                 <th scope="col">소요시간</th>
-                <th scope="col">등록일</th>
               </tr>
             </thead>
             <tbody>

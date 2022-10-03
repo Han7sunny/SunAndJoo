@@ -78,19 +78,22 @@
 					<div class="board container mt-5 mb-5 pb-5">
 						<table class="table table-hover text-center" data-aos="fade-up">
 							<thead>
+
 								<tr>
 									<th scope="col">번호</th>
 									<th scope="col" colspan="2">제목</th>
 									<th scope="col">작성자</th>
-									<th scope="col">카테고리</th>								
+									<th scope="col">카테고리</th>
 									<th scope="col">조회수</th>
 									<th scope="col">작성날짜</th>
+
 								</tr>
 							</thead>
 							<tbody>
 								<c:if test="${boardList ne null}">
 									<c:forEach var="board" items="${boardList}" begin="0"
 										end="${boardSize}" step="1" varStatus="status">
+
 										<tr
 											onClick="location.href='${root}/main_community?act=view&board_id=${board.board_id}'">
 											<th scope="row">${status.count}</th>
@@ -99,6 +102,7 @@
 											<td>${board.board_type_id}</td>
 											<td>${board.readcount}</td>
 											<td>${board.regist_time}</td>
+
 										</tr>
 									</c:forEach>
 								</c:if>
@@ -110,67 +114,107 @@
 					</div>
 				</div>
 			</div>
-			
-			<c:if test = "${userInfo.adminAuthor == true}">
-			<div class="boardList text-center">
-				<h4 class="mb-2 pt-5 mt-5">최근 작성 공지사항 글 목록</h4>
+
+
+
+			<div class="replyList text-center">
+				<h4 class="mt-5 mb-2 pt-5 mt-5">최근 작성 댓글 목록</h4>
+
 			</div>
 			<div class="container">
 				<div class="container">
 					<div class="board container mt-5 mb-5 pb-5">
 						<table class="table table-hover text-center" data-aos="fade-up">
 							<thead>
-								<tr>
-									<th scope="col">번호</th>
-									<th scope="col" colspan="2">제목</th>
-									<th scope="col">작성자</th>
-									<th scope="col">카테고리</th>								
-									<th scope="col">조회수</th>
-									<th scope="col">작성날짜</th>
+
+								<tr class="row">
+									<th class="col-1">번호</th>
+									<th class="col-5">제목</th>
+									<th class="col-3">작성자</th>
+									<th class="col-1">글 번호</th>
+									<th class="col-2">작성날짜</th>
 								</tr>
 							</thead>
 							<tbody>
-								<c:if test="${noticeList ne null}">
-									<c:forEach var="notice" items="${noticeList}" begin="0"
-										end="${noticeSize}" step="1" varStatus="status">
-										<tr
-											onClick="location.href='${root}/main_community?act=view&board_id=${notice.board_id}'">
-											<th scope="row">${status.count}</th>
-											<td colspan="2">${notice.board_title}</td>
-											<td>${notice.user_id}</td>
-											<td>${notice.board_type_id}</td>
-											<td>${notice.readcount}</td>
-											<td>${notice.regist_time}</td>
+								<c:if test="${replyList ne null}">
+									<c:forEach var="replys" items="${replyList}" begin="0"
+										end="${replySize}" step="1" varStatus="status">
+										<tr class="row"
+											onClick="location.href='${root}/main_community?act=view&board_id=${replys.board_id}'">
+											<th class="col-1">${status.count}</th>
+											<td class="col-5">${replys.reply_content}</td>
+											<td class="col-3">${replys.user_id}</td>
+											<td class="col-1">${replys.board_id}</td>
+											<td class="col-2">${replys.regist_time}</td>
+
 										</tr>
 									</c:forEach>
 								</c:if>
 							</tbody>
 						</table>
-						<c:if test="${noticeList eq null or noticeSize eq 0}">
-							<div class="mt-5 text-center">작성된 글이 없습니다.</div>
+
+						<c:if test="${replyList eq null or replySize eq 0}">
+							<div class="mt-5 text-center">작성된 댓글이 없습니다.</div>
 						</c:if>
+					</div>
+				</div>
+			</div>
+
+			<c:if test="${userInfo.adminAuthor == true}">
+				<div class="boardList text-center">
+					<h4 class="mb-2 pt-5 mt-5">최근 작성 공지사항 글 목록</h4>
+				</div>
+				<div class="container">
+					<div class="container">
+						<div class="board container mt-5 mb-5 pb-5">
+							<table class="table table-hover text-center" data-aos="fade-up">
+								<thead>
+									<tr>
+										<th scope="col">번호</th>
+										<th scope="col" colspan="2">제목</th>
+										<th scope="col">작성자</th>
+										<th scope="col">카테고리</th>
+										<th scope="col">조회수</th>
+										<th scope="col">작성날짜</th>
+									</tr>
+								</thead>
+								<tbody>
+									<c:if test="${noticeList ne null}">
+										<c:forEach var="notice" items="${noticeList}" begin="0"
+											end="${noticeSize}" step="1" varStatus="status">
+											<tr
+												onClick="location.href='${root}/main_community?act=view&board_id=${notice.board_id}'">
+												<th scope="row">${status.count}</th>
+												<td colspan="2">${notice.board_title}</td>
+												<td>${notice.user_id}</td>
+												<td>${notice.board_type_id}</td>
+												<td>${notice.readcount}</td>
+												<td>${notice.regist_time}</td>
+											</tr>
+										</c:forEach>
+									</c:if>
+								</tbody>
+							</table>
+							<c:if test="${noticeList eq null or noticeSize eq 0}">
+								<div class="mt-5 text-center">작성된 글이 없습니다.</div>
+							</c:if>
 
 
-						<div class="row mt-5 md-3" data-aos="fadeup">
-							<div class="col-lg-6 col-sm-12 text-lg-start text-center"
-								data-aos="fade-up">
-								<button type="button" class="btn btn-warning" id="delete-btn">탈퇴하기</button>
-							</div>
-							<div class="col-lg-6 col-sm-12 text-lg-end  text-center"
-								data-aos="fade-up">
-								<button type="button" class="btn btn-4" id="modify-btn">회원정보
-									수정하기</button>
+							<div class="row mt-5 md-3" data-aos="fadeup">
+								<div class="col-lg-6 col-sm-12 text-lg-start text-center"
+									data-aos="fade-up">
+									<button type="button" class="btn btn-warning" id="delete-btn">탈퇴하기</button>
+								</div>
+								<div class="col-lg-6 col-sm-12 text-lg-end  text-center"
+									data-aos="fade-up">
+									<button type="button" class="btn btn-4" id="modify-btn">회원정보
+										수정하기</button>
+								</div>
 							</div>
 						</div>
 					</div>
 				</div>
-			</div>
 			</c:if>
-			
-			
-			
-			
-			
 		</div>
 	</div>
 </div>
