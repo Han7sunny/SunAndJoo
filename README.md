@@ -218,7 +218,7 @@
 
 
     > 각 게시글 클릭 시 : 상세 페이지 board_detail_view.jsp 로 이동
-    >                  : 클릭할 때마다 해당 게시글 조회수 증가
+    >                   : 클릭할 때마다 해당 게시글 조회수 증가
 ![tripReview-view](/uploads/506db8c304f2b288e391c60f05dccdaf/tripReview-view.JPG)
 <br/><br/><br/>
 
@@ -232,7 +232,7 @@
 
 
     > 각 게시글 클릭 시 : 상세 페이지 board_detail_view.jsp 로 이동
-    >                  : 클릭할 때마다 해당 게시글 조회수 증가
+    >                   : 클릭할 때마다 해당 게시글 조회수 증가
 ![tripMate-view](/uploads/1cbfd976dc8103b67c1237f8b651cf6e/tripMate-view.JPG)
 <br/><br/><br/>
 
