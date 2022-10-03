@@ -249,12 +249,16 @@
 
 
     > 수정하기 클릭 시 : 수정 페이지 board_modify.jsp 로 이동
-    > 삭제하기 클릭 시 : 삭제 진행
+    > 수정 후 등록하기 버튼 클릭 시 : 마이 페이지 mypage.jsp 로 이동
 ![board-modify-complete](/uploads/507c1655dc969ae625c62d29ed3de36a/board-modify-complete.JPG)
 <br/><br/><br/>
 
-    > 수정 후 등록하기 버튼 클릭 시 : 마이 페이지 mypage.jsp 로 이동
 
+    > 삭제하기 클릭 시 : 재확인 후 삭제 진행
+![board-delete-check](/uploads/38936a0d185f5cf460a96bbc8a4ededc/board-delete-check.JPG)
+<br/><br/>
+
+<br/>
 
 
 
