@@ -38,10 +38,10 @@
           <div class="col-xs-12 col-sm-6 col-md-6 col-lg-4  mt-5 mb-5"  data-aos="fade-up" data-aos-delay="${300+idx*100}">
             <div class="property-item mb-30">
               <a href="${root}/main?action=hanokView&zipcode=${total_hanok[idx].zipcode}" class="img align-items-center">
-                <img src="${total_hanok[idx].img}" alt="Image" class="img-fluid" />
+                <img src="${total_hanok[idx].img}" alt="Image" class="img-fluid  mb-3" />
               </a>
 
-              <div class="property-content">
+              <div class="property-content mt-1">
                 <div class="price mb-2"><span>${total_hanok[idx].title}</span></div>
                 <div>
                   <span class="d-block mb-2 text-black-50"
@@ -73,10 +73,10 @@
           <div class="col-xs-12 col-sm-6 col-md-6 col-lg-4  mt-5 mb-5" data-aos="fade-up" data-aos-delay="${300+(idx+1)*100}">
             <div class="property-item mb-30">
               <a href="${root}/main?action=hanokView&zipcode=${total_hanok[idx+1].zipcode}" class="img">
-                <img src="${total_hanok[idx+1].img}" alt="Image" class="img-fluid" />
+                <img src="${total_hanok[idx+1].img}" alt="Image" class="img-fluid mb-5" style="width:100%" />
               </a>
 
-              <div class="property-content">
+              <div class="property-content mt-3">
                 <div class="price mb-2"><span>${total_hanok[idx+1].title}</span></div>
                 <div>
                   <span class="d-block mb-2 text-black-50"
@@ -108,10 +108,10 @@
           <div class="col-xs-12 col-sm-6 col-md-6 col-lg-4 mt-5 mb-5" data-aos="fade-up" data-aos-delay="${300+(idx+2)*100}">
             <div class="property-item mb-30">
               <a href="${root}/main?action=hanokView&zipcode=${total_hanok[idx+2].zipcode}" class="img">
-                <img src="${total_hanok[idx+2].img}" alt="Image" class="img-fluid"/>
+                <img src="${total_hanok[idx+2].img}" alt="Image" class="img-fluid mb-3"/>
               </a>
 
-              <div class="property-content">
+              <div class="property-content mt-1">
                 <div class="price mb-2"><span>${total_hanok[idx+2].title}</span></div>
                 <div>
                   <span class="d-block mb-2 text-black-50"
