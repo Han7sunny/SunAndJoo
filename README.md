@@ -14,31 +14,31 @@
 
 > 지역별 관광지 정보 조회 - [시도, 구군, 컨텐츠별 관광지 정보](https://www.data.go.kr/data/15101578/openapi.do)
 <br/>
-![메인화면](/WebContent/assets/readme/main-index.jpg)  
+![main-index](/uploads/bbb0324f344ebbc314b46d5bd3ab4999/main-index.JPG)
 <br/><br/>
 
 
 > 시, 구, 컨텐츠타입 선택 후 search버튼 클릭 시 - 하단 맵으로 자동 스크롤 이동
 <br/>
-![메인화면](/assets/readme/kakaomap.jpg)  
+![kakaomap](/uploads/d77431353e4a902e7e3d6c2973abae76/kakaomap.JPG)
 <br/><br/>
 
     > 선택한 컨텐츠 별로 다르게 표시되는 마커들  
 <br/><br/><br/>
-![메인화면](/assets/readme/map-shopping.jpg)
-![메인화면](/assets/readme/map-festival.jpg)
-![메인화면](/assets/readme/map-food.jpg)
+![map-shopping](/uploads/e7ed7869f4f96d6320cbc47ebb7ab959/map-shopping.png)
+![map-festival](/uploads/5fe1ffadd04fd558e8a3a8b9a0d2df97/map-festival.png)
+![map-food](/uploads/ae4123ead18a0ba98b537185fac020c0/map-food.png)
 <br/><br/><br/>
 
 
 > 여행 테마 소개 - [추천하는 여행 코스](https://www.data.go.kr/data/15101578/openapi.do)를 보여주는 기능
 <br/>
-![여행후기](/assets/readme/trip-theme.jpg)  
+![trip-theme](/uploads/68b9b27c81542eed42faf98ae294d31f/trip-theme.JPG)
 <br/><br/>
 
-> 여행 메이트 찾기 - 최신 작성일자의 여행 메이트 모집글 4개 출력
+> 여행 메이트 찾기 - 아직 마감되지 않은 여행 메이트 모집글 4개 출력
 <br/>
-![여행메이트](/assets/readme/trip-mate.jpg)   
+![trip-mate](/uploads/056794ee71067527170b21eec23d73f3/trip-mate.JPG)
 <br/><br/>
 
     > '자세히보기' 클릭 시 community-tripMate.jsp 내의 해당 게시글로 이동
@@ -46,7 +46,7 @@
 
 > 여행 후기 - 별점 기준 상위 4개의 후기 출력
 <br/>
-![여행후기](/assets/readme/trip-review.jpg)  
+![trip-review](/uploads/15033dfbb993f480f9868e4f7469281a/trip-review.JPG)
 <br/><br/>
 
     > 후기 클릭 시 community-tripReview.jsp 내의 해당 게시글로 이동
@@ -56,7 +56,7 @@
 
 > 한옥 소개 - 한국에서만 경험할 수 있는 한옥 체험 소개
 <br/>
-![한옥](/assets/readme/hanok-info.jpg)  
+![hanok-info](/uploads/255f4db857413dfee32cdcc49e1e60cc/hanok-info.JPG)
 <br/><br/>
 
     > 더 많은 한옥 보기 : 추후 전국 한옥 체험 가능한 숙박 정보 업데이트
