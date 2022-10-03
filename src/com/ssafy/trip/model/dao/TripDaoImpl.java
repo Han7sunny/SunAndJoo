@@ -10,6 +10,8 @@ import java.util.List;
 import com.ssafy.board.model.dto.BoardDto;
 import com.ssafy.trip.model.AreaDto;
 import com.ssafy.trip.model.ContentTypeDto;
+import com.ssafy.trip.model.HanokDto;
+import com.ssafy.trip.model.HanokFacilityDto;
 import com.ssafy.trip.model.SigunguDto;
 import com.ssafy.trip.model.ThemeTripDto;
 import com.ssafy.trip.model.TotalThemeDto;
@@ -350,6 +352,122 @@ public class TripDaoImpl implements TripDao {
 		}
 		return theme;
 	
+	}
+
+
+	@Override
+	public List<HanokDto> getHanokList() throws SQLException {
+		List<HanokDto> HanokList = new ArrayList<>();
+
+		Connection conn = null;
+		PreparedStatement pstmt = null;
+		ResultSet rs = null;
+		try {
+			conn = dbUtil.getConnection();
+			StringBuilder sql = new StringBuilder();
+			sql.append("select * from hanok");
+			pstmt = conn.prepareStatement(sql.toString());
+			rs = pstmt.executeQuery();
+			
+			while (rs.next()) {
+				HanokDto hanok = new HanokDto();
+				hanok.setTitle(rs.getString("title"));
+				hanok.setZipcode(rs.getString("zipcode"));
+				hanok.setAddr(rs.getString("addr"));
+				hanok.setAccept(rs.getString("accept"));
+				hanok.setRoom(rs.getString("room"));
+				hanok.setImg(rs.getString("img"));
+
+				System.out.println(hanok.toString());
+				HanokList.add(hanok);
+			}
+		} finally {
+			dbUtil.close(rs, pstmt, conn);
+		}
+		return HanokList;
+	}
+
+	@Override
+	public HanokDto HanokDetails(String zipcode) throws SQLException {
+		HanokDto hanok = new HanokDto();
+
+		Connection conn = null;
+		PreparedStatement pstmt = null;
+		ResultSet rs = null;
+		try {
+			conn = dbUtil.getConnection();
+			StringBuilder sql = new StringBuilder();
+			sql.append("select * from hanok");
+			
+			pstmt = conn.prepareStatement(sql.toString());
+			rs = pstmt.executeQuery();
+			
+			if(rs.next()) {
+				hanok.setTitle(rs.getString("title"));
+				hanok.setZipcode(rs.getString("zipcode"));
+				hanok.setAddr(rs.getString("addr"));
+				hanok.setTel(rs.getString("tel"));
+				hanok.setLat(rs.getString("latitude"));
+				hanok.setLng(rs.getString("longitude"));
+				hanok.setOverview(rs.getString("overview"));
+				hanok.setScale(rs.getString("scale"));
+				hanok.setCheckin(rs.getString("checkin"));
+				hanok.setCheckout(rs.getString("checkout"));
+				hanok.setAccept(rs.getString("accept"));
+				hanok.setRoom(rs.getString("room"));
+				hanok.setRoom_type(rs.getString("room_type"));
+				hanok.setPolicy(rs.getString("policy"));
+				hanok.setImg(rs.getString("img"));
+
+				System.out.println(hanok.toString());
+			}
+		} finally {
+			dbUtil.close(rs, pstmt, conn);
+		}
+		return hanok;
+	}
+	
+	public HanokFacilityDto getHanokFacility(String zipcode) throws SQLException {
+		HanokFacilityDto hanokFacility = new HanokFacilityDto();
+
+		Connection conn = null;
+		PreparedStatement pstmt = null;
+		ResultSet rs = null;
+		try {
+			conn = dbUtil.getConnection();
+			StringBuilder sql = new StringBuilder();
+			sql.append("select * from hanok_facility");
+			
+			pstmt = conn.prepareStatement(sql.toString());
+			rs = pstmt.executeQuery();
+			
+			if(rs.next()) {
+				hanokFacility.setZipcode(rs.getString("zipcode"));
+				hanokFacility.setParking(rs.getString("parking"));
+				hanokFacility.setCooking(rs.getString("cooking"));
+				hanokFacility.setBooking(rs.getString("booking"));
+				hanokFacility.setPage(rs.getString("bookpage"));
+				hanokFacility.setPickup(rs.getString("pickup"));
+				hanokFacility.setFood(rs.getString("food"));
+				hanokFacility.setAmenity(rs.getString("amenity"));
+				hanokFacility.setSeminar(rs.getString("seminar"));
+				hanokFacility.setSports(rs.getString("sports"));
+				hanokFacility.setSauna(rs.getString("sauna"));
+				hanokFacility.setBeauty(rs.getString("beauty"));
+				hanokFacility.setBbq(rs.getString("bbq"));
+				hanokFacility.setCampfire(rs.getString("campfire"));
+				hanokFacility.setBike(rs.getString("bike"));
+				hanokFacility.setFitness(rs.getString("fitness"));
+				hanokFacility.setPc(rs.getString("pc"));
+				hanokFacility.setShower(rs.getString("shower"));
+				hanokFacility.setDetails(rs.getString("details"));
+
+				System.out.println(hanokFacility.toString());
+			}
+		} finally {
+			dbUtil.close(rs, pstmt, conn);
+		}
+		return hanokFacility;
 	}
 	
 	

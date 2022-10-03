@@ -323,5 +323,23 @@ public class BoardDaoImpl implements BoardDao {
 		}
 		return Location;
 	}
+	
+	public void updateHit(int board_id) throws SQLException {
+		Connection conn = null;
+		PreparedStatement pstmt = null;
+
+		try {
+			conn = dbUtil.getConnection();
+			StringBuilder sql = new StringBuilder();
+			sql.append("update board set readcount = readcount + 1 \n");
+			sql.append("where board_id = ?");
+			pstmt = conn.prepareStatement(sql.toString());
+			pstmt.setInt(1, board_id);
+
+			pstmt.executeUpdate();
+		} finally {
+			dbUtil.close(pstmt, conn);
+		}
+	}
 
 }
