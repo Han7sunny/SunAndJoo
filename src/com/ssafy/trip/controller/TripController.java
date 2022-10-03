@@ -243,6 +243,9 @@ public class TripController extends HttpServlet {
 		HanokDto hanok = new HanokDto();
 		HanokFacilityDto hanok_facility = new HanokFacilityDto();
 		String zipcode = req.getParameter("zipcode");
+		
+		System.out.println("컨트롤러" + zipcode);
+		
 		try {
 			hanok = tripService.HanokDetails(zipcode);
 			req.setAttribute("hanok_single", hanok);

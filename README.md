@@ -14,7 +14,7 @@
 
 > 지역별 관광지 정보 조회 - [시도, 구군, 컨텐츠별 관광지 정보](https://www.data.go.kr/data/15101578/openapi.do)
 <br/>
-![메인화면](/assets/readme/main-index.jpg)  
+![메인화면](/WebContent/assets/readme/main-index.jpg)  
 <br/><br/>
 
 
@@ -96,7 +96,7 @@
 ### 4. 커뮤니티 - community.jsp
 > 여행 메이트 / 여행 후기 보기를 할 수 있는 페이지
 <br/>
-![메인](/assets/readme/community-main.jpg)  
+![메인](/assets/readme/community-main.JPG)  
 <br/><br/>
 
 
@@ -111,14 +111,16 @@
 
 > 게시글 작성 - 위치, 글 제목, 작성자명, 날짜, 카테고리 선택
 <br/>
-![가입](/assets/readme/board-regist.jpg)  
+![작성](/assets/readme/board-regist.jpg)  
 <br/><br/>
 <br/>
-![가입](/assets/readme/board-regist2.jpg)  
+![작성](/assets/readme/board-regist2.jpg)  
 <br/><br/>
 
 
+    > 시작 날짜 선택 시 종료 날짜는 시작 날짜 이후로 선택 가능
     > 글 카테고리 선택 가능(여행 후기, 여행 메이트, 여행 메이트 후기)
+    > 별점 선택
 <br/><br/><br/>
 
 
