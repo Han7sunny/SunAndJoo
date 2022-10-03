@@ -170,7 +170,7 @@
 
 
     > 각 숙소 클릭 시 : 상세 페이지 hanok_single.jsp 로 이동
-![hanok-detail](/uploads/2f50874b52e5a17bf4bbec1a204c59b0/hanok-detail.JPG)
+![hanok-detail](/uploads/cc5d1de5ae5a0ab8a2e2deabf4413747/hanok-detail.JPG)
 <br/><br/><br/>
 
 
