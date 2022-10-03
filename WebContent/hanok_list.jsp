@@ -131,7 +131,7 @@
                   </div>
 
                   <a
-                    href="${total_hanok[idx+2].img}"
+                    href="${root}/main?action=hanokView&zipcode=${total_hanok[idx].zipcode}"
                     class="btn btn-4 py-2 px-3"
                     >자세히 보기</a
                   >
