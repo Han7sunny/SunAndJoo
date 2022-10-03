@@ -248,7 +248,6 @@ public class TripDaoImpl implements TripDao {
 				theme.setDist(rs.getString("total_distance"));
 				theme.setTime(rs.getString("total_time"));
 
-				System.out.println(theme.toString());
 				ThemeList.add(theme);
 			}
 		} finally {

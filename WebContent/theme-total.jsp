@@ -15,7 +15,7 @@
       <div class="container">
         <div class="row justify-content-center align-items-center">
           <div class="col-lg-9 text-center mt-5">
-            <h1 class="heading" data-aos="fade-up">여행 메이트</h1>
+            <h1 class="heading" data-aos="fade-up">여행 테마</h1>
 
             <nav aria-label="breadcrumb" data-aos="fade-up" data-aos-delay="200">
               <ol class="breadcrumb text-center justify-content-center">
@@ -27,10 +27,6 @@
           </div>
         </div>
       </div>
-    </div>
-
-    <div class="container mt-5 mb-5">
-      <h2 class="font-weight-bold text-primary heading">여행 메이트</h2>
     </div>
 
     <div class="container">

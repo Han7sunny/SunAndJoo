@@ -485,14 +485,15 @@
 							<span class="caption text-black-50">연간 평균 한옥 마을 방문 관광객</span>
 						</div>
 					</div>
-
-				</div>
-				<div class="col-6 col-sm-6 col-lg-3" data-aos="fade-up"
-					data-aos-delay="600">
-					<div class="m-4 text-center">
-						<a href="${root}/main?action=hanokList" class="learn-more">더 많은 한옥 보기</a>
+					<div class="col-6 col-sm-6 col-lg-3" data-aos="fade-up"
+						data-aos-delay="600">
+						<div class="m-4 text-center">
+							<a href="${root}/main?action=hanokList" class="learn-more">더
+								많은 한옥 보기</a>
+						</div>
 					</div>
 				</div>
+
 			</div>
 		</div>
 		<!-- 한옥 end -->
