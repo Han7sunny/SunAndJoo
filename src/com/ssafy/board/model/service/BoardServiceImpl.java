@@ -68,4 +68,9 @@ public class BoardServiceImpl implements BoardService {
 	public String[] getLocationName(BoardDto boardDto) throws Exception {
 		return boardDao.getLocationName(boardDto);
 	}
+	
+	@Override
+	public void updateHit(int board_id) throws Exception {
+		boardDao.updateHit(board_id);
+	}
 }

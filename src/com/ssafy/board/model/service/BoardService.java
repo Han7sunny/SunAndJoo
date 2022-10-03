@@ -15,4 +15,5 @@ public interface BoardService {
 	List<BoardDto> topReviewList(String content_type_id) throws Exception;
 	List<BoardDto> topMateList(String content_type_id) throws Exception;
 	String[] getLocationName(BoardDto boardDto) throws Exception;
+	void updateHit(int board_id) throws Exception;
 }

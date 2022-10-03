@@ -5,6 +5,8 @@ import java.util.List;
 
 import com.ssafy.trip.model.AreaDto;
 import com.ssafy.trip.model.ContentTypeDto;
+import com.ssafy.trip.model.HanokDto;
+import com.ssafy.trip.model.HanokFacilityDto;
 import com.ssafy.trip.model.SigunguDto;
 import com.ssafy.trip.model.ThemeTripDto;
 import com.ssafy.trip.model.TotalThemeDto;
@@ -32,4 +34,10 @@ public interface TripDao {
 	TotalThemeDto ThemeDetails(int idx) throws SQLException;
 
 	TotalThemeDto joinDB(String title) throws SQLException;
+	
+	List<HanokDto> getHanokList() throws SQLException;
+	
+	HanokDto HanokDetails(String zipcode) throws SQLException;
+
+	HanokFacilityDto getHanokFacility(String zipcode) throws SQLException;
 }

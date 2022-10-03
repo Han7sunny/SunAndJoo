@@ -217,6 +217,7 @@ public class BoardController extends HttpServlet {
 		try {
 			BoardDto boardDto = boardService.view(board_id);
 			request.setAttribute("detail_board", boardDto);
+			boardService.updateHit(board_id);
 
 			location = boardService.getLocationName(boardDto);
 			request.setAttribute("location_sido", location[0]);

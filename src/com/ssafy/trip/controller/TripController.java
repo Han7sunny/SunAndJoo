@@ -18,6 +18,8 @@ import com.ssafy.board.model.service.BoardService;
 import com.ssafy.board.model.service.BoardServiceImpl;
 import com.ssafy.trip.model.AreaDto;
 import com.ssafy.trip.model.ContentTypeDto;
+import com.ssafy.trip.model.HanokDto;
+import com.ssafy.trip.model.HanokFacilityDto;
 import com.ssafy.trip.model.SigunguDto;
 import com.ssafy.trip.model.ThemeTripDto;
 import com.ssafy.trip.model.TotalThemeDto;
@@ -80,6 +82,14 @@ public class TripController extends HttpServlet {
 			path = joinTheme(req, resp);
 			forward(req, resp, path);
 			break;
+		case "hanokList":
+			path = hanokList(req, resp);
+			forward(req, resp, path);
+			break;
+		case "hanokView":
+			path = hanokView(req, resp);
+			forward(req, resp, path);
+			break;
 		default:
 			resp.sendRedirect(path);
 			break;
@@ -90,14 +100,13 @@ public class TripController extends HttpServlet {
 	private String joinTheme(HttpServletRequest req, HttpServletResponse resp) {
 		try {
 			TotalThemeDto theme = new TotalThemeDto();
-			
 			String title = req.getParameter("total_tb_title");
-			
+
 			theme = tripService.joinDB(title);
 			req.setAttribute("theme", theme);
 			String result = "/main?action=themeView&" + theme.getIdx();
 			return result;
-		} catch (SQLException e) {
+		} catch (Exception e) {
 			e.printStackTrace();
 			return "/error/error.jsp";
 		}
@@ -109,31 +118,31 @@ public class TripController extends HttpServlet {
 		try {
 			TotalThemeDto theme = tripService.ThemeDetails(idx);
 			req.setAttribute("theme_details", theme);
-			
+
 			System.out.println(theme.toString());
-			
+
 			String[] whole_details = theme.getDetails().split(":");
-			
-			
+
+
 			for (int i = 0; i < whole_details.length; i++) {
 				System.out.println(whole_details[i]);
 			}
-			
+
 			req.setAttribute("details", whole_details);
-			
-//			
+
+//
 //			HashMap<String, String> map = new HashMap<>();
-//			
+//
 //			for (int j = 0; j < whole_details.length - 1 ; j+=2) {
-//				map.put(whole_details[j],whole_details[j+1]);				
+//				map.put(whole_details[j],whole_details[j+1]);
 //			}
-//			
+//
 //			req.setAttribute("details", map);
-//			
+//
 
 			theme = tripService.joinDB(theme.getTitle());
 			req.setAttribute("theme", theme);
-			
+
 			return "/theme-single.jsp";
 		} catch (Exception e) {
 			e.printStackTrace();
@@ -188,7 +197,7 @@ public class TripController extends HttpServlet {
 	}
 
 	private String search(HttpServletRequest req, HttpServletResponse resp) { // 지역코드, 시군구코드, 컨텐츠 선택 시 데이터 긁어오기
-		
+
 		int areaCode = Integer.parseInt(req.getParameter("areaCode"));
 		int sigunguCode = Integer.parseInt(req.getParameter("sigunguCode"));
 		int contentTypeId = Integer.parseInt(req.getParameter("contentTypeId"));
@@ -214,10 +223,39 @@ public class TripController extends HttpServlet {
 			return "./error.jsp";
 		}
 	}
-	
-	
-	
-	
+
+
+	private String hanokList(HttpServletRequest req, HttpServletResponse resp) {
+		List<HanokDto> HanokList = new ArrayList<>();
+		try {
+			HanokList = tripService.getHanokList();
+			req.setAttribute("total_hanok", HanokList);
+			return "/hanok_list.jsp";
+		} catch (Exception e) {
+			e.printStackTrace();
+			return "./error.jsp";
+		}
+	}
+
+
+
+	private String hanokView(HttpServletRequest req, HttpServletResponse resp) {
+		HanokDto hanok = new HanokDto();
+		HanokFacilityDto hanok_facility = new HanokFacilityDto();
+		String zipcode = req.getParameter("zipcode");
+		try {
+			hanok = tripService.HanokDetails(zipcode);
+			req.setAttribute("hanok_single", hanok);
+
+			hanok_facility = tripService.getHanokFacility(zipcode);
+			req.setAttribute("hanok_facility", hanok_facility);
+			return "/hanok_single.jsp";
+		} catch (Exception e) {
+			e.printStackTrace();
+			return "./error.jsp";
+		}
+	}
+
 
 	@Override
 	protected void doPost(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {

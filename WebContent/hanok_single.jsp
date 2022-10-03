@@ -1,17 +1,15 @@
-
 <%@ page language="java" contentType="text/html; charset=UTF-8"
 	pageEncoding="UTF-8"%>
 <%@ include file="/common/header.jsp" %>
+
     <div
       class="hero page-inner overlay"
-      style="background-image: url('images/hero_bg_3.jpg')"
+      style="background-image: url('${root}/assets/images/hanok.jpg')"
     >
       <div class="container">
         <div class="row justify-content-center align-items-center">
           <div class="col-lg-9 text-center mt-5">
-            <h1 class="heading" data-aos="fade-up">
-              써니앤쥬에서 한옥을 체험해보세요
-            </h1>
+            <h1 class="heading" data-aos="fade-up">${hanok_single.title}</h1>
 
             <nav
               aria-label="breadcrumb"
@@ -19,10 +17,8 @@
               data-aos-delay="200"
             >
               <ol class="breadcrumb text-center justify-content-center">
-                <li class="breadcrumb-item"><a href="index.jsp">Home</a></li>
-                <li class="breadcrumb-item">
-                  <a href="${root}/hanok-single.jsp">한옥 스테이</a>
-                </li>
+                <li class="breadcrumb-item"><a href="${root}/index.jsp">Home</a></li>
+                <li class="breadcrumb-item"><a href="${root}/hanok_list.jsp">한옥 스테이</a></li>
               </ol>
             </nav>
           </div>
@@ -32,66 +28,135 @@
 
     <div class="section">
       <div class="container">
-        <div class="row justify-content-between">
-          <div class="col-lg-7">
-            <div class="img-property-slide-wrap">
-              <div class="img-property-slide">
-                <img src="images/img_1.jpg" alt="Image" class="img-fluid" />
-                <img src="images/img_2.jpg" alt="Image" class="img-fluid" />
-                <img src="images/img_3.jpg" alt="Image" class="img-fluid" />
-              </div>
+        <div class="row text-left mb-5">
+          <div class="col-12">
+            <h2 class="font-weight-bold heading text-primary mb-4">소개</h2>
+          </div>
+          <div class="col-lg-6">
+            <p class="text-black-50">
+              ${hanok_single.overview}
+            </p>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="section pt-0">
+      <div class="container">
+        <div class="row justify-content-between mb-5">
+          <div class="col-lg-7 mb-5 mb-lg-0 order-lg-2">
+            <div class="img-about dots">
+              <img src="${hanok_single.img}" alt="Image" class="img-fluid" />
             </div>
           </div>
           <div class="col-lg-4">
-            <h2 class="heading text-primary">5232 California Ave. 21BC</h2>
-            <p class="meta">California, United States</p>
-            <p class="text-black-50">
-              Lorem ipsum dolor sit amet consectetur, adipisicing elit. Ratione
-              laborum quo quos omnis sed magnam id, ducimus saepe, debitis error
-              earum, iste dicta odio est sint dolorem magni animi tenetur.
-            </p>
-            <p class="text-black-50">
-              Perferendis eligendi reprehenderit, assumenda molestias nisi eius
-              iste reiciendis porro tenetur in, repudiandae amet libero.
-              Doloremque, reprehenderit cupiditate error laudantium qui, esse
-              quam debitis, eum cumque perferendis, illum harum expedita.
-            </p>
-
-            <div class="d-block agent-box p-5">
-              <div class="img mb-4">
-                <img
-                  src="images/person_2-min.jpg"
-                  alt="Image"
-                  class="img-fluid"
-                />
-              </div>
-              <div class="text">
-                <h3 class="mb-0">Alicia Huston</h3>
-                <div class="meta mb-3">Real Estate</div>
-                <p>
-                  Lorem ipsum dolor sit amet consectetur adipisicing elit.
-                  Ratione laborum quo quos omnis sed magnam id ducimus saepe
+            <div class="d-flex feature-h">
+              <span class="wrap-icon me-3">
+                <span class="icon-home2"></span>
+              </span>
+              <div class="feature-text">
+                <h3 class="heading">규모</h3>
+                <p class="text-black-50">
+                  ${hanok_single.scale}
                 </p>
-                <ul class="list-unstyled social dark-hover d-flex">
-                  <li class="me-1">
-                    <a href="#"><span class="icon-instagram"></span></a>
-                  </li>
-                  <li class="me-1">
-                    <a href="#"><span class="icon-twitter"></span></a>
-                  </li>
-                  <li class="me-1">
-                    <a href="#"><span class="icon-facebook"></span></a>
-                  </li>
-                  <li class="me-1">
-                    <a href="#"><span class="icon-linkedin"></span></a>
-                  </li>
-                </ul>
+              </div>
+            </div>
+
+            <div class="d-flex feature-h">
+              <span class="wrap-icon me-3">
+                <span class="icon-person"></span>
+              </span>
+              <div class="feature-text">
+                <h3 class="heading">체크인 : ${hanok_single.checkin}</h3>
+                <h3 class="heading">체크아웃 : ${hanok_single.checkout}</h3>
+              </div>
+            </div>
+
+            <div class="d-flex feature-h">
+              <span class="wrap-icon me-3">
+                <span class="icon-security"></span>
+              </span>
+              <div class="feature-text">
+                <h3 class="heading">환불정책</h3>
+                <p class="text-black-50">
+                  ${hanok_single.policy}
+                </p>
               </div>
             </div>
           </div>
         </div>
       </div>
     </div>
+
+    <div class="section pt-0">
+      <div class="container">
+        <div class="row justify-content-between mb-5">
+          <div class="col-lg-7 mb-5 mb-lg-0">
+          <div id="map" class="ms-3 mt-4 mb-5" style="width:500px;height:400px;"></div>
+          </div>
+          <div class="col-lg-4">
+            <div class="d-flex feature-h">
+              <span class="wrap-icon me-3">
+                <span class="icon-home2"></span>
+              </span>
+              <div class="feature-text">
+                <h3 class="heading">홈페이지</h3>
+                <p class="text-black-50">
+                  ${hanok_facility.page}
+                </p>
+              </div>
+            </div>
+
+            <div class="d-flex feature-h">
+              <span class="wrap-icon me-3">
+                <span class="icon-person"></span>
+              </span>
+              <div class="feature-text">
+                <h3 class="heading">예약 안내</h3>
+                <p class="text-black-50">
+                  ${hanok_facility.booking}
+                </p>
+              </div>
+            </div>
+
+            <div class="d-flex feature-h">
+              <span class="wrap-icon me-3">
+                <span class="icon-security"></span>
+              </span>
+              <div class="feature-text">
+                <h3 class="heading">부대시설</h3>
+                <p class="text-black-50">
+                  ${hanok_facility.amenity}
+                </p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+	<script type="text/javascript" src="//dapi.kakao.com/v2/maps/sdk.js?appkey=958886d2b3c6658678dbc5974c84172f"></script>
+	<script>
+		var mapContainer = document.getElementById('map'), // 지도를 표시할 div 
+	    mapOption = { 
+			center: new kakao.maps.LatLng(${hanok_sigle.lat}, ${hanok_sigle.lng}),
+	        level: 4 // 지도의 확대 레벨
+	    };
+		
+		var kakaoMap = new kakao.maps.Map(mapContainer, mapOption); // 지도를 생성합니다
+
+		// 마커가 표시될 위치입니다
+		var markerPosition  = new kakao.maps.LatLng(${hanok_sigle.lat}, ${hanok_sigle.lng});
+
+		// 마커를 생성합니다
+		var marker = new kakao.maps.Marker({
+			position: markerPosition
+		});
+
+		// 마커가 지도 위에 표시되도록 설정합니다
+		marker.setMap(kakaoMap);
+	</script>
+	
 <%@ include file="/common/footer.jsp" %>
     <script src="js/bootstrap.bundle.min.js"></script>
     <script src="js/tiny-slider.js"></script>

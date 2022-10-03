@@ -5,6 +5,8 @@ import java.util.List;
 
 import com.ssafy.trip.model.AreaDto;
 import com.ssafy.trip.model.ContentTypeDto;
+import com.ssafy.trip.model.HanokDto;
+import com.ssafy.trip.model.HanokFacilityDto;
 import com.ssafy.trip.model.SigunguDto;
 import com.ssafy.trip.model.ThemeTripDto;
 import com.ssafy.trip.model.TotalThemeDto;
@@ -64,4 +66,20 @@ public class TripServiceImpl implements TripService {
 	public TotalThemeDto joinDB(String title) throws SQLException {
 		return tripDao.joinDB(title);
 	}
+
+	@Override
+	public List<HanokDto> getHanokList() throws Exception {
+		return tripDao.getHanokList();
+	}
+
+	@Override
+	public HanokDto HanokDetails(String zipcode) throws Exception {
+		return tripDao.HanokDetails(zipcode);
+	}
+
+	@Override
+	public HanokFacilityDto getHanokFacility(String zipcode) throws Exception {
+		return tripDao.getHanokFacility(zipcode);
+	}
 }
+

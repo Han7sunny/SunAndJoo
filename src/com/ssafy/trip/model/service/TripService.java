@@ -5,6 +5,8 @@ import java.util.List;
 
 import com.ssafy.trip.model.AreaDto;
 import com.ssafy.trip.model.ContentTypeDto;
+import com.ssafy.trip.model.HanokDto;
+import com.ssafy.trip.model.HanokFacilityDto;
 import com.ssafy.trip.model.SigunguDto;
 import com.ssafy.trip.model.ThemeTripDto;
 import com.ssafy.trip.model.TotalThemeDto;
@@ -25,9 +27,16 @@ public interface TripService {
 
 	List<ThemeTripDto> getThemeTripList() throws Exception; // 여행 테마 소개
 
-	TotalThemeDto ThemeDetails(int idx) throws SQLException;
+	TotalThemeDto ThemeDetails(int idx) throws Exception;
 
-	List<TotalThemeDto> TotalThemeList()  throws SQLException;
+	List<TotalThemeDto> TotalThemeList()  throws Exception;
 
-	TotalThemeDto joinDB(String title) throws SQLException;
+	TotalThemeDto joinDB(String title) throws Exception;
+	
+	
+	List<HanokDto> getHanokList() throws Exception;
+	
+	HanokDto HanokDetails(String zipcode) throws Exception;
+	
+	HanokFacilityDto getHanokFacility(String zipcode) throws Exception;
 }

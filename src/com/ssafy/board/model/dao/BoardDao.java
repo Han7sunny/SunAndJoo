@@ -15,4 +15,5 @@ public interface BoardDao {
 	List<BoardDto> topReviewList(String content_type_id) throws SQLException;
 	List<BoardDto> topMateList(String content_type_id) throws SQLException;
 	String[] getLocationName(BoardDto boardDto) throws SQLException;
+	void updateHit(int board_id) throws SQLException;
 }
