@@ -149,21 +149,15 @@
 
 			modify_div.style.display = "block";
 			origin_reply.style.display = "none";
-			delete_btn.style.display = "none";
 
 			reply.addEventListener("click", function() {
 				let idx = form.querySelector(".modified-idx").value;
-				let path = "${root}/reply?act=modify&board_id=" + $
-				{
-					detail_board.board_id
-				}
-				+"&idx=" + idx;
+				let path = "${root}/reply?act=modify&board_id="+${detail_board.board_id}+"&idx="+idx;
 				form.setAttribute("action", path);
 				form.submit();
 
 				modify_div.style.display = "none";
 				origin_reply.style.display = "block";
-				delete_btn.style.display = "block";
 			});
 		});
 	});
