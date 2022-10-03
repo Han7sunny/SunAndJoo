@@ -54,37 +54,20 @@
             <div id="map" class="ms-3 mt-4 mb-5" style="width:500px;height:400px;"></div>
             <div class="img-property-slide-wrap">
               <div class="img-property-slide">
-				<c:if test="${theme.img1 ne null}">
+				
                 <img
-                  src="${theme.img1}"
+                  src="${theme_details.img1}"
                   alt="Image"
                   class="img-fluid"
                 />
-				</c:if>
-				<c:if test="${theme.img2 ne null}">
+				
                 <img
-                  src="${theme.img2}"
+                  src="${theme_details.img2}"
                   alt="Image"
                   class="img-fluid"
                 />
-				</c:if>
-				<c:if test="${theme.img1 eq null && theme.img2 eq null}">
-                <img
-                  src="http://tong.visitkorea.or.kr/cms/resource/83/1306383_image2_1.jpg"
-                  alt="Image"
-                  class="img-fluid"
-                />
-                <img
-                  src="http://tong.visitkorea.or.kr/cms/resource/09/2716609_image2_1.jpg"
-                  alt="Image"
-                  class="img-fluid"
-                />
-                <img
-                  src="http://tong.visitkorea.or.kr/cms/resource/23/2654423_image2_1.jpg"
-                  alt="Image"
-                  class="img-fluid"
-                />
-                </c:if>
+				
+				
               </div>
             </div>
           </div>
