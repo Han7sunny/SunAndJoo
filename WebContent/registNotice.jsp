@@ -29,7 +29,7 @@
     <div class="section">
       <div class="container">
         <div class="row justify-content-between">
-
+		
 		<form action="${root}/main_community?act=regist" id="form-modify" method="POST">
 		<input type="hidden" name="content_type" value="4">
 			<div class="row">
@@ -42,6 +42,10 @@
 					<textarea id="content" name="board_content" rows="10"
 						class="form-control" placeholder="공지사항 내용">${modify_board.content}</textarea>
 				</div>
+				<div class="col-10 mb-3 custom-file">
+							<input type="file" class="custom-file-input" id="trip_img1"
+								name="trip_img1"> 
+						</div>
 				<input type="submit" class="btn btn-outline-primary"
 				id="btn-login" value="등록하기"/>
 			</div>

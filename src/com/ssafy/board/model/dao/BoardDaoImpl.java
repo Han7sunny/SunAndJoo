@@ -30,13 +30,12 @@ public class BoardDaoImpl implements BoardDao {
 
 		System.out.println(boardDto.toString());
 
-
 		try {
 			conn = dbUtil.getConnection();
 			StringBuilder sql = new StringBuilder();
-			sql.append("insert into board (board_title, board_type_id, user_id, location_sido, location_gungu, content, start_date, end_date, img1, img2, regist_time) \n");
+			sql.append(
+					"insert into board (board_title, board_type_id, user_id, location_sido, location_gungu, content, start_date, end_date, img1, img2, regist_time) \n");
 			sql.append("values (?,?,?,?,?,?,?,?,?,?,now())");
-
 
 			pstmt = conn.prepareStatement(sql.toString());
 
@@ -57,122 +56,122 @@ public class BoardDaoImpl implements BoardDao {
 		}
 	}
 
-
 	@Override
-    public List<BoardDto> list(String content_type_id) throws SQLException {
-        List<BoardDto> list = new ArrayList<>();
-        BoardDto boardDto;
-        Connection conn = null;
-        PreparedStatement pstmt = null;
-        ResultSet rs = null;
+	public List<BoardDto> list(String content_type_id) throws SQLException {
+		List<BoardDto> list = new ArrayList<>();
+		BoardDto boardDto;
+		Connection conn = null;
+		PreparedStatement pstmt = null;
+		ResultSet rs = null;
 
-	    try {
-	        conn = dbUtil.getConnection();
-	        StringBuilder sql = new StringBuilder();
-	        sql.append("select board_id, board_title, board_type_id, user_id, content, score, readcount, regist_time from board \n");
-	        
-	        switch(content_type_id) {
-	        case"1": case "3":
-	            sql.append("where board_type_id = '여행후기' or board_type_id = '여행메이트후기'\n");
-	            break;
-	        case"2":
-	            sql.append("where board_type_id = '여행메이트' \n");
-	            break;
-	        case"4":
-	            sql.append("where board_type_id = '공지사항' \n");
-	            break;
-	        }
-	        sql.append("order by readcount desc");
-	        pstmt = conn.prepareStatement(sql.toString());
-	        rs = pstmt.executeQuery();
+		try {
+			conn = dbUtil.getConnection();
+			StringBuilder sql = new StringBuilder();
+			sql.append(
+					"select board_id, board_title, board_type_id, user_id, content, score, readcount, regist_time from board \n");
 
-	        while (rs.next()) {
-	            boardDto = new BoardDto();
-	            boardDto.setBoard_id(rs.getInt("board_id"));
-	            boardDto.setBoard_title(rs.getString("board_title"));
-	            boardDto.setUser_id(rs.getString("user_id"));
-	            boardDto.setBoard_type_id(rs.getString("board_type_id"));
-	            boardDto.setContent(rs.getString("content"));
-	            boardDto.setScore(rs.getInt("score"));
-	            boardDto.setReadcount(rs.getInt("readcount"));
-	            boardDto.setRegist_time(rs.getString("regist_time"));
-	            list.add(boardDto);
-	        }
+			switch (content_type_id) {
+			case "1":
+			case "3":
+				sql.append("where board_type_id = '여행후기' or board_type_id = '여행메이트후기'\n");
+				break;
+			case "2":
+				sql.append("where board_type_id = '여행메이트' \n");
+				break;
+			case "4":
+				sql.append("where board_type_id = '공지사항' \n");
+				break;
+			}
+			sql.append("order by readcount desc");
+			pstmt = conn.prepareStatement(sql.toString());
+			rs = pstmt.executeQuery();
 
-	    } finally {
-	        dbUtil.close(rs, pstmt, conn); // rs닫기
-	    }
-	    return list;
+			while (rs.next()) {
+				boardDto = new BoardDto();
+				boardDto.setBoard_id(rs.getInt("board_id"));
+				boardDto.setBoard_title(rs.getString("board_title"));
+				boardDto.setUser_id(rs.getString("user_id"));
+				boardDto.setBoard_type_id(rs.getString("board_type_id"));
+				boardDto.setContent(rs.getString("content"));
+				boardDto.setScore(rs.getInt("score"));
+				boardDto.setReadcount(rs.getInt("readcount"));
+				boardDto.setRegist_time(rs.getString("regist_time"));
+				list.add(boardDto);
+			}
+
+		} finally {
+			dbUtil.close(rs, pstmt, conn); // rs닫기
+		}
+		return list;
 	}
-
 
 	@Override
 	public List<BoardDto> topReviewList(String content_type_id) throws SQLException {
-        List<BoardDto> Reviewlist = new ArrayList<>();
-        BoardDto boardDto;
-        Connection conn = null;
-        PreparedStatement pstmt = null;
-        ResultSet rs = null;
+		List<BoardDto> Reviewlist = new ArrayList<>();
+		BoardDto boardDto;
+		Connection conn = null;
+		PreparedStatement pstmt = null;
+		ResultSet rs = null;
 
-	    try {
-	        conn = dbUtil.getConnection();
-	        StringBuilder sql = new StringBuilder();
-	        sql.append("select board_id, board_title, user_id, content, DATE_FORMAT(regist_time, '%Y-%m-%d') as regist_time from board \n");
-	        sql.append("where board_type_id = '여행후기' or board_type_id = '여행메이트후기' \n");
-	        sql.append("order by readcount desc limit 4");
-	        pstmt = conn.prepareStatement(sql.toString());
-	        rs = pstmt.executeQuery();
+		try {
+			conn = dbUtil.getConnection();
+			StringBuilder sql = new StringBuilder();
+			sql.append(
+					"select board_id, board_title, user_id, content, DATE_FORMAT(regist_time, '%Y-%m-%d') as regist_time from board \n");
+			sql.append("where board_type_id = '여행후기' or board_type_id = '여행메이트후기' \n");
+			sql.append("order by readcount desc limit 4");
+			pstmt = conn.prepareStatement(sql.toString());
+			rs = pstmt.executeQuery();
 
-	        while (rs.next()) {
-	            boardDto = new BoardDto();
-	            boardDto.setBoard_id(rs.getInt("board_id"));
-	            boardDto.setBoard_title(rs.getString("board_title"));
-	            boardDto.setUser_id(rs.getString("user_id"));
-	            boardDto.setContent(rs.getString("content"));
-	            boardDto.setRegist_time(rs.getString("regist_time"));
-	            Reviewlist.add(boardDto);
-	        }
+			while (rs.next()) {
+				boardDto = new BoardDto();
+				boardDto.setBoard_id(rs.getInt("board_id"));
+				boardDto.setBoard_title(rs.getString("board_title"));
+				boardDto.setUser_id(rs.getString("user_id"));
+				boardDto.setContent(rs.getString("content"));
+				boardDto.setRegist_time(rs.getString("regist_time"));
+				Reviewlist.add(boardDto);
+			}
 
-	    } finally {
-	        dbUtil.close(rs, pstmt, conn); // rs닫기
-	    }
-	    return Reviewlist;
+		} finally {
+			dbUtil.close(rs, pstmt, conn); // rs닫기
+		}
+		return Reviewlist;
 	}
 
 	@Override
 	public List<BoardDto> topMateList(String content_type_id) throws SQLException {
-        List<BoardDto> MateList = new ArrayList<>();
-        BoardDto boardDto;
-        Connection conn = null;
-        PreparedStatement pstmt = null;
-        ResultSet rs = null;
+		List<BoardDto> MateList = new ArrayList<>();
+		BoardDto boardDto;
+		Connection conn = null;
+		PreparedStatement pstmt = null;
+		ResultSet rs = null;
 
-	    try {
-	        conn = dbUtil.getConnection();
-	        StringBuilder sql = new StringBuilder();
-	        sql.append("select board_id, board_title, user_id, content, DATE_FORMAT(regist_time, '%Y-%m-%d') as regist_time from board \n");
-	        sql.append("where board_type_id = '여행메이트' \n");
-	        sql.append("order by readcount desc limit 4");
-	        pstmt = conn.prepareStatement(sql.toString());
-	        rs = pstmt.executeQuery();
+		try {
+			conn = dbUtil.getConnection();
+			StringBuilder sql = new StringBuilder();
+			sql.append(
+					"select board_id, board_title, user_id, content, DATE_FORMAT(regist_time, '%Y-%m-%d') as regist_time from board \n");
+			sql.append("where board_type_id = '여행메이트' \n");
+			sql.append("order by readcount desc limit 4");
+			pstmt = conn.prepareStatement(sql.toString());
+			rs = pstmt.executeQuery();
 
-	        while (rs.next()) {
-	            boardDto = new BoardDto();
-	            boardDto.setBoard_id(rs.getInt("board_id"));
-	            boardDto.setBoard_title(rs.getString("board_title"));
-	            boardDto.setUser_id(rs.getString("user_id"));
-	            boardDto.setContent(rs.getString("content"));
-	            boardDto.setRegist_time(rs.getString("regist_time"));
-	            MateList.add(boardDto);
-	        }
+			while (rs.next()) {
+				boardDto = new BoardDto();
+				boardDto.setBoard_id(rs.getInt("board_id"));
+				boardDto.setBoard_title(rs.getString("board_title"));
+				boardDto.setUser_id(rs.getString("user_id"));
+				boardDto.setContent(rs.getString("content"));
+				boardDto.setRegist_time(rs.getString("regist_time"));
+				MateList.add(boardDto);
+			}
 
-	    } finally {
-	        dbUtil.close(rs, pstmt, conn); // rs닫기
-	    }
-	    return MateList;
+		} finally {
+			dbUtil.close(rs, pstmt, conn); // rs닫기
+		}
+		return MateList;
 	}
-
-
 
 	@Override
 	public BoardDto view(int board_id) throws SQLException {
@@ -215,26 +214,26 @@ public class BoardDaoImpl implements BoardDao {
 		}
 		return boardDto;
 	}
-	
-	
-	
 
 	@Override
 	public void modify(BoardDto boardDto) throws SQLException {
 		Connection conn = null;
 		PreparedStatement pstmt = null;
-System.out.println("모디파이 dao");
+		System.out.println("모디파이 dao");
 		try {
 			conn = dbUtil.getConnection();
 			StringBuilder sql = new StringBuilder();
 			sql.append("update board \n");
-			sql.append("set board_title = ?, content = ?, regist_time = now() \n");
+			sql.append("set board_title = ?, content = ?, location_sido = ?, location_gungu = ?, regist_time = now() \n");
 			sql.append("where board_id = ? \n");
 			pstmt = conn.prepareStatement(sql.toString());
 			pstmt.setString(1, boardDto.getBoard_title());
 			pstmt.setString(2, boardDto.getContent());
-			pstmt.setInt(3, boardDto.getBoard_id());
-			System.out.println("결과는" + pstmt.executeUpdate());
+			pstmt.setInt(3, boardDto.getLocation_sido());
+			pstmt.setInt(4, boardDto.getLocation_gungu());
+			pstmt.setInt(5, boardDto.getBoard_id());
+			pstmt.executeUpdate();
+			//System.out.println("결과는" + pstmt.executeUpdate());
 		} finally {
 			dbUtil.close(pstmt, conn);
 		}
@@ -260,7 +259,7 @@ System.out.println("모디파이 dao");
 	}
 
 	@Override
-	public List<BoardDto> getBoardListById(String id) throws SQLException {
+	public List<BoardDto> getBoardListById(String id, String board_type_id) throws SQLException {
 		List<BoardDto> list = new ArrayList<>();
 		Connection conn = null;
 		PreparedStatement pstmt = null;
@@ -271,7 +270,10 @@ System.out.println("모디파이 dao");
 			StringBuilder sql = new StringBuilder();
 			sql.append("select * \n");
 			sql.append("from board \n");
-			sql.append("where user_id = ? \n");
+			if(board_type_id.equals("공지사항"))
+				sql.append("where user_id = ? and board_type_id = '공지사항' \n");
+			else
+				sql.append("where user_id = ? and board_type_id != '공지사항' \n");
 			sql.append("order by regist_time desc");
 			pstmt = conn.prepareStatement(sql.toString());
 			pstmt.setString(1, id);
@@ -281,6 +283,7 @@ System.out.println("모디파이 dao");
 				BoardDto boardDto = new BoardDto();
 				boardDto.setBoard_id(rs.getInt("board_id"));
 				boardDto.setBoard_title(rs.getString("board_title"));
+				boardDto.setBoard_type_id(rs.getString("board_type_id"));
 				boardDto.setUser_id(rs.getString("user_id"));
 				boardDto.setReadcount(rs.getInt("readcount"));
 				boardDto.setRegist_time(rs.getString("regist_time"));
@@ -310,10 +313,10 @@ System.out.println("모디파이 dao");
 			pstmt = conn.prepareStatement(sql.toString());
 			pstmt.setInt(1, boardDto.getLocation_sido());
 			pstmt.setInt(2, boardDto.getLocation_gungu());
-			
+
 			rs = pstmt.executeQuery();
 
-			if(rs.next()) {
+			if (rs.next()) {
 				Location[0] = rs.getString("area_name");
 				Location[1] = rs.getString("sigungu_name");
 			}

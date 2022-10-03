@@ -118,19 +118,20 @@ public class BoardController extends HttpServlet {
 			break;
 		}
 
+		boardDto.setReadcount(0);
+		boardDto.setRegist_time("now"); // 디폴트값
+		boardDto.setContent(request.getParameter("board_content"));
+
 		if (contentType != "4") {
 			// 작성자가 고른 지역과 군구
 //		boardDto.setLocation_sido(Integer.parseInt(request.getParameter("")));
 //		boardDto.setLocation_gungu("default_location");
 			boardDto.setLocation_sido(1);// 임시 지역
 			boardDto.setLocation_gungu(1);// 임시 지역
-			boardDto.setContent(request.getParameter("board_content"));
 
 			boardDto.setStart_date(request.getParameter("start_date"));
 			boardDto.setEnd_date(request.getParameter("end_date"));
 
-			boardDto.setReadcount(0);
-			boardDto.setRegist_time("now"); // 디폴트값
 			boardDto.setImg1("default_img1"); // 임시 디폴트값
 			boardDto.setImg2("default_img2"); // 임시 디폴트값
 		}
@@ -167,6 +168,8 @@ public class BoardController extends HttpServlet {
 		case "3":
 			by_content_type_path = "/community-tripReview.jsp";
 			break;
+		case "4":
+			return "/main_community?act=notice";
 		}
 
 		try {
@@ -234,7 +237,6 @@ public class BoardController extends HttpServlet {
 	}
 
 	private String mvModify(HttpServletRequest request, HttpServletResponse response) {
-		String[] location = new String[2];
 		int board_id = Integer.parseInt(request.getParameter("board_id"));
 
 		System.out.println("수정하려는 글 번호 :  " + board_id);
@@ -244,10 +246,6 @@ public class BoardController extends HttpServlet {
 
 			request.setAttribute("modify_board", boardDto);
 			System.out.println("수정 갱신 전에 " + boardDto.toString());
-
-			location = boardService.getLocationName(boardDto);
-			request.setAttribute("location_sido", location[0]);
-			request.setAttribute("location_gungu", location[1]);
 
 			return "/board_modify.jsp";
 		} catch (Exception e) {
@@ -259,13 +257,21 @@ public class BoardController extends HttpServlet {
 
 	private String modify(HttpServletRequest request, HttpServletResponse response) {
 		BoardDto boardDto = new BoardDto();
-
+System.out.println(request.getParameter("userInfo"));
 		boardDto.setBoard_id(Integer.parseInt(request.getParameter("board_id")));
 		boardDto.setBoard_title(request.getParameter("title"));
+		String boardTypeId = request.getParameter("board_type_id");
+		boardDto.setBoard_type_id(boardTypeId);
 		boardDto.setContent(request.getParameter("content"));
-
+		if (!"공지사항".equals(boardTypeId)) {
+			boardDto.setLocation_sido(Integer.parseInt(request.getParameter("location_sido")));
+			boardDto.setLocation_gungu(Integer.parseInt(request.getParameter("location_gungu")));
+		}else {
+			boardDto.setLocation_sido(1); // default
+			boardDto.setLocation_gungu(1); // default
+		}
 		System.out.println("컨트롤러" + boardDto.toString());
-
+		System.out.println(boardDto.getLocation_sido() + ", " + boardDto.getLocation_gungu());
 		try {
 			boardService.modify(boardDto);
 			request.setAttribute("board_id", boardDto.getBoard_id());

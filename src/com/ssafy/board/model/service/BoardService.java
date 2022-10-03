@@ -12,7 +12,7 @@ public interface BoardService {
 	BoardDto view(int board_id) throws Exception;
 	void modify(BoardDto boardDto) throws Exception;
 	void delete(int board_id) throws Exception;
-	List<BoardDto> getBoardListById(String id) throws Exception;
+	List<BoardDto> getBoardListById(String id, String board_type_id) throws Exception;
 	List<BoardDto> topReviewList(String content_type_id) throws Exception;
 	List<BoardDto> topMateList(String content_type_id) throws Exception;
 	String[] getLocationName(BoardDto boardDto) throws Exception;

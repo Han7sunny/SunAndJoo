@@ -113,9 +113,12 @@ public class UserController extends HttpServlet {
 		try {
 			HttpSession session = request.getSession();
 			UserDto user = (UserDto) session.getAttribute("userInfo");
-			System.out.println("session "+user.getId());
-			List<BoardDto> boardList = boardService.getBoardListById(user.getId());
-			System.out.println(boardList.size());
+			if(user.getAdminAuthor()) {
+				List<BoardDto> noticeList = boardService.getBoardListById(user.getId(), "공지사항");
+				request.setAttribute("noticeSize", noticeList.size());
+				request.setAttribute("noticeList", noticeList);
+			}
+			List<BoardDto> boardList = boardService.getBoardListById(user.getId(), "list");
 			request.setAttribute("boardList", boardList);
 			request.setAttribute("boardSize", boardList.size());
 			return "/user/mypage.jsp";
@@ -199,14 +202,17 @@ public class UserController extends HttpServlet {
 	}
 
 	private String findPwd(HttpServletRequest request, HttpServletResponse response) {
-		String find_name = request.getParameter("find-name");
+		String find_id = request.getParameter("find-id");
 		String find_email = request.getParameter("find-email");
 		String find_emaildomain = request.getParameter("find-emaildomain");
 		String result = null;
 
 		try {
-			result = userService.findPwd(find_name, find_email, find_emaildomain);
-			request.setAttribute("finded_pwd", result);
+			result = userService.findPwd(find_id, find_email, find_emaildomain);
+			if(result != null) {
+				// 이메일 보내기
+			}
+			//request.setAttribute("finded_pwd", result);
 			return "/user/find-pwd-result.jsp";
 		} catch (Exception e) {
 			e.printStackTrace();

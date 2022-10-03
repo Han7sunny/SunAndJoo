@@ -48,7 +48,7 @@
 
 			<div class="col-lg-8" data-aos="fade-up" data-aos-delay="200">
 				<form action="${root}/user" method="POST" id="form-mypage">
-				<input type="hidden" name="action" value="modify"/>
+					<input type="hidden" name="action" value="modify" />
 					<div class="row">
 						<div class="col-12 mb-4">
 							<input type="text" class="form-control" name="userpage_name"
@@ -57,13 +57,14 @@
 
 						<div class="col-12 mb-4">
 							<input type="text" class="form-control" name="userpage_id"
-								placeholder="${userInfo.id}" value="${userInfo.id}" readonly/>
+								placeholder="${userInfo.id}" value="${userInfo.id}" readonly />
 						</div>
 
 						<div class="input-group mb-4">
-							<input type="text" class="form-control" name="userpage_emailId" value="${userInfo.emailId}"/>
-							<span class="input-group-text">@</span>
-							<input type="text" class="form-control" name="userpage_emailDomain" value="${userInfo.emailDomain}"/>
+							<input type="text" class="form-control" name="userpage_emailId"
+								value="${userInfo.emailId}" /> <span class="input-group-text">@</span>
+							<input type="text" class="form-control"
+								name="userpage_emailDomain" value="${userInfo.emailDomain}" />
 						</div>
 					</div>
 				</form>
@@ -81,6 +82,7 @@
 									<th scope="col">번호</th>
 									<th scope="col" colspan="2">제목</th>
 									<th scope="col">작성자</th>
+									<th scope="col">카테고리</th>								
 									<th scope="col">조회수</th>
 									<th scope="col">작성날짜</th>
 								</tr>
@@ -89,10 +91,12 @@
 								<c:if test="${boardList ne null}">
 									<c:forEach var="board" items="${boardList}" begin="0"
 										end="${boardSize}" step="1" varStatus="status">
-										<tr onClick="location.href='${root}/main_community?act=view&board_id=${board.board_id}'">
+										<tr
+											onClick="location.href='${root}/main_community?act=view&board_id=${board.board_id}'">
 											<th scope="row">${status.count}</th>
 											<td colspan="2">${board.board_title}</td>
 											<td>${board.user_id}</td>
+											<td>${board.board_type_id}</td>
 											<td>${board.readcount}</td>
 											<td>${board.regist_time}</td>
 										</tr>
@@ -101,37 +105,87 @@
 							</tbody>
 						</table>
 						<c:if test="${boardList eq null or boardSize eq 0}">
-								<div class="mt-5 text-center">작성된 글이 없습니다.</div>
+							<div class="mt-5 text-center">작성된 글이 없습니다.</div>
 						</c:if>
 					</div>
 				</div>
 			</div>
+			
+			<c:if test = "${userInfo.adminAuthor == true}">
+			<div class="boardList text-center">
+				<h4 class="mb-2 pt-5 mt-5">최근 작성 공지사항 글 목록</h4>
+			</div>
+			<div class="container">
+				<div class="container">
+					<div class="board container mt-5 mb-5 pb-5">
+						<table class="table table-hover text-center" data-aos="fade-up">
+							<thead>
+								<tr>
+									<th scope="col">번호</th>
+									<th scope="col" colspan="2">제목</th>
+									<th scope="col">작성자</th>
+									<th scope="col">카테고리</th>								
+									<th scope="col">조회수</th>
+									<th scope="col">작성날짜</th>
+								</tr>
+							</thead>
+							<tbody>
+								<c:if test="${noticeList ne null}">
+									<c:forEach var="notice" items="${noticeList}" begin="0"
+										end="${noticeSize}" step="1" varStatus="status">
+										<tr
+											onClick="location.href='${root}/main_community?act=view&board_id=${notice.board_id}'">
+											<th scope="row">${status.count}</th>
+											<td colspan="2">${notice.board_title}</td>
+											<td>${notice.user_id}</td>
+											<td>${notice.board_type_id}</td>
+											<td>${notice.readcount}</td>
+											<td>${notice.regist_time}</td>
+										</tr>
+									</c:forEach>
+								</c:if>
+							</tbody>
+						</table>
+						<c:if test="${noticeList eq null or noticeSize eq 0}">
+							<div class="mt-5 text-center">작성된 글이 없습니다.</div>
+						</c:if>
+
+
+						<div class="row mt-5 md-3" data-aos="fadeup">
+							<div class="col-lg-6 col-sm-12 text-lg-start text-center"
+								data-aos="fade-up">
+								<button type="button" class="btn btn-warning" id="delete-btn">탈퇴하기</button>
+							</div>
+							<div class="col-lg-6 col-sm-12 text-lg-end  text-center"
+								data-aos="fade-up">
+								<button type="button" class="btn btn-4" id="modify-btn">회원정보
+									수정하기</button>
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
+			</c:if>
+			
+			
+			
+			
+			
 		</div>
-    <div
-      class="row mb-5 mt-5"
-      data-aos="fadeup"
-    >
-		<div class="col-lg-6 col-sm-12 text-lg-start text-center" data-aos="fade-up">
-			<button type="button" class="btn btn-warning" id="delete-btn">탈퇴하기</button>
-		</div>
-       	<div class="col-lg-6 col-sm-12 text-lg-end  text-center" data-aos="fade-up">
-			<button type="button" class="btn btn-4" id="modify-btn">회원정보 수정하기</button>
-		</div>
-	</div>
 	</div>
 </div>
 
 <script>
+console.log("admin : "+${userInfo});
+	document.querySelector("#delete-btn").addEventListener("click", function() {
+		location.href = "${root}/alert_page/user_delete_check.jsp";
+	});
 
-document.querySelector("#delete-btn").addEventListener("click",function(){
-	location.href = "${root}/alert_page/user_delete_check.jsp";
-});
-
-document.querySelector("#modify-btn").addEventListener("click",function(){
-	let form = document.querySelector("#form-mypage");
-		  form.setAttribute("action","${root}/user?act=modify");
-		  form.submit();
-});
+	document.querySelector("#modify-btn").addEventListener("click", function() {
+		let form = document.querySelector("#form-mypage");
+		form.setAttribute("action", "${root}/user?act=modify");
+		form.submit();
+	});
 </script>
 
 

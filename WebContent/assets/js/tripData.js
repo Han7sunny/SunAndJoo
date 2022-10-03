@@ -131,10 +131,10 @@ fetch(ThemeUrl)
       let image = document.createElement("img");
       image.setAttribute("src", theme.firstimage);
       image.setAttribute("class", "img-fluid");
-
+      
       a.appendChild(image);
       propertyItemDiv[idx].appendChild(a);
-
+      
       let propertyContent = document.createElement("div");
       propertyContent.setAttribute("class", "property-content");
 
@@ -142,10 +142,10 @@ fetch(ThemeUrl)
       let span = document.createElement("span");
       span.setAttribute("class", "city d-block mb-3");
       span.appendChild(document.createTextNode(theme.title));
-
+      
       let div = document.createElement("div");
       div.setAttribute("class", "specs d-flex mb-4");
-
+      
       let span1 = document.createElement("span");
       span1.setAttribute("class", "d-block d-flex align-items-center me-3");
       let span2 = document.createElement("span");
@@ -156,24 +156,24 @@ fetch(ThemeUrl)
       let span3 = document.createElement("span");
       span3.setAttribute("class", "caption");
       span3.appendChild(document.createTextNode(theme.readcount))
-
+      
       span1.appendChild(span2);
       span1.appendChild(span3);
-
+      
       div.appendChild(span1);
-
+      
       let a1 = document.createElement("a");
       a1.setAttribute("href", "theme-single.html");
       a1.setAttribute("class", "btn btn-4 py-2 px-3");
       a1.appendChild(document.createTextNode("See detail"));
-
+      
       divEmpty.appendChild(span);
       divEmpty.appendChild(div);
       divEmpty.appendChild(a1);
-
+      
       propertyContent.appendChild(divEmpty);
-
+      
       propertyItemDiv[idx++].appendChild(propertyContent);
-
+      
     });
   });

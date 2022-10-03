@@ -190,7 +190,7 @@ public class UserDaoImpl implements UserDao {
 			
 			if(rs.next())
 				user_id = rs.getString(1);
-			
+			System.out.println("id : "+user_id);
 		} finally {
 			dbUtil.close(pstmt, conn);
 		}
@@ -199,7 +199,7 @@ public class UserDaoImpl implements UserDao {
 	}
 
 	@Override
-	public String findPwd(String name, String email, String domain) throws SQLException {
+	public String findPwd(String id, String email, String domain) throws SQLException {
 		Connection conn = null;
 		PreparedStatement pstmt = null;
 		ResultSet rs = null;
@@ -209,17 +209,17 @@ public class UserDaoImpl implements UserDao {
 			conn = dbUtil.getConnection();
 			StringBuilder sql = new StringBuilder();
 			sql.append("select user_pwd from user \n");
-			sql.append("where user_name = ? and user_email_id = ? and user_email_domain = ?");	
+			sql.append("where user_id = ? and user_email_id = ? and user_email_domain = ?");	
 			
 			pstmt = conn.prepareStatement(sql.toString());
-			pstmt.setString(1, name);
+			pstmt.setString(1, id);
 			pstmt.setString(2, email);
 			pstmt.setString(3, domain);
 			rs = pstmt.executeQuery();
 			
 			if(rs.next())
 					user_pwd = rs.getString(1);
-			System.out.println("아이디 찾음 " + user_pwd);
+			System.out.println("pwd 찾음 " + user_pwd);
 		} finally {
 			dbUtil.close(pstmt, conn);
 		}

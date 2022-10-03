@@ -63,7 +63,7 @@ public class UserDto {
 		this.emailDomain = emailDomain;
 	}
 
-	public boolean isAdminAuthor() {
+	public boolean getAdminAuthor() {
 		return adminAuthor;
 	}
 
@@ -74,7 +74,7 @@ public class UserDto {
 	@Override
 	public String toString() {
 		return "UserDto [name=" + name + ", id=" + id + ", pwd=" + pwd + ", emailId=" + emailId + ", emailDomain="
-				+ emailDomain + "]";
+				+ emailDomain + ", adminAuthor="+adminAuthor+ "]";
 	}
 
 }

@@ -13,5 +13,5 @@ public interface UserDao {
 	void modify(UserDto userDto) throws SQLException;
 	void delete(String id) throws SQLException;
 	String findId(String email, String domain) throws SQLException;
-	String findPwd(String name, String email, String domain) throws SQLException;
+	String findPwd(String id, String email, String domain) throws SQLException;
 }

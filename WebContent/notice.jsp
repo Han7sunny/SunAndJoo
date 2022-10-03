@@ -30,9 +30,12 @@
 <!-- /.untree_co-section -->
 
 <div class="container">
-	<div class="col-auto text-md-end mt-5">
-		<button type="button" class="regist btn btn-sm btn-light mb-3">공지사항 등록</button>
-	</div>
+	<c:if test="${userInfo != null and userInfo.adminAuthor eq true}">
+		<div class="col-auto text-md-end mt-5">
+			<button type="button" class="regist btn btn-sm btn-light mb-3" onclick="${root}/main_community?act=mvRegist">공지사항
+				등록</button>
+		</div>
+	</c:if>
 	<div class="board container mt-5 mb-5 pb-5">
 		<table class="table table-hover text-center" data-aos="fade-up">
 			<thead>
@@ -40,7 +43,7 @@
 					<th scope="col">번호</th>
 					<th scope="col" colspan="2">제목</th>
 					<th scope="col">작성자</th>
-					<th scope="col">조회수</th>
+					<th scope="col">조회수</th>
 					<th scope="col">등록일</th>
 				</tr>
 			</thead>
@@ -61,7 +64,7 @@
 			class="row justify-content-between align-items-center"
 			data-aos="fadeup">
 			<span data-controls="prev" class="prev col-1">이전</span> <span
-				data-controls="prev" class="prev col-1">다음</span>
+				data-controls="prev" class="prev col-1">다음</span>
 		</div>
 	</div>
 </div>
@@ -70,7 +73,8 @@
 
 <script>
 document.querySelector(".regist").addEventListener("click", function(){
-	console.log(${userInfo.adminAuthor});
+	console.log(${userInfo != null});
+	console.log(${userInfo.adminAuthor eq null});
 	if(${userInfo.adminAuthor != true}){
 		alert("관리자 권한 기능입니다.");
 	 	return;

@@ -4,12 +4,12 @@
 * Template URI: https://untree.co/
 * License: https://creativecommons.org/licenses/by/3.0/
 */ -->
-<%@ page language="java" contentType="text/html; charset=UTF-8" pageEncoding="UTF-8"%>
-<%@ include file="/common/header.jsp" %>
+<%@ page language="java" contentType="text/html; charset=UTF-8"
+	pageEncoding="UTF-8"%>
+<%@ include file="/common/header.jsp"%>
 
 <!-- kakao map -->
 <style>
-
 .map_wrap {
 	position: relative;
 	overflow: hidden;
@@ -906,5 +906,5 @@
 
 
     </script>
-</body>
-</html>
+	</body>
+	</html>

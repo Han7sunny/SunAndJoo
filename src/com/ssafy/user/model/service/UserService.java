@@ -12,5 +12,5 @@ public interface UserService {
 	void modify(UserDto userDto) throws Exception;
 	void delete(String id) throws Exception;
 	String findId(String email, String domain) throws Exception;
-	String findPwd(String name, String email, String domain) throws Exception;
+	String findPwd(String id, String email, String domain) throws Exception;
 }

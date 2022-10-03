@@ -35,10 +35,10 @@
 			<div class="col-lg-8 text-center mt-5 mb-5 pb-5" data-aos="fade-up"
 				data-aos-delay="200">
 				<h4>			
-			<c:if test="${finded_pwd} != null">
+			<c:if test="${finded_pwd ne null}">
 				 회원님의 비밀번호는 ${finded_pwd}입니다.
 			</c:if>
-			<c:if test="${finded_pwd} == null">
+			<c:if test="${finded_pwd eq null}">
 				회원 정보를 찾을 수 없습니다.
 			</c:if>		
 				</h4> 

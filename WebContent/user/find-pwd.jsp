@@ -40,13 +40,13 @@
 					<input type="hidden" name="action" value="findPwd" />
 					<div class="row">
 						<div class="col-12 mb-4">
-							<input id="find-name" name="find-name" type="text" class="form-control"
-								placeholder="사용했던 아이디를 입력해주세요" required/>
+							<input id="find-id" name="find-id" type="text" class="form-control"
+								placeholder="사용하던 아이디를 입력해주세요" required/>
 						</div>
 
 						<div class="col-12 mb-4 input-group">
 							<input id="find-name" name="find-email" type="text"
-								class="form-control" placeholder="사용했던 이메일을 입력해주세요" required />
+								class="form-control" placeholder="사용하던 이메일을 입력해주세요" required />
 							<span class="input-group-text">@</span>
 							<select class="form-select"
 								id="find-emaildomain" name="find-emaildomain" aria-label="이메일 도메인 선택">

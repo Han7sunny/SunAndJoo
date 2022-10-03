@@ -11,7 +11,7 @@ public interface BoardDao {
 	BoardDto view(int board_id) throws SQLException;
 	void modify(BoardDto boardDto) throws SQLException;
 	void delete(int board_id) throws SQLException;
-	List<BoardDto> getBoardListById(String id) throws SQLException;
+	List<BoardDto> getBoardListById(String id, String board_type_id) throws SQLException;
 	List<BoardDto> topReviewList(String content_type_id) throws SQLException;
 	List<BoardDto> topMateList(String content_type_id) throws SQLException;
 	String[] getLocationName(BoardDto boardDto) throws SQLException;

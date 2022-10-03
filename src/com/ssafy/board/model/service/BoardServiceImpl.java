@@ -49,8 +49,8 @@ public class BoardServiceImpl implements BoardService {
 	}
 
 	@Override
-	public List<BoardDto> getBoardListById(String id) throws Exception {
-		return boardDao.getBoardListById(id);
+	public List<BoardDto> getBoardListById(String id, String board_type_id) throws Exception {
+		return boardDao.getBoardListById(id, board_type_id);
 	}
 	
 	@Override

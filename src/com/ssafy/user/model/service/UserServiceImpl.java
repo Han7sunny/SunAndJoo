@@ -53,7 +53,7 @@ public class UserServiceImpl implements UserService {
 	}
 
 	@Override
-	public String findPwd(String name, String email, String domain) throws Exception {
-		return userDao.findPwd(name, email, domain);
+	public String findPwd(String id, String email, String domain) throws Exception {
+		return userDao.findPwd(id, email, domain);
 	}
 }
