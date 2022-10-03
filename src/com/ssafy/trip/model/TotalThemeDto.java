@@ -82,13 +82,6 @@ public class TotalThemeDto {
 	public void setDetails(String details) {
 		this.details = details;
 	}
-	@Override
-	public String toString() {
-		return "TotalThemeDto [idx=" + idx + ", title=" + title + ", lat=" + lat + ", lng=" + lng + ", overview="
-				+ overview + ", calendar=" + calendar + ", type=" + type + ", dist=" + dist + ", time=" + time
-				+ ", details=" + details + "]";
-	}
-	
 	public String getImg1() {
 		return img1;
 	}
@@ -120,7 +113,13 @@ public class TotalThemeDto {
 		this.sigungu_code = sigungu_code;
 	}
 	
-	
+	@Override
+	public String toString() {
+		return "TotalThemeDto [idx=" + idx + ", title=" + title + ", lat=" + lat + ", lng=" + lng + ", overview="
+				+ overview + ", calendar=" + calendar + ", type=" + type + ", dist=" + dist + ", time=" + time
+				+ ", details=" + details + ", img1=" + img1 + ", img2=" + img2 + ", readcount=" + readcount
+				+ ", area_code=" + area_code + ", sigungu_code=" + sigungu_code + "]";
+	}
 	
 	
 	
