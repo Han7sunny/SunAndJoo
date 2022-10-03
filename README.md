@@ -213,25 +213,33 @@
 
 
     > 수정하기 클릭 시 : 수정 페이지 board_modify.jsp 로 이동
+    > 삭제하기 클릭 시 : 삭제 진행
 ![board-modify-complete](/uploads/507c1655dc969ae625c62d29ed3de36a/board-modify-complete.JPG)
 <br/><br/><br/>
 
+    > 수정 후 등록하기 버튼 클릭 시 : 마이 페이지 mypage.jsp 로 이동
 
-    > 삭제하기 클릭 시 : 삭제 진행
+
 
 
 -----------------------------------------------------------
 
 
 ### 8. 댓글 기능
-> 댓글 작성 폼
+> 모든 게시글 하단에 구현되어 있는 댓글 작성 폼
 <br/>
 ![reply-regist](/uploads/9a106ce414cd969b217059eebeca7c17/reply-regist.JPG)
 <br/><br/>
 
 
-    > 댓글 작성자와 세션에 저장된 로그인 아이디가 같을 때에만 수정, 삭제버튼 활성화
+> 댓글 작성자와 세션에 저장된 로그인 아이디가 같을 때에만 수정, 삭제버튼 활성화
 ![reply-modify](/uploads/8ebcbc3925487fd18a40e97120c5896c/reply-modify.JPG)
+<br/><br/><br/>
+ 
+ 
+
+> 삭제 버튼 클릭 시 : alert창 띄운 후 삭제 진행
+![reply-delete](/uploads/a2a2e7a23a7ffea0b08d9d71d9b80f8e/reply-delete.JPG)
 <br/><br/><br/>
  
  
