@@ -165,7 +165,7 @@
 ### 6. 한옥 숙소 소개 - hanok_list.jsp
 > index.jsp에서 '더 많은 한옥 보기' 클릭 시 이동할 수 있는 한옥 숙소 소개 페이지
 <br/>
-![hanok-list](/uploads/b5f195abbd9009d877154089859d2af9/hanok-list.JPG)
+![hanok-list](/uploads/b2fcfda35cf2955b5a0b60c3010e6d80/hanok-list.JPG)
 <br/><br/>
 
 
