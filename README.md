@@ -162,13 +162,13 @@
 ------------------------------------------------------------
 
 ### 6. 한옥 숙소 소개 - hanok_list.jsp
-> 작성된 여행 후기 및 여행 메이트 후기 게시글을 볼 수 있는 페이지
+> 한옥 숙소들을 모두 조회할 수 있는 페이지
 <br/>
 ![hanok-list](/uploads/b5f195abbd9009d877154089859d2af9/hanok-list.JPG)
 <br/><br/>
 
 
-    > 각 게시글 클릭 시 : 상세 페이지 hanok_single.jsp 로 이동
+    > 각 숙소 클릭 시 : 상세 페이지 hanok_single.jsp 로 이동
 ![hanok-detail](/uploads/2f50874b52e5a17bf4bbec1a204c59b0/hanok-detail.JPG)
 <br/><br/><br/>
 
