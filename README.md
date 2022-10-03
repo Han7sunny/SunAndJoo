@@ -14,7 +14,7 @@
 
 > 지역별 관광지 정보 조회 - [시도, 구군, 컨텐츠별 관광지 정보](https://www.data.go.kr/data/15101578/openapi.do)
 <br/>
-![메인화면](../WebContent/assets/readme/main-index.jpg)  
+![메인화면](/WebContent/assets/readme/main-index.jpg)  
 <br/><br/>
 
 
