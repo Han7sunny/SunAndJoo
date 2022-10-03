@@ -31,7 +31,7 @@
 <br/><br/><br/>
 
 
-> 여행 테마 소개 - [추천하는 여행 코스](https://www.data.go.kr/data/15101578/openapi.do)를 보여주는 기능
+> 여행 테마 소개 - [추천 여행 코스](https://www.data.go.kr/data/15101578/openapi.do)를 보여주는 기능
 <br/>
 ![trip-theme](/uploads/68b9b27c81542eed42faf98ae294d31f/trip-theme.JPG)
 <br/><br/>
@@ -44,7 +44,7 @@
     > '자세히보기' 클릭 시 community-tripMate.jsp 내의 해당 게시글로 이동
 <br/><br/>
 
-> 여행 후기 - 별점 기준 상위 4개의 후기 출력
+> 여행 후기 - 슬라이드 모션으로 여행 후기글 출력
 <br/>
 ![trip-review](/uploads/15033dfbb993f480f9868e4f7469281a/trip-review.JPG)
 <br/><br/>
@@ -59,7 +59,7 @@
 ![hanok-info](/uploads/255f4db857413dfee32cdcc49e1e60cc/hanok-info.JPG)
 <br/><br/>
 
-    > 더 많은 한옥 보기 : 추후 전국 한옥 체험 가능한 숙박 정보 업데이트
+    > '더 많은 한옥 보기' 클릭 시 : 한옥 체험 가능한 숙박 정보 리스트 화면 hanok_list.jsp 로 이동
 <br/><br/><br/>
 
 
@@ -70,17 +70,42 @@
 > 메인 페이지의 상단 바를 통해 이용 가능한 로그인 / 회원가입 기능
 <br/>
 
-
-![로그인](/assets/readme/login.jpg)
+![login](/uploads/23c8f3fd0fb79f1d79fcbeebbc66372e/login.JPG)
 <br/><br/>
 
-![가입](/assets/readme/joinin.jpg)  
+![joinin](/uploads/ca2a9dca7492cbdb799f0a13149de93c/joinin.JPG)
 <br/><br/>
 
 
 -----------------------------------------------------------
 
-### 3. 마이페이지 - mypage.jsp
+### 3. 아이디 찾기 / 비밀번호 찾기 - find-id.jsp / find-pwd.jsp
+> 로그인 페이지에서 이용 가능한 아이디 찾기 기능
+<br/>
+
+![find-id](/uploads/56ef5b936f6caeafb7e760a4a4351e29/find-id.JPG)
+<br/><br/>
+
+>  이메일 인증번호 전송으로 구현한 비밀번호 찾기 기능
+<br/>
+
+![find-pwd](/uploads/ec7b84d15a5ff0b9e0839ec85c851b7e/find-pwd.GIF)
+<br/><br/>
+
+![find-pwd-result](/uploads/8470fff7436e24af77628b8926d83012/find-pwd-result.GIF)
+
+
+>  사용자가 이메일로 받아볼 수 있는 비밀번호 찾기 결과
+<br/>
+![find_pwd_email](/uploads/6d0c50bd7a7b67eef828a6ef18685d07/find_pwd_email.GIF)
+
+
+
+-----------------------------------------------------------
+
+
+
+### 4. 마이페이지 - mypage.jsp
 > 가입 정보를 수정할 수 있는 마이페이지  
 <br/>
 
@@ -93,7 +118,7 @@
 
 -----------------------------------------------------------
 
-### 4. 커뮤니티 - community.jsp
+### 5. 커뮤니티 - community.jsp
 > 여행 메이트 / 여행 후기 보기를 할 수 있는 페이지
 <br/>
 ![메인](/assets/readme/community-main.JPG)  
@@ -126,14 +151,14 @@
 
 -----------------------------------------------------------
 
-### 5. 여행 후기 - community-tripReview.jsp
+### 6. 여행 후기 - community-tripReview.jsp
 > 작성된 여행 후기 및 여행 메이트 후기 게시글을 볼 수 있는 페이지
 <br/>
 ![후기](/assets/readme/tripReview-list.jpg)
 
 -----------------------------------------------------------
 
-### 6. 여행 메이트 - community-tripMate.jsp
+### 7. 여행 메이트 - community-tripMate.jsp
 > 작성된 여행 메이트 게시글(모집글)을 볼 수 있는 페이지
 <br/>
 ![메이트](/assets/readme/tripMate-list.jpg)
