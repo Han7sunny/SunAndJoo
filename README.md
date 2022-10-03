@@ -111,14 +111,16 @@
 
 > 게시글 작성 - 위치, 글 제목, 작성자명, 날짜, 카테고리 선택
 <br/>
-![가입](/assets/readme/board-regist.jpg)  
+![작성](/assets/readme/board-regist.jpg)  
 <br/><br/>
 <br/>
-![가입](/assets/readme/board-regist2.jpg)  
+![작성](/assets/readme/board-regist2.jpg)  
 <br/><br/>
 
 
+    > 시작 날짜 선택 시 종료 날짜는 시작 날짜 이후로 선택 가능
     > 글 카테고리 선택 가능(여행 후기, 여행 메이트, 여행 메이트 후기)
+    > 별점 선택
 <br/><br/><br/>
 
 
