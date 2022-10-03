@@ -149,7 +149,7 @@
 ### 5. 여행 테마 - theme-total.jsp
 > 여행 테마 전체를 조회할 수 있는 페이지
 <br/>
-![theme-list](/uploads/241269dc801c4037154de0f9bfcd4b8d/theme-list.JPG)
+![theme-list](/uploads/1b34eeb26d5fe55176c4848903525966/theme-list.JPG)
 <br/><br/>
 
 
@@ -182,11 +182,7 @@
 > 여행 메이트 / 여행 후기 글을 조회할 수 있는 페이지
 
 <br/>
-![community-review](/uploads/e508258dde2aca54173389cba093ac24/community-review.JPG)
-<br/><br/>
-
-<br/>
-![community-mate](/uploads/8e5003c9677f94dedabab44a51e921be/community-mate.JPG)
+![community](/uploads/ecf6c5f63cd83005003179255ee56ac6/community.JPG)
 <br/><br/>
 
 
@@ -215,13 +211,13 @@
 ### 8. 여행 후기 - community-tripReview.jsp
 > 작성된 여행 후기 및 여행 메이트 후기 게시글을 볼 수 있는 페이지
 <br/>
-![tripReview-list](/uploads/a80bef94a2c4edbb340f8b8a08c869a4/tripReview-list.JPG)
+![tripReview-list](/uploads/49c541be2dfd21d4be9cebd817faeeb5/tripReview-list.JPG)
 <br/><br/>
 
 
     > 각 게시글 클릭 시 : 상세 페이지 board_detail_view.jsp 로 이동
     >                   : 클릭할 때마다 해당 게시글 조회수 증가
-![tripReview-view](/uploads/506db8c304f2b288e391c60f05dccdaf/tripReview-view.JPG)
+![tripReview-view](/uploads/81cac2677334d22a6c60d6e9e17fee84/tripReview-view.JPG)
 <br/><br/><br/>
 
 -----------------------------------------------------------
@@ -229,13 +225,13 @@
 ### 9. 여행 메이트 - community-tripMate.jsp
 > 작성된 여행 메이트 모집글 전체를 볼 수 있는 페이지
 <br/>
-![tripMate-list](/uploads/5bc01dc793f4745a1ad52216a1e2c424/tripMate-list.JPG)
+![tripMate-list](/uploads/037168ce34a05e623ace2b755e6bed6e/tripMate-list.JPG)
 <br/><br/>
 
 
     > 각 게시글 클릭 시 : 상세 페이지 board_detail_view.jsp 로 이동
     >                   : 클릭할 때마다 해당 게시글 조회수 증가
-![tripMate-view](/uploads/1cbfd976dc8103b67c1237f8b651cf6e/tripMate-view.JPG)
+![tripMate-view](/uploads/b71b8865dc8f6a7bc90fe538855f0358/tripMate-view.JPG)
 <br/><br/><br/>
 
 -----------------------------------------------------------
@@ -249,8 +245,8 @@
 
 
     > 수정하기 클릭 시 : 수정 페이지 board_modify.jsp 로 이동
-    > 수정 후 등록하기 버튼 클릭 시 : 마이 페이지 mypage.jsp 로 이동
-![board-modify-complete](/uploads/507c1655dc969ae625c62d29ed3de36a/board-modify-complete.JPG)
+    > 내용 수정 후 등록하기 버튼 클릭 시 : 마이 페이지 mypage.jsp 로 이동
+![board-modify-complete](/uploads/6dce99f7f610d2c4e642d574acea1e2a/board-modify-complete.JPG)
 <br/><br/><br/>
 
 
