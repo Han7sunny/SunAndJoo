@@ -267,7 +267,7 @@ public class TripDaoImpl implements TripDao {
 		try {
 			conn = dbUtil.getConnection();
 			StringBuilder sql = new StringBuilder();
-			sql.append("select * from theme_info as theme left join (select * from total_area where content_type_id = 25) as total \n");
+			sql.append("select * from theme_info as theme left join (select * from total_area where content_type_id = 25 and first_image is not null and first_image2 is not null) as total \n");
 			sql.append("on theme.title = total.title \n");
 			sql.append("where theme.idx  = ?");
 			pstmt = conn.prepareStatement(sql.toString());
@@ -290,7 +290,7 @@ public class TripDaoImpl implements TripDao {
 
 				// from join table
 				theme.setImg1(rs.getString("first_image"));
-				theme.setImg2(rs.getString("first_image"));
+				theme.setImg2(rs.getString("first_image2"));
 				theme.setReadcount(rs.getString("readcount"));
 				theme.setArea_code(rs.getString("area_code"));
 				theme.setSigungu_code(rs.getString("sigungu_code"));
@@ -339,7 +339,7 @@ public class TripDaoImpl implements TripDao {
 				
 				// from join table
 				theme.setImg1(rs.getString("first_image"));
-				theme.setImg2(rs.getString("first_image"));
+				theme.setImg2(rs.getString("first_image2"));
 				theme.setReadcount(rs.getString("readcount"));
 				theme.setArea_code(rs.getString("area_code"));
 				theme.setSigungu_code(rs.getString("sigungu_code"));
@@ -438,9 +438,12 @@ public class TripDaoImpl implements TripDao {
 		try {
 			conn = dbUtil.getConnection();
 			StringBuilder sql = new StringBuilder();
-			sql.append("select * from hanok_facility");
+			sql.append("select * from \n");
+			sql.append("hanok_facility \n");
+			sql.append("where zipcode = ?");
 			
 			pstmt = conn.prepareStatement(sql.toString());
+			pstmt.setString(1, zipcode);
 			rs = pstmt.executeQuery();
 			
 			if(rs.next()) {

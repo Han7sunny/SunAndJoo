@@ -98,7 +98,7 @@
           <div id="map" class="ms-3 mt-4 mb-5" style="width:500px;height:400px;"></div>
           </div>
           <div class="col-lg-4">
-            <div class="d-flex feature-h">
+            <div class="d-flex feature-h" onclick="location.href='${hanok_facility.page}'">
               <span class="wrap-icon me-3">
                 <span class="icon-home2"></span>
               </span>
