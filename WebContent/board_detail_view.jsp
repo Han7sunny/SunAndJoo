@@ -176,11 +176,7 @@
 				let idx = form.querySelector(".modified-idx").value;
 				console.log(idx.value + "번호");
 
-				let path = "${root}/reply?act=delete&board_id=" + $
-				{
-					detail_board.board_id
-				}
-				+"&idx=" + idx;
+				let path = "${root}/reply?act=delete&board_id="+ ${detail_board.board_id}+"&idx=" + idx;
 				form.setAttribute("action", path);
 				form.submit();
 			}
