@@ -283,4 +283,27 @@
 ![reply-delete](/uploads/a2a2e7a23a7ffea0b08d9d71d9b80f8e/reply-delete.JPG)
 <br/><br/><br/>
  
+
+ 
+
+-----------------------------------------------------------
+
+
+### 12. 공지사항 기능
+> 상단 바를 통한 공지사항 조회
+<br/>
+![notice-notadmin](/uploads/b31668d53458b56d011e08a1068e2009/notice-notadmin.JPG)
+<br/><br/>
+
+
+> 관리자로 로그인 시 : 공지사항 등록 버튼 활성화
+<br/>
+![notice](/uploads/4844d9b5160ce0a1fc4d457a46889247/notice.JPG)
+<br/><br/><br/>
+ 
+ 
+> 공지사항 등록 기능
+<br/>
+![notice-regist](/uploads/0957549d139a495519638d7ac4314915/notice-regist.JPG)
+<br/><br/><br/>
  
