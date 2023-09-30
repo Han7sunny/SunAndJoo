@@ -33,9 +33,12 @@
 
     > 선택한 컨텐츠 별로 다르게 표시되는 마커들  
 <br/><br/><br/>
-![map-shopping](./resources/images/map-shopping.png)
-![map-festival](./resources/images/map-festival.png)
-![map-food](./resources/images/map-food.png)
+
+![map-shopping](./resources/images/map-shopping.PNG)
+
+![map-festival](./resources/images/map-festival.PNG)
+
+![map-food](./resources/images/map-food.PNG)
 <br/><br/><br/>
 
 
