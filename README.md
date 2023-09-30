@@ -32,13 +32,13 @@
 <br/><br/>
 
     > 선택한 컨텐츠 별로 다르게 표시되는 마커들  
-<br/><br/><br/>
+<br/>
 
-![map-shopping](./resources/images/map-shopping.PNG)
+![map-festival](https://github.com/Han7sunny/SunAndJoo/assets/63834758/0476a546-b412-4597-bc65-27ffeb472515)
+![map-shopping](https://github.com/Han7sunny/SunAndJoo/assets/63834758/14041434-c54c-46fa-b42f-c5b8618182d5)
+![map-food](https://github.com/Han7sunny/SunAndJoo/assets/63834758/40094245-f839-4d3b-accb-e27ba67a7a31)
 
-![map-festival](./resources/images/map-festival.PNG)
 
-![map-food](./resources/images/map-food.PNG)
 <br/><br/><br/>
 
 
