@@ -1,391 +1,284 @@
-# S&J EnjoyTrip
-써니앤쥬의 국내 여행지 정보 사이트
+# 🏕 S&J (SunAndJoo)
 
-#### 프로젝트 소개
-> 메인 페이지에 구현된 지도와 로그인, 회원가입, 커뮤니티 기능을 통해 여행 후기, 여행 메이트를 찾아 보고
-> 
-> 여행 테마와 한옥 숙박 정보도 얻을 수 있는 여행 정보 사이트 웹 프로젝트입니다.
+![image](https://github.com/Han7sunny/SunAndJoo/assets/63834758/1643b748-7344-4b8d-a05b-de020c7f86ee)
 
+## 💾 프로젝트 진행 기간
 
-----------------------------------------------------------------------------
+2022.09.07(수) ~ 2022.09.11(일)
 
+SSAFY 8기 1학기 관통프로젝트
 
-#### 구현 기능
+## 🌻 S&J - 개요
 
-### 1. 메인 페이지 - index.jsp
+S&J는 SunAndJoo의 약자입니다. 
 
-> 지역별 관광지 정보 조회 - [시도, 구군, 컨텐츠별 관광지 정보](https://www.data.go.kr/data/15101578/openapi.do)
-<br/>
-    
-![main-index](./resources/images/main-index.JPG)
+한국관광공사의 공공 데이터를 기반으로 국내 여행지 정보를 제공하는 여행지 추천 서비스입니다.
 
-<br/><br/>
+전국 여행지를 조회할 수 있을 뿐만 아니라, 테마별 여행 코스와 한옥 숙박 정보를 얻을 수 있습니다. 
 
+또한 사용자들끼리 여행 메이트를 찾아 보고, 다녀온 여행 후기를 남기는 등의 교류를 할 수 있는 커뮤니티를 구현하였습니다.
 
-> 시, 구, 컨텐츠타입 선택 후 search버튼 클릭 시 - 하단 맵으로 자동 스크롤 이동
-<br/>
+## 🔎 주요 기능
 
+### 🗺 지역별 관광지 조회
 
-![kakaomap](./resources/images/kakaomap.JPG)
+- **시, 구, 컨텐츠**를 선택하면 해당 정보와 위치를 **지도에서** 확인할 수 있어요.
 
+### 🌷 여행 테마 소개
 
-<br/><br/>
+- **한국관광공사**가 제공하는 여행 코스를 확인할 수 있어요.
+- 여행 코스에 해당하는 관광지와 함께 **총 거리, 소요 시간**을 확인할 수 있어요.
 
-    > 선택한 컨텐츠 별로 다르게 표시되는 마커들  
-<br/>
+### ☘ 커뮤니티
 
-![map-festival](https://github.com/Han7sunny/SunAndJoo/assets/63834758/0476a546-b412-4597-bc65-27ffeb472515)
-![map-shopping](https://github.com/Han7sunny/SunAndJoo/assets/63834758/14041434-c54c-46fa-b42f-c5b8618182d5)
-![map-food](https://github.com/Han7sunny/SunAndJoo/assets/63834758/40094245-f839-4d3b-accb-e27ba67a7a31)
+- 마감되지 않은 **여행 메이트** 글을 조회할 수 있어요.
+- **여행 후기** 글을 조회할 수 있어요.
+- **조회수 기준 상위 4개**의 글을 먼저 볼 수 있어요.
 
+### 👨‍👧‍👦 여행 메이트 구하기
 
-<br/><br/><br/>
+- 커뮤니티에 함께 여행을 떠날 **여행 메이트 모집 글**을 작성할 수 있어요.
+- 댓글을 남긴 **회원들과 함께** 여행을 떠날 수 있어요.
+- 모집 마감이 끝나지 않은 글만 조회할 수 있어요.
 
+### 📝 여행 후기
 
-> 여행 테마 소개 - [추천 여행 코스](https://www.data.go.kr/data/15101578/openapi.do)를 보여주는 기능
-<br/>
+- 다녀온 **관광지에 대한 후기**를 작성할 수 있어요.
+- 댓글을 통해 의견을 주고 받을 수 있어요.
 
+### 🏠 한옥 소개
 
-![trip-theme](./resources/images/trip-theme.JPG)
+- 한국에서만 경험할 수 있는 **한옥 체험을 조회**할 수 있어요.
+- **위치**와 더불어 간단한 **한옥 숙소 정보**와 **해당 홈페이지**를 확인할 수 있어요.
 
+## 🛠 주요 기술
 
-<br/><br/>
+| Frontend | Backend |
+| --- | --- |
+| VSCode 1.77.3 | Eclipse IDE 2018-09 (4.9.0) |
+| HTML | Java 1.8 |
+| CSS | Spring 2.7.9 |
+| JavaScript | Maven 4 |
+|  | JavaMail1.6.2 |
+|  | MySQL 8.0.29 |
 
+## ⚒ 서비스 아키텍처
 
-    > '더 많은 여행테마 보기' 클릭 시 theme-total.jsp 로 이동
-<br/><br/>
+![시스템구성도](https://github.com/Han7sunny/SunAndJoo/assets/63834758/00d1ee35-cfab-489f-bfd5-14cd58c98710)
 
+## 🌳 S&J 서비스 화면
 
-> 여행 메이트 찾기 - 아직 마감되지 않은 여행 메이트 모집글 4개 출력
-<br/>
+### 🌏 메인 화면
 
+![main-index.JPG](./resources/images/main-index.JPG)
 
-![trip-mate](./resources/images/trip-mate.JPG)
+### 🌱 지도 검색
 
+![kakaomap.JPG](./resources/images/kakaomap.JPG)
 
-<br/><br/>
+### 🌱 컨텐츠별 검색
 
-    > '자세히보기' 클릭 시 community-tripMate.jsp 내의 해당 게시글로 이동
-<br/><br/>
+![map-festival.PNG](https://github.com/Han7sunny/SunAndJoo/assets/63834758/0476a546-b412-4597-bc65-27ffeb472515)
 
-> 여행 후기 - 슬라이드 모션으로 여행 후기글 출력
-<br/>
+![map-shopping.PNG](https://github.com/Han7sunny/SunAndJoo/assets/63834758/14041434-c54c-46fa-b42f-c5b8618182d5)
 
-![trip-review](./resources/images/trip-review.JPG)
+![map-food.PNG](https://github.com/Han7sunny/SunAndJoo/assets/63834758/40094245-f839-4d3b-accb-e27ba67a7a31)
 
-<br/><br/>
+### ⛺ 여행 테마 추천
 
-    > 후기 클릭 시 community-tripReview.jsp 내의 해당 게시글로 이동
-<br/><br/>
+![trip-theme.JPG](./resources/images/trip-theme.JPG)
 
+### 💵 여행 메이트 찾기
 
+![trip-mate.JPG](./resources/images/trip-mate.JPG)
 
-> 한옥 소개 - 한국에서만 경험할 수 있는 한옥 체험 소개
-<br/>
+### 🔍 여행 후기 모음
 
-![hanok-info](./resources/images/hanok-info.JPG)
+![trip-review.JPG](./resources/images/trip-review.JPG)
 
-<br/><br/>
+### 🚞 한옥 여행지 소개
 
-    > '더 많은 한옥 보기' 클릭 시 : 한옥 체험 가능한 숙박 정보 리스트 화면 hanok_list.jsp 로 이동
-<br/><br/><br/>
+![hanok-info.JPG](./resources/images/hanok-info.JPG)
 
+### 🚞 한옥 여행지 게시판
 
+![hanok-list.JPG](./resources/images/hanok-list.JPG)
 
------------------------------------------------------------
+### 🚞 한옥 여행지 조회
 
-### 2. 로그인 / 회원가입 기능 - login.jsp / joinin.jsp
-> 메인 페이지의 상단 바를 통해 이용 가능한 로그인 / 회원가입 기능
-<br/>
+![hanok-detail.JPG](./resources/images/hanok-detail.JPG)
 
-![login](./resources/images/login.JPG)
+### 🌼 여행 테마 게시판
 
-<br/><br/>
+![theme-list.jpg](./resources/images/theme-list.JPG)
 
+### 🌼 여행 테마별 코스 소개
 
-![joinin](./resources/images/joinin.JPG)
+![theme-view.jpg](./resources/images/theme-view.JPG)
 
-<br/><br/>
+### 👨‍👧‍👧 커뮤니티
 
+![community-main.jpg](./resources/images/community-main.JPG)
 
------------------------------------------------------------
+### 📚 게시글 작성
 
-### 3. 아이디 찾기 / 비밀번호 찾기 - find-id.jsp / find-pwd.jsp
-> 로그인 페이지에서 이용 가능한 아이디 찾기 기능
-<br/>
+![board-regist.jpg](./resources/images/board-regist.JPG)
 
-![find-id](./resources/images/find-id.JPG)
+### 👨‍👧‍👧 여행 후기 게시판
 
-<br/><br/>
+![tripReview-list.jpg](./resources/images/tripReview-list.JPG)
 
->  이메일 인증번호 전송으로 구현한 비밀번호 찾기 기능
-<br/>
+### 📖 여행 후기 조회
 
-![find-pwd](./resources/images/find-pwd.GIF)
+![tripReview-view.jpg](./resources/images/tripReview-view.JPG)
 
-<br/><br/>
+### 👨‍👧‍👧 여행 메이트 게시판
 
-![find-pwd-result](./resources/images/find-pwd-result.GIF)
+![tripMate-list.jpg](./resources/images/tripMate-list.JPG)
 
+### 📖 여행 메이트 조회
 
->  사용자가 이메일로 받아볼 수 있는 비밀번호 찾기 결과
-<br/>
+![tripMate-view.jpg](./resources/images/tripMate-view.JPG)
 
-![find_pwd_email](./resources/images/find-pwd-email.GIF)
+### ✏ 게시글 수정
 
-<br/><br/><br/>
+![board-modify.jpg](./resources/images/board-modify.jpg)
 
+![board-modify2.jpg](./resources/images/board-modify2.JPG)
 
+![board-delete-check.jpg](./resources/images/board-delete-check.JPG)
 
+### 🌼 댓글 기능
 
+![reply-regist.jpg](./resources/images/reply-regist.JPG)
 
------------------------------------------------------------
+![reply-modify.jpg](./resources/images/reply-modify.JPG)
 
+### 🌼 공지사항 게시판
 
+![notice-notadmin.jpg](./resources/images/notice-notadmin.JPG)
 
-### 4. 마이페이지 - mypage.jsp
-> 가입 정보를 수정할 수 있는 마이페이지  
-<br/>
+### 🌼 관리자 모드
 
-> 사용자가 작성한 글, 댓글을 모두 조회할 수 있는 기능 
-<br/>
+![notice.jpg](./resources/images/notice.JPG)
 
+![notice-regist.jpg](./resources/images/notice-regist.JPG)
 
-![mypage](./resources/images/mypage.JPG)
+### 
 
-<br/><br/>
+![tripReview-list.jpg](./resources/images/tripReview-list.JPG)
 
-> 관리자가 로그인한 경우, 작성한 공지사항들을 모두 조회할 수 있다.
-<br/>
+### 🌼 회원가입 기능
 
-![mypage2](./resources/images/mypage2.JPG)
+![joinin.JPG](./resources/images/joinin.JPG)
 
-<br/><br/>
+### 🌼 로그인 기능
 
+![login.JPG](./resources/images/login.JPG)
 
+### ☘ 아이디 찾기
 
-    > '탈퇴하기' 클릭 시 : 재확인 후 탈퇴 진행
+![find-id.JPG](./resources/images/find-id.JPG)
 
-![join-delete-check](./resources/images/join-delete-check.JPG)
+### ☘ 비밀번호 찾기
 
-<br/><br/><br/>
+![find-pwd.GIF](./resources/images/find-pwd.GIF)
 
+![find-pwd-result.GIF](./resources/images/find-pwd-result.GIF)
 
+### 🌲 마이페이지
 
-    > '정보 수정하기' 클릭 시 : 정보 수정 완료 창
+![mypage.JPG](./resources/images/mypage.JPG)
 
-![mypage-modify](./resources/images/mypage-modify.JPG)
+![mypage2.JPG](./resources/images/mypage2.JPG)
 
-<br/><br/><br/>
+![mypage-modify.JPG](./resources/images/mypage-modify.JPG)
 
------------------------------------------------------------
+## ⛓ 프로젝트 파일 구조
 
-### 5. 여행 테마 - theme-total.jsp
-> 여행 테마 전체를 조회할 수 있는 페이지
+### Front-End
 
-<br/>
+```
+S&J
+ ├── WebContent
+ │ ├── alert_page
+ │ ├── assests
+ │ ├── common
+ │ ├── user
+ │ └── jsp
+ └── scss
+   ├── bootstrap
+   ├── components
+   ├── index.html
+   └── style.scss
+```
 
-![theme-list](./resources/images/theme-list.JPG)
+### Back-End
 
-<br/><br/>
+```
+S&J
+ ├── src/com/ssafy
+ │ ├── user
+ │ │  ├── controller
+ │ │  └── model
+ │ │    ├── dao
+ │ │    ├── dto
+ │ │    └── service
+ │ ├── trip
+ │ ├── board
+ │ └── util
+ │   └── DBUtil.java
+ └── pom.xml
+```
 
+## 🔧 협업툴
 
+- Git
+- Notion
+- MatterMost
+- Webex
 
-    > 각 게시글 클릭 시 : 상세 페이지 theme-single.jsp 로 이동
+## 🔨 협업 환경
 
-![theme-view](./resources/images/theme-view.JPG)
-
-<br/><br/><br/>
-
-
-
-
-------------------------------------------------------------
-
-### 6. 한옥 숙소 소개 - hanok_list.jsp
-> index.jsp에서 '더 많은 한옥 보기' 클릭 시 이동할 수 있는 한옥 숙소 소개 페이지
-<br/>
-
-![hanok-list](./resources/images/hanok-list.JPG)
-
-<br/><br/>
-
-
-
-    > 각 숙소 클릭 시 : 상세 페이지 hanok_single.jsp 로 이동
-
-![hanok-detail](./resources/images/hanok-detail.JPG)
-
-<br/><br/><br/>
-
-
-------------------------------------------------------------
-
-
-
-### 7. 커뮤니티 - community.jsp
-> 여행 메이트 / 여행 후기 글을 조회할 수 있는 페이지
-
-> 조회수 기준 상위 4개의 글을 볼 수 있다.
-
-<br/>
-
-![community](./resources/images/community-main.JPG)
-
-<br/><br/>
-
-
-    > 각 게시글 클릭 시 : 게시글 상세 페이지 board_detail_view.jsp 로 이동
-<br/>
-
-
-> 게시글 작성 - 위치, 글 제목, 작성자명, 날짜, 카테고리 선택
-<br/>
-
-![board-regist](./resources/images/board-regist.JPG)
-
-<br/><br/>
-<br/>
-
-![board-regist2](./resources/images/board-regist2.jpg)
-
-<br/><br/>
-
-
-    > 글 작성 내용에 맞는 도시, 군구 선택 가능
-    > 시작 날짜 선택 시 종료 날짜는 시작 날짜 이후로 선택 가능
-    > 글 카테고리 선택 가능 (여행 후기, 여행 메이트, 여행 메이트 후기)
-    > 별점 선택
-<br/><br/><br/>
-
-
------------------------------------------------------------
-
-### 8. 여행 후기 - community-tripReview.jsp
-> 작성된 여행 후기 및 여행 메이트 후기 게시글을 볼 수 있는 페이지
-<br/>
-
-![tripReview-list](./resources/images/tripReview-list.JPG)
-
-<br/><br/>
-
-
-    > 각 게시글 클릭 시 : 상세 페이지 board_detail_view.jsp 로 이동
-    >                   : 클릭할 때마다 해당 게시글 조회수 증가
-
-
-![tripReview-view](./resources/images/tripReview-view.JPG)
-
-
-<br/><br/><br/>
-
------------------------------------------------------------
-
-### 9. 여행 메이트 - community-tripMate.jsp
-> 작성된 여행 메이트 모집글 전체를 볼 수 있는 페이지
-<br/>
-
-![tripMate-list](./resources/images/tripMate-list.JPG)
-
-<br/><br/>
-
-
-    > 각 게시글 클릭 시 : 상세 페이지 board_detail_view.jsp 로 이동
-    >                   : 클릭할 때마다 해당 게시글 조회수 증가
-
-![tripMate-view](./resources/images/tripMate-view.JPG)
-
-<br/><br/><br/>
-
------------------------------------------------------------
-
-
-### 10. 게시글 수정 기능
-> 글 작성자와 세션에 저장된 로그인 아이디가 같을 때에만 수정, 삭제 버튼 활성화
-<br/>
-
-![board-modify](./resources/images/board-modify.jpg)
-
-<br/><br/>
-
-
-    > 수정하기 클릭 시 : 수정 페이지 board_modify.jsp 로 이동
-    > 내용 수정 후 등록하기 버튼 클릭 시 : 마이 페이지 mypage.jsp 로 이동
-
-![board-modify-complete](./resources/images/board-modify2.JPG)
-
-<br/><br/><br/>
-
-
-    > 삭제하기 클릭 시 : 재확인 후 삭제 진행
-
-![board-delete-check](./resources/images/board-delete-check.JPG)
-
-<br/><br/>
-
-<br/>
-
-
-
------------------------------------------------------------
-
-
-### 11. 댓글 기능
-> 모든 게시글 하단에 구현되어 있는 댓글 작성 폼
-> 댓글 작성자와 세션에 저장된 로그인 아이디가 같을 때에만 수정, 삭제버튼 활성화
-<br/>
-
-![reply-regist](./resources/images/reply-regist.JPG)
-
-<br/><br/>
-
-
-> 수정 버튼 클릭 시 : input textarea 형식으로 전환
-<br/>
-
-![reply-modify](./resources/images/reply-modify.JPG)
-
-<br/><br/><br/>
+- Gitlab
+    - 기능별 commit 및 push
+- Notion
+    - 회의록 기록 및 보관
+    - 피드백관 관련된 업무 사항 정리
+    - 새로운 기술을 학습했을 때, 작업 순서대로 정리하여 공유
+    - 컨벤션 정리, 기능명세서 등 모두가 공유해야 하는 문서 관리
+- MatterMost
+    - 간단한 파일 공유
+    - Back-End와 Front-End 이슈 사항 공유
+- Webex
+    - 오프라인 참여에 사정이 있는 팀원 발생 시 웹엑스를 통해 프로젝트 진행
+- 회의
+    - 매일 아침 Daily Scrum 진행으로 빠른 소통과 문제에 대한 신속한 대응
  
- 
+## 👩‍💻 팀원 역할 분배
 
-> 삭제 버튼 클릭 시 : alert창으로 재확인 후 삭제 진행
-<br/>
+|한선희|강윤주|
+|---|---|
+|![image](https://avatars.githubusercontent.com/u/63505110?v=4)|![image](https://avatars.githubusercontent.com/u/63834758?v=4)|
+|FullStack|FullStack|
+|  - 메인페이지 구현
+<br>      - 지역별 관광지, 문화시설, 공연, 여행코스, 쇼핑 조회 
+<br>      - 메인페이지 카카오맵 지도 구현
+<br>      - 여행 테마, 여행 메이트 찾기  
+<br>      - 여행 후기
+<br>      - 한옥 소개
+<br>  - 로그인, 로그아웃, 회원가입 기능
+<br>  - 비밀번호 찾기 기능
+<br>  - 마이페이지 회원정보 조회, 작성글 조회
+<br>  - 커뮤니티 기능
+<br>  - 공지사항 게시판
+<br>  - 여행 테마, 여행 메이트 게시판 |
+  - 아이디 찾기 기능
+<br>  - 마이페이지 회원 탈퇴, 정보 수정
+<br>  - 여행 테마 조회
+<br>  - 한옥 숙소 조회
+<br>  - 여행 테마, 여행 메이트 게시판
+<br>  - 게시글 수정, 삭제
+<br>  - 댓글 기능
+<br>  - DB 설계 및 데이터 입력 |
 
-![reply-delete](./resources/images/reply-delete.JPG)
-
-<br/><br/><br/>
- 
-
- 
-
------------------------------------------------------------
-
-
-### 12. 공지사항 기능
-> 상단 바를 통한 공지사항 조회
-
-<br/>
-
-![notice-notadmin](./resources/images/notice-notadmin.JPG)
-
-
-<br/><br/>
-
-
-> 관리자로 로그인 시 : 공지사항 등록 버튼 활성화
-<br/>
-
-![notice](./resources/images/notice.JPG)
-
-<br/><br/><br/>
-
- 
- 
-> 공지사항 등록 기능
-<br/>
-
-![notice-regist](./resources/images/notice-regist.JPG)
-
-<br/><br/><br/>
- 
