@@ -51,6 +51,8 @@ S&J는 SunAndJoo의 약자입니다.
 - 한국에서만 경험할 수 있는 **한옥 체험을 조회**할 수 있어요.
 - **위치**와 더불어 간단한 **한옥 숙소 정보**와 **해당 홈페이지**를 확인할 수 있어요.
 
+ <br>
+ 
 ## 🛠 주요 기술
 
 | Frontend | Backend |
@@ -194,6 +196,11 @@ S&J는 SunAndJoo의 약자입니다.
 
 ![mypage-modify.JPG](./resources/images/mypage-modify.JPG)
 
+
+
+ <br>
+
+ 
 ## ⛓ 프로젝트 파일 구조
 
 ### Front-End
@@ -231,6 +238,8 @@ S&J
  └── pom.xml
 ```
 
+ <br>
+ 
 ## 🔧 협업툴
 
 - Git
@@ -254,31 +263,11 @@ S&J
     - 오프라인 참여에 사정이 있는 팀원 발생 시 웹엑스를 통해 프로젝트 진행
 - 회의
     - 매일 아침 Daily Scrum 진행으로 빠른 소통과 문제에 대한 신속한 대응
+
+ <br>
  
 ## 👩‍💻 팀원 역할 분배
 
-|한선희|강윤주|
-|---|---|
-|![image](https://avatars.githubusercontent.com/u/63505110?v=4)|![image](https://avatars.githubusercontent.com/u/63834758?v=4)|
-|FullStack|FullStack|
-|  - 메인페이지 구현
-<br>      - 지역별 관광지, 문화시설, 공연, 여행코스, 쇼핑 조회 
-<br>      - 메인페이지 카카오맵 지도 구현
-<br>      - 여행 테마, 여행 메이트 찾기  
-<br>      - 여행 후기
-<br>      - 한옥 소개
-<br>  - 로그인, 로그아웃, 회원가입 기능
-<br>  - 비밀번호 찾기 기능
-<br>  - 마이페이지 회원정보 조회, 작성글 조회
-<br>  - 커뮤니티 기능
-<br>  - 공지사항 게시판
-<br>  - 여행 테마, 여행 메이트 게시판 |
-  - 아이디 찾기 기능
-<br>  - 마이페이지 회원 탈퇴, 정보 수정
-<br>  - 여행 테마 조회
-<br>  - 한옥 숙소 조회
-<br>  - 여행 테마, 여행 메이트 게시판
-<br>  - 게시글 수정, 삭제
-<br>  - 댓글 기능
-<br>  - DB 설계 및 데이터 입력 |
+![image](https://github.com/Han7sunny/SunAndJoo/assets/63834758/69fdb76d-0129-44b1-8cfa-dcac174749ee)
+
 
