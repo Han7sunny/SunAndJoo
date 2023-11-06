@@ -268,6 +268,6 @@ S&J
  
 ## 👩‍💻 팀원 역할 분배
 
-![image](https://github.com/Han7sunny/SunAndJoo/assets/63834758/69fdb76d-0129-44b1-8cfa-dcac174749ee)
+![image](https://github.com/Han7sunny/SunAndJoo/assets/63834758/a34c02d1-be1b-4943-b853-0c385bdff2a3)
 
 
